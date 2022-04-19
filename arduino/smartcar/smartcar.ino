@@ -1,30 +1,49 @@
 #include <vector>
-
+ 
 #include <MQTT.h>
 #include <WiFi.h>
 #ifdef __SMCE__
 #include <OV767X.h>
 #endif
-
+ 
 #include <Smartcar.h>
-
+ 
 MQTTClient mqtt;
 WiFiClient net;
-
-
+ 
+ 
+//empty for local host connection
+const char ssid[] = " ";
+const char pass[] = " ";
+ 
+ 
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
-
+ 
 SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
-
+ 
+const auto pulsesPerMeter = 600;
+const auto oneSecond = 1000UL;
+#ifdef __SMCE__
+const auto triggerPin = 6;
+const auto echoPin = 7;
+const auto mqttBrokerUrl = "127.0.0.1";
+ 
+#else
+const auto triggerPin = 33;
+const auto echoPin = 32;
+const auto mqttBrokerUrl = "192.168.0.40";
+#endif
+const unsigned int maxDistance = 100;
+ 
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
-
+ 
 //Ultrasonic
 SR04 front(arduinoRuntime, triggerPin, echoPin, maxDistance);
-
+ 
 //Odometer
 DirectionlessOdometer leftOdometer{ arduinoRuntime,
                                     smartcarlib::pins::v2::leftOdometerPin,
@@ -34,34 +53,21 @@ DirectionlessOdometer rightOdometer{ arduinoRuntime,
                                      smartcarlib::pins::v2::rightOdometerPin,
                                      []() { rightOdometer.update(); },
                                      pulsesPerMeter };
-
-const auto oneSecond = 1000UL;
-#ifdef __SMCE__
-const auto triggerPin = 6;
-const auto echoPin = 7;
-const auto mqttBrokerUrl = "127.0.0.1";
-const auto pulsesPerMeter = 600;
-#else
-const auto triggerPin = 33;
-const auto echoPin = 32;
-const auto mqttBrokerUrl = "192.168.0.40";
-#endif
-const unsigned int maxDistance = 110;
-
+                                   
 std::vector<char> frameBuffer;
-
+ 
 void setup() {
   Serial.begin(9600);
   carGo();
-  
+ 
 #ifdef __SMCE__
   Camera.begin(QVGA, RGB888, 15);
   frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
 #endif
-
+ 
   WiFi.begin();
   mqtt.begin(mqttBrokerUrl, 1883, net);
-
+ 
   Serial.println("Connecting to WiFi...");
   auto wifiStatus = WiFi.status();
   while (wifiStatus != WL_CONNECTED && wifiStatus != WL_NO_SHIELD) {
@@ -70,14 +76,14 @@ void setup() {
     delay(1000);
     wifiStatus = WiFi.status();
   }
-
-
+ 
+ 
   Serial.println("Connecting to MQTT broker");
   while (!mqtt.connect("arduino", "public", "public")) {
     Serial.print(".");
     delay(1000);
   }
-
+ 
   mqtt.subscribe("/smartcar/control/#", 1);
   mqtt.onMessage([](String topic, String message) {
     if (topic == "/smartcar/control/throttle") {
@@ -89,22 +95,22 @@ void setup() {
     }
   });
 }
-
+ 
 void obstacle() {
     const auto distance = front.getDistance();
  if (distance > 0 && distance < 100) {
     car.setSpeed(0);
  }
 }
-
+ 
 void carGo() {
       car.setSpeed(60);
 }
-
+ 
 void loop() {
  
   obstacle();
-  
+ 
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
