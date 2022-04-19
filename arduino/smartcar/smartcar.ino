@@ -28,7 +28,7 @@ const auto triggerPin = 33;
 const auto echoPin = 32;
 const auto mqttBrokerUrl = "192.168.0.40";
 #endif
-const unsigned int maxDistance = 100;
+const unsigned int maxDistance = 110;
 
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
