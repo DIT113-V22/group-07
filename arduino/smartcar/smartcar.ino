@@ -19,20 +19,6 @@ DifferentialControl control(leftMotor, rightMotor);
 
 SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
 
-
-const auto oneSecond = 1000UL;
-#ifdef __SMCE__
-const auto triggerPin = 6;
-const auto echoPin = 7;
-const auto mqttBrokerUrl = "127.0.0.1";
-const auto pulsesPerMeter = 600;
-#else
-const auto triggerPin = 33;
-const auto echoPin = 32;
-const auto mqttBrokerUrl = "192.168.0.40";
-#endif
-const unsigned int maxDistance = 110;
-
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
 
@@ -48,6 +34,19 @@ DirectionlessOdometer rightOdometer{ arduinoRuntime,
                                      smartcarlib::pins::v2::rightOdometerPin,
                                      []() { rightOdometer.update(); },
                                      pulsesPerMeter };
+
+const auto oneSecond = 1000UL;
+#ifdef __SMCE__
+const auto triggerPin = 6;
+const auto echoPin = 7;
+const auto mqttBrokerUrl = "127.0.0.1";
+const auto pulsesPerMeter = 600;
+#else
+const auto triggerPin = 33;
+const auto echoPin = 32;
+const auto mqttBrokerUrl = "192.168.0.40";
+#endif
+const unsigned int maxDistance = 110;
 
 std::vector<char> frameBuffer;
 
