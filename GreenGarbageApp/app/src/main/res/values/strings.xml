@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Green Garbage App</string>
     <string name="green_garbage">Green Garbage</string>
+    <string name="forward">Forward</string>
+    <string name="cameraview">cameraView</string>
+    <string name="left">Left</string>
+    <string name="stop">Stop</string>
+    <string name="right">Right</string>
+    <string name="backward">Backward</string>
 </resources>
