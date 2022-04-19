@@ -15,12 +15,12 @@ jobs:
         with:
           python-version: '3.x'
       - name: Fetch sketch dependencies
-        run: |
+    run: |
           pip3 install pyserial
           arduino-cli core update-index --additional-urls "https://dl.espressif.com/dl/package_esp32_index.json"
           arduino-cli core install esp32:esp32 --additional-urls "https://dl.espressif.com/dl/package_esp32_index.json"
           arduino-cli lib install "Smartcar shield"
-	  arduino-cli lib install "MQTT"
+          arduino-cli lib install "MQTT"
 
       - name: Build sketch
         run: |
