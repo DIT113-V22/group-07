@@ -22,20 +22,10 @@ BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
  
-SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
- 
 const auto pulsesPerMeter = 600;
 const auto oneSecond = 1000UL;
-#ifdef __SMCE__
 const auto triggerPin = 6;
 const auto echoPin = 7;
-const auto mqttBrokerUrl = "127.0.0.1";
- 
-#else
-const auto triggerPin = 33;
-const auto echoPin = 32;
-const auto mqttBrokerUrl = "192.168.0.40";
-#endif
 const unsigned int maxDistance = 100;
  
 //Top Sensor
@@ -53,7 +43,8 @@ DirectionlessOdometer rightOdometer{ arduinoRuntime,
                                      smartcarlib::pins::v2::rightOdometerPin,
                                      []() { rightOdometer.update(); },
                                      pulsesPerMeter };
-                                   
+SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
+   
 std::vector<char> frameBuffer;
  
 void setup() {
@@ -66,7 +57,7 @@ void setup() {
 #endif
  
   WiFi.begin();
-  mqtt.begin(mqttBrokerUrl, 1883, net);
+  mqtt.begin("127.0.0.1", 1883, net);
  
   Serial.println("Connecting to WiFi...");
   auto wifiStatus = WiFi.status();
