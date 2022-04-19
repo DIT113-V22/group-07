@@ -17,6 +17,9 @@ BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
 
+SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
+
+
 const auto oneSecond = 1000UL;
 #ifdef __SMCE__
 const auto triggerPin = 6;
@@ -47,10 +50,6 @@ DirectionlessOdometer rightOdometer{ arduinoRuntime,
                                      pulsesPerMeter };
 
 std::vector<char> frameBuffer;
-
-SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
-
-
 
 void setup() {
   Serial.begin(9600);
