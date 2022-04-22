@@ -1,4 +1,4 @@
-Green Garbage 
+eeGreen Garbage 
 -------------
 
 Project proposal
