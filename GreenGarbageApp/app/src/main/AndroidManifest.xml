@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenGarbageApp">
         <activity
+            android:name=".intro_screen"
+            android:exported="false" />
+        <activity
             android:name=".Screen_1"
             android:exported="false" />
         <activity
@@ -27,7 +30,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
