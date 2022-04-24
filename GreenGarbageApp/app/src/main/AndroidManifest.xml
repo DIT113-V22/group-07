@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenGarbageApp">
         <activity
+            android:name=".end_of_game"
+            android:exported="false" />
+        <activity
             android:name=".intro_screen"
             android:exported="false" />
         <activity
