@@ -1,5 +1,4 @@
-eeGreen Garbage 
--------------
+# Green Garbage
 
 Project proposal
 ----------------
