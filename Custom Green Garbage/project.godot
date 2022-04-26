@@ -10,8 +10,12 @@ config_version=4
 
 [application]
 
-config/name="Green_Garbage"
+config/name="GreenGarbage"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://src/gd/globals.gd"
 
 [physics]
 

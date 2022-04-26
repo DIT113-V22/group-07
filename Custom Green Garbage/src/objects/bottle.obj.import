@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bottle.obj-41ce20230ce9849064d838d2025396df.mesh"
+
+[deps]
+
+files=[ "res://.import/bottle.obj-41ce20230ce9849064d838d2025396df.mesh" ]
+
+source_file="res://src/objects/bottle.obj"
+dest_files=[ "res://.import/bottle.obj-41ce20230ce9849064d838d2025396df.mesh", "res://.import/bottle.obj-41ce20230ce9849064d838d2025396df.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
