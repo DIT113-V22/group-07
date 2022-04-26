@@ -5,7 +5,6 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.util.Log
 import android.widget.ImageView
-
 import androidx.appcompat.app.AppCompatActivity
 import org.eclipse.paho.client.mqttv3.*
 
@@ -31,10 +30,8 @@ class MqttSmartcar : AppCompatActivity {
         this.mCameraView = mCameraView
         this.context = context
     }
-
     constructor(){
     }
-
     override fun onResume() {
         super.onResume()
         connectToMqttBroker()
@@ -110,5 +107,4 @@ class MqttSmartcar : AppCompatActivity {
         mMqttClient?.publish(THROTTLE_CONTROL, Integer.toString(throttleSpeed), QOS, null)
         mMqttClient?.publish(STEERING_CONTROL, Integer.toString(steeringAngle), QOS, null)
     }
-
 }
