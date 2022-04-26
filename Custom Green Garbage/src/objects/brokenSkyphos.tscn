@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://20949_Broken_Skyphos_v1_diffuse.jpg" type="Texture" id=1]
+[ext_resource path="res://20949_Broken_Skyphos_v1_NEW.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CylinderShape" id=2]
+radius = 8.00056
+height = 19.4746
+
+[node name="Spatial" type="Spatial"]
+
+[node name="20949_Broken_Skyphos_v1_NEW" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5412, -18.9001, -37.1208 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="20949_Broken_Skyphos_v1_NEW"]
+
+[node name="CollisionShape" type="CollisionShape" parent="20949_Broken_Skyphos_v1_NEW/StaticBody"]
+shape = SubResource( 2 )
