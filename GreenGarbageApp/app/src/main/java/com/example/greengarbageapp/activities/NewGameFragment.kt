@@ -17,6 +17,4 @@ class NewGameFragment : Fragment() {
         val binding = FragmentNewGameBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-
 }
