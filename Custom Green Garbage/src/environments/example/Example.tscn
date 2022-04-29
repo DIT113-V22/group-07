@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/textures/forrest_ground_01_diff_4k.jpg" type="Texture" id=1]
 [ext_resource path="res://src/objects/Land2.tscn" type="PackedScene" id=2]
@@ -7,14 +7,8 @@
 [ext_resource path="res://src/gd/Example.gd" type="Script" id=5]
 [ext_resource path="res://src/gd/Count.gd" type="Script" id=6]
 [ext_resource path="res://src/objects/barrel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/objects/glass.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/objects/bottle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/objects/Can.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/objects/tree.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/objects/Wine.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/objects/cup.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/objects/Dog.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/objects/duck.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -97,35 +91,8 @@ custom_fonts/font = SubResource( 8 )
 text = "A"
 script = ExtResource( 6 )
 
-[node name="barrel" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24604, -2.30027 )
-
-[node name="glass" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 13.9152, 1.04078, 8.45115 )
-
-[node name="bottle" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 29.82, 2.03047, 0 )
-
 [node name="Can" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 17.4931, 1.28936, 0 )
-
-[node name="Can2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 17.4931, 1.28936, 8.10374 )
-
-[node name="Can3" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 19.797, 1.28936, -4.75141 )
-
-[node name="barrel2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3144, 1.24604, -2.30027 )
-
-[node name="bottle2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 29.82, 2.03047, -24.4957 )
-
-[node name="bottle3" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 29.82, 2.03047, 32.463 )
-
-[node name="bottle4" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 22.3791, 2.03047, 0 )
 
 [node name="tree" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.135, 0.47731, 0 )
@@ -193,62 +160,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6961, 0.47731, -48.5263 )
 [node name="tree22" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6961, 0.47731, -56.5004 )
 
-[node name="Wine" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32973, 1.24482, 0 )
+[node name="barrel" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0007, 1.94781, 0 )
 
-[node name="Wine2" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8661, 1.24482, -6.40411 )
-
-[node name="Wine3" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21294, 1.24482, 30.2225 )
-
-[node name="cup" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5456, 1.07205, -12.5183 )
-
-[node name="cup3" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4681, 1.07205, -23.5228 )
-
-[node name="barrel3" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24604, -36.2372 )
-
-[node name="Duck" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 10.7157, 1.26609, -31.1814 )
-
-[node name="Duck2" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 21.435, 1.26609, -33.5379 )
-
-[node name="Duck3" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 24.9592, 1.26609, -29.8899 )
-
-[node name="Duck4" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 21.8846, 1.26609, -28.1447 )
-
-[node name="Duck5" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 12.5772, 1.26609, -26.0974 )
-
-[node name="Dog" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.92219, 1.00747, -20.7157 )
-
-[node name="Dog2" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 19.517, 0.992207, -20.7157 )
-
-[node name="cup2" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87431, 1.07205, -12.5183 )
-
-[connection signal="TrashCollected" from="barrel" to="CanvasLayer/Count" method="_on_barrel_TrashCollected"]
-[connection signal="TrashCollected" from="glass" to="CanvasLayer/Count" method="_on_glass_TrashCollected"]
-[connection signal="TrashCollected" from="bottle" to="CanvasLayer/Count" method="_on_bottle_TrashCollected"]
 [connection signal="TrashCollected" from="Can" to="CanvasLayer/Count" method="_on_Can_TrashCollected"]
-[connection signal="TrashCollected" from="Can2" to="CanvasLayer/Count" method="_on_Can_TrashCollected"]
-[connection signal="TrashCollected" from="Can3" to="CanvasLayer/Count" method="_on_Can_TrashCollected"]
-[connection signal="TrashCollected" from="barrel2" to="CanvasLayer/Count" method="_on_barrel_TrashCollected"]
-[connection signal="TrashCollected" from="bottle2" to="CanvasLayer/Count" method="_on_bottle_TrashCollected"]
-[connection signal="TrashCollected" from="bottle3" to="CanvasLayer/Count" method="_on_bottle_TrashCollected"]
-[connection signal="TrashCollected" from="bottle4" to="CanvasLayer/Count" method="_on_bottle_TrashCollected"]
-[connection signal="TrashCollected" from="Wine" to="CanvasLayer/Count" method="_on_Wine_TrashCollected"]
-[connection signal="TrashCollected" from="Wine2" to="CanvasLayer/Count" method="_on_Wine_TrashCollected"]
-[connection signal="TrashCollected" from="Wine3" to="CanvasLayer/Count" method="_on_Wine_TrashCollected"]
-[connection signal="TrashCollected" from="cup" to="CanvasLayer/Count" method="_on_cup_TrashCollected"]
-[connection signal="TrashCollected" from="cup3" to="CanvasLayer/Count" method="_on_cup_TrashCollected"]
-[connection signal="TrashCollected" from="barrel3" to="CanvasLayer/Count" method="_on_barrel_TrashCollected"]
-[connection signal="TrashCollected" from="cup2" to="CanvasLayer/Count" method="_on_cup_TrashCollected"]
+[connection signal="TrashCollected" from="barrel" to="CanvasLayer/Count" method="_on_barrel_TrashCollected"]

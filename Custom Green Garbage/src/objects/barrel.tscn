@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/textures/barrel_low_lambert1_BaseColor.png" type="Texture" id=1]
-[ext_resource path="res://src/objects/barrel.obj.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://.import/barrel.obj.obj-602a9075134526d5e7bfad95459c0ab2.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://src/objects/barrel.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -20,6 +20,7 @@ material/0 = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+visible = false
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_barrel_body_entered"]

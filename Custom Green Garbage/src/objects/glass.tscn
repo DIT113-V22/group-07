@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/textures/greenglassbroken.jpeg" type="Texture" id=1]
-[ext_resource path="res://src/objects/seaglass.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://.import/seaglass.obj-3aec215c3d545ca1906170d2dc8141c8.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://src/objects/glass.gd" type="Script" id=3]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )

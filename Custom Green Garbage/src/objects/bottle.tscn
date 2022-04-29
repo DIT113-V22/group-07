@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/objects/bottle.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://.import/bottle.obj-1f800ea05c744db824f2c125e26d07a2.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://src/gd/bottle.gd" type="Script" id=2]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.592157, 1, 0.941176, 1 )
