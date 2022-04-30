@@ -7,17 +7,18 @@
     tools:context=".activities.MainActivity"
     android:background="@color/background">
 
-
-    <ImageView
-        android:id="@+id/imageView24"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
+    <ImageButton
+        android:id="@+id/imageView9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045"
-        app:srcCompat="@drawable/ic_baseline_cancel_24" />
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/ic_baseline_cancel_24_2"
+        android:background="@color/background"/>
 
     <Button
         android:id="@+id/button2"
