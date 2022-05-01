@@ -15,7 +15,9 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
- 
+
+boolean forward = false;
+boolean back = false;
  
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
@@ -49,8 +51,7 @@ std::vector<char> frameBuffer;
  
 void setup() {
   Serial.begin(9600);
-  carGo();
- 
+  
 #ifdef __SMCE__
   Camera.begin(QVGA, RGB888, 15);
   frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
@@ -77,8 +78,8 @@ void setup() {
  
   mqtt.subscribe("/smartcar/control/#", 1);
   mqtt.onMessage([](String topic, String message) {
-    if (topic == "/smartcar/control/throttle") {
-      car.setSpeed(message.toInt());
+    if (topic == "/smartcar/control/takeInput") {
+      takeInput(message);
     } else if (topic == "/smartcar/control/steering") {
       car.setAngle(message.toInt());
     } else {
@@ -93,11 +94,54 @@ void obstacle() {
     car.setSpeed(0);
  }
 }
- 
+
+void takeInput(String input) {
+        int inputChoice = input.substring(0).toInt();
+            int throttle;
+            int angle;
+            if(input.length() > 1) {
+              unsigned int throttleChoice = input.substring(1).toInt();
+              throttle = throttleChoice;
+              angle = throttleChoice;
+            }
+            
+            switch(inputChoice) {
+              case 2:  //forward
+                forward = true;
+                back = false;
+                car.setSpeed(throttle);
+                break;
+              
+              case 3:  //backwards
+                forward = false;
+                back = true;
+                car.setSpeed(-throttle);
+                break;
+            
+              case 4:  //right
+                  car.setAngle(angle);
+                break;
+            
+              case 5:  //left
+                  car.setAngle(-angle);
+                break;
+              
+              case 6: //stop
+                forward = false;
+                back = false;
+                car.setAngle(0);
+                car.setSpeed(0);
+                break;
+                
+              default:
+                break;
+            }
+        }
+/* 
 void carGo() {
       car.setSpeed(60);
 }
- 
+*/
 void loop() {
  
   obstacle();
