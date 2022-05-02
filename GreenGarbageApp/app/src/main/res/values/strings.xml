@@ -8,4 +8,6 @@
     <string name="right">Right</string>
     <string name="backward">Backward</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">about</string>
+    <string name="about_us">About us</string>
 </resources>
