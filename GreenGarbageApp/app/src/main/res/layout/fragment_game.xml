@@ -4,28 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/half_circle_lightgreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/half_circle_lightgreen" />
+
+    <ImageView
+        android:id="@+id/half_circle_darkgreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/half_circle_darkgreen" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="0"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            app:srcCompat="@drawable/garbagetruck_2">
+
+        </ImageView>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
+            android:layout_height="50dp"
+            android:layout_weight="1"
             android:contentDescription="@string/cameraview" />
 
-        <Button
+        <ImageButton
             android:id="@+id/forward"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:backgroundTint="@color/background"
+            android:text="@string/forward"
             android:textColor="#FAFAFA"
-            android:backgroundTint="#616161"
-            android:text="@string/forward" />
+            app:srcCompat="@drawable/ic_outline_arrow_circle_up_24" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,40 +60,43 @@
             android:layout_weight="0.3"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/left"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#FAFAFA"
-                android:backgroundTint="#616161"
-                android:text="@string/left" />
+                android:backgroundTint="@color/background"
+                android:text="@string/left"
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/stop"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="#FAFAFA"
-                android:backgroundTint="#212121"
-                android:text="@string/stop" />
+                android:backgroundTint="@color/background"
+                android:text="@string/stop"
+                app:srcCompat="@drawable/ic_baseline_cancel_24_2"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/right"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="#FAFAFA"
-                android:backgroundTint="#616161"
+                android:backgroundTint="@color/background"
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
                 android:text="@string/right" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/backward"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:textColor="#FAFAFA"
-            android:backgroundTint="#616161"
-            android:text="@string/backward" />
+            android:backgroundTint="@color/background"
+            android:text="@string/backward"
+            app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
