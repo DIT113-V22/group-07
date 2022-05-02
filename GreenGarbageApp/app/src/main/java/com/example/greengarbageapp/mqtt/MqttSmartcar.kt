@@ -14,7 +14,7 @@ class MqttSmartcar : AppCompatActivity {
     private val LOCALHOST = "10.0.2.2"
     private val MQTT_SERVER = "tcp://$LOCALHOST:1883"
     private val THROTTLE_CONTROL = "/smartcar/control/takeInput"
-    private val STEERING_CONTROL = "/smartcar/control/steering"
+    private val STEERING_CONTROL = "/smartcar/control/takeInput"
     private val QOS = 1
     private val IMAGE_WIDTH = 320
     private val IMAGE_HEIGHT = 240
@@ -97,7 +97,7 @@ class MqttSmartcar : AppCompatActivity {
         }
     }
 
-    fun drive(throttleSpeed: String, steeringAngle: Int, actionDescription: String?) {
+    fun drive(throttleSpeed: String, steeringAngle: String, actionDescription: String?) {
         if (!isConnected) {
             val notConnected = "Not connected (yet)"
             Log.e(TAG, notConnected)
@@ -105,6 +105,6 @@ class MqttSmartcar : AppCompatActivity {
         }
         Log.i(TAG, actionDescription!!)
         mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed, QOS, null)
-        mMqttClient?.publish(STEERING_CONTROL, Integer.toString(steeringAngle), QOS, null)
+        mMqttClient?.publish(STEERING_CONTROL, steeringAngle, QOS, null)
     }
 }

@@ -15,9 +15,6 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
-
-boolean forward = false;
-boolean back = false;
  
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
@@ -80,71 +77,50 @@ void setup() {
   mqtt.onMessage([](String topic, String message) {
     if (topic == "/smartcar/control/takeInput") {
       takeInput(message);
-    } else if (topic == "/smartcar/control/steering") {
-      car.setAngle(message.toInt());
     } else {
       Serial.println(topic + " " + message);
     }
   });
 }
  
-void obstacle() {
-    const auto distance = front.getDistance();
- if (distance > 0 && distance < 100) {
-    car.setSpeed(0);
- }
-}
-
 void takeInput(String input) {
-        int inputChoice = input.substring(0).toInt();
+        int inputSelection = input.substring(0).toInt();
             int throttle;
             int angle;
             if(input.length() > 1) {
-              unsigned int throttleChoice = input.substring(1).toInt();
-              throttle = throttleChoice;
-              angle = throttleChoice;
+              unsigned int stringInput = input.substring(1).toInt(); 
+              throttle = stringInput;
+              angle = stringInput;
             }
             
-            switch(inputChoice) {
+            switch(inputSelection) {
               case 2:  //forward
-                forward = true;
-                back = false;
                 car.setSpeed(throttle);
                 break;
               
               case 3:  //backwards
-                forward = false;
-                back = true;
                 car.setSpeed(-throttle);
                 break;
             
               case 4:  //right
-                  car.setAngle(angle);
+                  car.setAngle(-angle);
                 break;
             
               case 5:  //left
-                  car.setAngle(-angle);
-                break;
-              
-              case 6: //stop
-                forward = false;
-                back = false;
-                car.setAngle(0);
-                car.setSpeed(0);
+                  car.setAngle(angle);
                 break;
                 
+              case 7: //stop
+                car.setSpeed(0);
+                car.setAngle(0);
+              break;
+              
               default:
                 break;
             }
         }
-/* 
-void carGo() {
-      car.setSpeed(60);
-}
-*/
+
 void loop() {
- 
-  obstacle();
  
   if (mqtt.connected()) {
     mqtt.loop();
