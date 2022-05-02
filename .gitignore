@@ -44,7 +44,7 @@ local.properties
 
 # Log/OS Files
 *.log
-*.DS_Store
+
 
 # Android Studio generated files and folders
 captures/
@@ -69,3 +69,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# MSC
+.DS_Store
