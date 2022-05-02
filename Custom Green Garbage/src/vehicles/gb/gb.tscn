@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/vehicles/gb/paintGreen.material" type="Material" id=1]
 [ext_resource path="res://src/vehicles/gb/plastic.material" type="Material" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://src/vehicles/gb/lightBack.material" type="Material" id=7]
 [ext_resource path="res://src/vehicles/gb/carTire.material" type="Material" id=8]
 [ext_resource path="res://src/vehicles/gb/gb.gd" type="Script" id=9]
+[ext_resource path="res://src/vehicles/attachments/Gyroscope.gd" type="Script" id=10]
+[ext_resource path="res://src/vehicles/attachments/BrushedMotor.gd" type="Script" id=11]
+[ext_resource path="res://src/vehicles/attachments/Odometer.gd" type="Script" id=12]
+[ext_resource path="res://src/vehicles/gb/BrushedMotor.gd" type="Script" id=13]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -173,23 +177,23 @@ surfaces/2 = {
 }
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 0.641321, 0.673738, 1.17922 )
+extents = Vector3( 0.589369, 0.959407, 1.45971 )
 
-[node name="truck" type="Spatial"]
+[node name="gb" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.44774, 0 )
 
-[node name="truck" type="VehicleBody" parent="."]
+[node name="gb" type="VehicleBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.13179, 0 )
 script = ExtResource( 9 )
 
-[node name="arm" type="MeshInstance" parent="truck"]
+[node name="arm" type="MeshInstance" parent="gb"]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = null
 material/1 = null
 
-[node name="body" type="MeshInstance" parent="truck"]
+[node name="body" type="MeshInstance" parent="gb"]
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = null
@@ -200,16 +204,17 @@ material/4 = null
 material/5 = null
 material/6 = null
 
-[node name="backr" type="VehicleWheel" parent="truck"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.392, 0.135, -0.552 )
+[node name="backr" type="VehicleWheel" parent="gb"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391982, 0.0242867, -0.551932 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 1.0
-suspension_stiffness = 33.0
+wheel_friction_slip = 9.0
+suspension_stiffness = 20.0
+suspension_max_force = 1600.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="backright" type="MeshInstance" parent="truck/backr"]
+[node name="backright" type="MeshInstance" parent="gb/backr"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../../..")
@@ -217,19 +222,16 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="truck"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501688, 0 )
-shape = SubResource( 4 )
-
-[node name="frontr" type="VehicleWheel" parent="truck"]
+[node name="frontr" type="VehicleWheel" parent="gb"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.368145, 0.118823, 1.024 )
 use_as_steering = true
 wheel_radius = 0.4
-suspension_stiffness = 33.0
+suspension_stiffness = 18.0
+suspension_max_force = 1600.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="frontright" type="MeshInstance" parent="truck/frontr"]
+[node name="frontright" type="MeshInstance" parent="gb/frontr"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../../..")
@@ -237,36 +239,80 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="frontl" type="VehicleWheel" parent="truck"]
+[node name="frontl" type="VehicleWheel" parent="gb"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331748, 0.135054, 1.03508 )
 use_as_steering = true
 wheel_radius = 0.4
-suspension_stiffness = 33.0
+suspension_stiffness = 18.0
+suspension_max_force = 1600.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="frontleft" type="MeshInstance" parent="truck/frontl"]
+[node name="frontleft" type="MeshInstance" parent="gb/frontl"]
 mesh = SubResource( 3 )
 skeleton = NodePath("../../..")
 material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="backl" type="VehicleWheel" parent="truck"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, 0.135, -0.613 )
+[node name="backl" type="VehicleWheel" parent="gb"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, 0.0272038, -0.613251 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 1.0
-suspension_stiffness = 33.0
+wheel_friction_slip = 9.0
+suspension_stiffness = 20.0
+suspension_max_force = 1600.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="backleft" type="MeshInstance" parent="truck/backl"]
+[node name="backleft" type="MeshInstance" parent="gb/backl"]
 mesh = SubResource( 3 )
 skeleton = NodePath("../../..")
 material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="Camera" type="Camera" parent="truck"]
-transform = Transform( -0.999912, -0.00537873, 0.0121624, 0, 0.914558, 0.404456, -0.0132987, 0.40442, -0.914477, 0, 4, -5 )
+[node name="Camera" type="Camera" parent="gb"]
+transform = Transform( -0.999831, 0.00247033, 0.0182016, 0.00961875, 0.914604, 0.404236, -0.0156487, 0.404343, -0.914473, 0.211762, 4.26735, -11.3701 )
+
+[node name="CollisionShape" type="CollisionShape" parent="gb"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127942, 0.691202, 0 )
+shape = SubResource( 4 )
+
+[node name="AttachmentSlots" type="Spatial" parent="gb"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0 )
+
+[node name="Front" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298176, 3.3645 )
+
+[node name="Front2" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367102, 0.226681, 3.30005 )
+
+[node name="FrontTop" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32153, 1.56936 )
+
+[node name="Left" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.4497, 0.148479, 0 )
+
+[node name="Right" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.44067, 0.177506, -0.26242 )
+
+[node name="Back" type="Position3D" parent="gb/AttachmentSlots"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.360592, -3.37166 )
+
+[node name="BuiltinAttachments" type="Spatial" parent="gb"]
+script = ExtResource( 11 )
+
+[node name="Gyroscope" type="Node" parent="gb/BuiltinAttachments"]
+script = ExtResource( 10 )
+
+[node name="Left Odometer" type="Spatial" parent="gb/BuiltinAttachments"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611274, -0.0568171, 0.0406425 )
+script = ExtResource( 12 )
+
+[node name="Right Odometer" type="Spatial" parent="gb/BuiltinAttachments"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.635938, -0.0440162, 0 )
+script = ExtResource( 12 )
+
+[node name="BrushedMotor" type="Spatial" parent="gb/BuiltinAttachments"]
+script = ExtResource( 13 )

@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RayCast",
+"class": "AnalogRaycast",
+"language": "GDScript",
+"path": "res://src/vehicles/attachments/AnalogRaycast.gd"
+}, {
+"base": "Spatial",
+"class": "Shooty",
+"language": "GDScript",
+"path": "res://src/vehicles/attachments/Shooty.gd"
+}, {
+"base": "Button",
+"class": "ShootyVisualizer",
+"language": "GDScript",
+"path": "res://src/vehicles/attachments/ShootyVisualizer.gd"
+}, {
+"base": "Spatial",
+"class": "UltraSonic",
+"language": "GDScript",
+"path": "res://src/vehicles/attachments/UltraSonic.gd"
+} ]
+_global_script_class_icons={
+"AnalogRaycast": "",
+"Shooty": "",
+"ShootyVisualizer": "",
+"UltraSonic": ""
+}
+
 [application]
 
 config/name="GreenGarbage"
