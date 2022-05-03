@@ -84,28 +84,28 @@ void setup() {
 }
  
 void takeInput(String input) {
-        int inputSelection = input.toInt();
-            int throttle;
+        int inputSelection = input.substring(0,1).toInt();
+            int appInput;
             if(input.length() > 1) {
               unsigned int stringInput = input.substring(1).toInt(); 
-              throttle = stringInput;
+              appInput = stringInput;
             }
             
             switch(inputSelection) {
               case 2:  //forward
-                car.setSpeed(throttle);
+                car.setSpeed(appInput); // incrementing number from app to go forward
                 break;
               
               case 3:  //backwards
-                car.setSpeed(-throttle);
+                car.setSpeed(-appInput); // incrementing number from app to go backwards
                 break;
             
               case 4:  //right
-                  car.setAngle(-throttle);
+                  car.setAngle(-appInput); // incrementing number from app to turn right
                 break;
             
               case 5:  //left
-                  car.setAngle(throttle);
+                  car.setAngle(appInput); // incrementing number from app to turn right
                 break;
                 
               case 7: //stop
