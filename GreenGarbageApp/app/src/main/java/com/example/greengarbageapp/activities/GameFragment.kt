@@ -1,5 +1,6 @@
 package com.example.greengarbageapp.activities
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,10 +25,9 @@ class GameFragment : Fragment() {
 
     private var control: MqttSmartcar? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         control = MqttSmartcar(context, binding.imageView)
         control!!.connectToMqttBroker()
@@ -48,10 +48,10 @@ class GameFragment : Fragment() {
         }
 
         left.setOnClickListener {
-            control!!.drive(increase(6), increase(4), "Moving forward left")
+            control!!.drive(increase(6), increase(4), "Moving forward left") // does not increase speed
         }
         right.setOnClickListener {
-            control!!.drive(increase(6), increase(5),"Moving forward right")
+            control!!.drive(increase(6), increase(5),"Moving forward right") // does not increase speed
         }
 
         return binding.root
