@@ -84,13 +84,11 @@ void setup() {
 }
  
 void takeInput(String input) {
-        int inputSelection = input.substring(0).toInt();
+        int inputSelection = input.toInt();
             int throttle;
-            int angle;
             if(input.length() > 1) {
               unsigned int stringInput = input.substring(1).toInt(); 
               throttle = stringInput;
-              angle = stringInput;
             }
             
             switch(inputSelection) {
@@ -103,11 +101,11 @@ void takeInput(String input) {
                 break;
             
               case 4:  //right
-                  car.setAngle(-angle);
+                  car.setAngle(-throttle);
                 break;
             
               case 5:  //left
-                  car.setAngle(angle);
+                  car.setAngle(throttle);
                 break;
                 
               case 7: //stop
