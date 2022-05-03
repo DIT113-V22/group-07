@@ -14,7 +14,7 @@ import com.example.greengarbageapp.databinding.FragmentStartBinding
 class StartFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentStartBinding.inflate(inflater, container, false)
         binding.button1.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_introFragment))

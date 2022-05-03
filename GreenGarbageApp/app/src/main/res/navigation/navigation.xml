@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.greengarbageapp.activities.StartFragment"
-        android:label="StartFragment" >
+        android:label="Home">
         <action
             android:id="@+id/action_startFragment_to_introFragment"
             app:destination="@id/introFragment" />
@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/introFragment"
         android:name="com.example.greengarbageapp.activities.IntroFragment"
-        android:label="IntroFragment" >
+        android:label="Introduction">
         <action
             android:id="@+id/action_introFragment_to_startFragment"
             app:destination="@id/startFragment" />
@@ -26,9 +26,13 @@
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.greengarbageapp.activities.GameFragment"
-        android:label="GameFragment" >
+        android:label="Game">
         <action
             android:id="@+id/action_gameFragment_to_introFragment"
             app:destination="@id/introFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.greengarbageapp.activities.AboutFragment"
+        android:label="About" />
 </navigation>

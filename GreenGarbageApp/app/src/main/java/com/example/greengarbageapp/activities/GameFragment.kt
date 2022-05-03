@@ -22,7 +22,6 @@ class GameFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         control = MqttSmartcar(context, binding.imageView)
         control!!.connectToMqttBroker()
