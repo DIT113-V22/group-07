@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/textures/forrest_ground_01_diff_4k.jpg" type="Texture" id=1]
 [ext_resource path="res://src/objects/Land2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/vehicles/gb/gb.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/font/walkthemoonspaced.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/gd/Example.gd" type="Script" id=5]
 [ext_resource path="res://src/gd/Count.gd" type="Script" id=6]
@@ -15,13 +14,15 @@
 [ext_resource path="res://src/objects/cup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/objects/Dog.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/objects/duck.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/vehicles/gb/gb.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/objects/Mountainland.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
-size = Vector3( 430, 2, 480 )
+size = Vector3( 600, 2, 500 )
 
 [sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -215, 1, 240, 215, 1, 240, -215, -1, 240, 215, 1, 240, 215, -1, 240, -215, -1, 240, 215, 1, -240, -215, 1, -240, 215, -1, -240, -215, 1, -240, -215, -1, -240, 215, -1, -240, 215, 1, 240, 215, 1, -240, 215, -1, 240, 215, 1, -240, 215, -1, -240, 215, -1, 240, -215, 1, -240, -215, 1, 240, -215, -1, -240, -215, 1, 240, -215, -1, 240, -215, -1, -240, 215, 1, 240, -215, 1, 240, 215, 1, -240, -215, 1, 240, -215, 1, -240, 215, 1, -240, -215, -1, 240, 215, -1, 240, -215, -1, -240, 215, -1, 240, 215, -1, -240, -215, -1, -240 )
@@ -46,10 +47,11 @@ size = 24
 font_data = ExtResource( 4 )
 
 [node name="World" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 0.999948, -0.01021, 0, 0.01021, 0.999948, -0.690521, 0.924622, -0.885193 )
 script = ExtResource( 5 )
 
 [node name="Ground" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88171, 0, -0.535759 )
+transform = Transform( 1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 5.88171, -0.0345388, -0.535407 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -59,13 +61,10 @@ material/0 = null
 shape = SubResource( 3 )
 
 [node name="Mountains" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.5339, 0 )
+transform = Transform( 1, 0, 0, 0, 1, -9.31323e-10, 0, 9.31323e-10, 1, 0, -10.5339, 5.96046e-08 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.984977, -0.172686, 0, 0.172686, 0.984977, 79.6012, 93.0438, 116.729 )
-
-[node name="truck" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0033, -3.72914, -37.8366 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )
@@ -80,18 +79,18 @@ custom_fonts/font = SubResource( 6 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-margin_left = 108.0
-margin_top = 471.0
-margin_right = 187.0
-margin_bottom = 507.0
+margin_left = 357.0
+margin_top = 523.0
+margin_right = 452.0
+margin_bottom = 559.0
 custom_fonts/font = SubResource( 7 )
 text = "Trash : "
 
 [node name="Count" type="Label" parent="CanvasLayer"]
-margin_left = 202.0
-margin_top = 471.0
-margin_right = 273.0
-margin_bottom = 503.0
+margin_left = 452.0
+margin_top = 523.0
+margin_right = 468.0
+margin_bottom = 555.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "A"
@@ -234,6 +233,18 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 19.517, 0.992207, -20
 
 [node name="cup2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87431, 1.07205, -12.5183 )
+
+[node name="gb" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, -9.31323e-09, 0, 9.31323e-09, 1, 20.8907, -0.493504, -48.3328 )
+
+[node name="Mountainland" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.6, 0, 0, 0, 0.5, -1.02445e-08, 0, 1.02445e-08, 0.5, 17.7974, 13.1625, -218.411 )
+
+[node name="Mountainland2" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.6, 0, 0, 0, 0.5, -1.58325e-08, 0, 1.58325e-08, 0.5, 18.5705, 10.8902, 248.988 )
+
+[node name="Mountainland3" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.00732137, 0.00510447, 0.49992, -0.00510445, 0.499949, -0.00503, -0.499921, -0.00502999, 0.00737273, 303.228, 11.5463, -9.25743 )
 
 [connection signal="TrashCollected" from="barrel" to="CanvasLayer/Count" method="_on_barrel_TrashCollected"]
 [connection signal="TrashCollected" from="glass" to="CanvasLayer/Count" method="_on_glass_TrashCollected"]

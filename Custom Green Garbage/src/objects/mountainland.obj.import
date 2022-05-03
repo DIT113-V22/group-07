@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/mountainland.obj-e6fe434d125ae22d2b649c7a70894fa7.mesh"
+path="res://.import/mountainland.obj-bbe0184b8b55acac95bd27bd1e2f8f90.mesh"
 
 [deps]
 
-files=[ "res://.import/mountainland.obj-e6fe434d125ae22d2b649c7a70894fa7.mesh" ]
+files=[ "res://.import/mountainland.obj-bbe0184b8b55acac95bd27bd1e2f8f90.mesh" ]
 
-source_file="res://src/environments/objects/mountainland.obj"
-dest_files=[ "res://.import/mountainland.obj-e6fe434d125ae22d2b649c7a70894fa7.mesh", "res://.import/mountainland.obj-e6fe434d125ae22d2b649c7a70894fa7.mesh" ]
+source_file="res://src/objects/mountainland.obj"
+dest_files=[ "res://.import/mountainland.obj-bbe0184b8b55acac95bd27bd1e2f8f90.mesh", "res://.import/mountainland.obj-bbe0184b8b55acac95bd27bd1e2f8f90.mesh" ]
 
 [params]
 
