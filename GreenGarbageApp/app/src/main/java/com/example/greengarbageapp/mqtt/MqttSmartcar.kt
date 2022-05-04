@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import org.eclipse.paho.client.mqttv3.*
 
@@ -18,17 +19,18 @@ class MqttSmartcar : AppCompatActivity {
     private val QOS = 1
     private val IMAGE_WIDTH = 320
     private val IMAGE_HEIGHT = 240
-
+    private var mTextView: TextView? = null
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
 
     private var context: Context? = null
 
-    constructor(context: Context?, mCameraView: ImageView?) {
+    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
+        this.mTextView = mTextView
     }
     constructor(){
     }
@@ -57,6 +59,7 @@ class MqttSmartcar : AppCompatActivity {
                     Log.i(TAG, successfulConnection)
                     mMqttClient?.subscribe("/smartcar/ultrasound/front", QOS, null)
                     mMqttClient?.subscribe("/smartcar/camera", QOS, null)
+                    mMqttClient?.subscribe("/smartcar/speedometer", QOS, null)
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
@@ -85,7 +88,10 @@ class MqttSmartcar : AppCompatActivity {
                         }
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView!!.setImageBitmap(bm)
-                    } else {
+                    } else if(topic == "/smartcar/speedometer"){
+                        val speed = message.toString()
+                        mTextView?.setText(speed)
+                    }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
                 }

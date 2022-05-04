@@ -136,6 +136,7 @@ void loop() {
     if (currentTime - previousTransmission >= oneSecond) {
       previousTransmission = currentTime;
       const auto distance = String(front.getDistance());
+      mqtt.publish("/smartcar/speedometer", String(car.getSpeed()));
       mqtt.publish("/smartcar/ultrasound/front", distance);
     }
   }

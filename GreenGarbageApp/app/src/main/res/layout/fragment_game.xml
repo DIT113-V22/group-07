@@ -98,5 +98,12 @@
             android:backgroundTint="@color/background"
             android:text="@string/backward"
             app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24"/>
+
+        <TextView
+            android:id="@+id/speedometerIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="16sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

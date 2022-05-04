@@ -29,7 +29,7 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
-        control = MqttSmartcar(context, binding.imageView)
+        control = MqttSmartcar(context, binding.imageView, binding.speedometerIndicator)
         control!!.connectToMqttBroker()
         val backward = binding.backward
         val forward = binding.forward
