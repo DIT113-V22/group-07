@@ -15,7 +15,8 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
- 
+const String ODOMETER_SPEED = "car/status/odometer/speed";
+
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
@@ -26,7 +27,7 @@ const auto oneSecond = 1000UL;
 const auto triggerPin = 6;
 const auto echoPin = 7;
 const unsigned int maxDistance = 100;
- 
+
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
  
@@ -123,6 +124,7 @@ void loop() {
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
+     mqtt.publish(ODOMETER_SPEED, String(car.getSpeed()));
 #ifdef __SMCE__
     static auto previousFrame = 0UL;
     if (currentTime - previousFrame >= 65) {
@@ -138,6 +140,7 @@ void loop() {
       const auto distance = String(front.getDistance());
       mqtt.publish("/smartcar/ultrasound/front", distance);
     }
+    
   }
 #ifdef __SMCE__
   // Avoid over-using the CPU if we are running in the emulator
