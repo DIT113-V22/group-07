@@ -21,16 +21,17 @@ ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
+DirectionlessOdometer odometer(arduinoRuntime, smartcarlib::pins::v2::leftOdometerPin, []() { odometer.update(); }, 100);
+DistanceCar car(arduinoRuntime, control, odometer);
  
 const auto pulsesPerMeter = 600;
 const auto oneSecond = 1000UL;
 const auto triggerPin = 6;
 const auto echoPin = 7;
 const unsigned int maxDistance = 100;
- 
+int velocity = 0; 
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
- 
 //Ultrasonic
 SR04 front(arduinoRuntime, triggerPin, echoPin, maxDistance);
  
@@ -81,7 +82,9 @@ void setup() {
       car.setSpeed(message.toInt());
     } else if (topic == "/smartcar/control/steering") {
       car.setAngle(message.toInt());
-    } else {
+    } else if (topic== "/smartcar/speedometer"){
+            velocity = message.toInt();
+    else {
       Serial.println(topic + " " + message);
     }
   });
@@ -93,7 +96,7 @@ void obstacle() {
     car.setSpeed(0);
  }
 }
- 
+  //  const auto speed = String(car.getSpeed());
 void carGo() {
       car.setSpeed(60);
 }
@@ -119,6 +122,11 @@ void loop() {
       previousTransmission = currentTime;
       const auto distance = String(front.getDistance());
       mqtt.publish("/smartcar/ultrasound/front", distance);
+    }
+    if(topic == "/smartcar/speedometer"){
+      const auto speed = String(car.getSpeed());
+      mqtt.publish("smartcar/speedometer", speed);
+      }
     }
   }
 #ifdef __SMCE__

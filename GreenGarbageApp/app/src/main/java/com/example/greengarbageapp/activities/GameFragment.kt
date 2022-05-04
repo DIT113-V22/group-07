@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.example.greengarbageapp.R
 
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
@@ -25,6 +27,7 @@ class GameFragment : Fragment() {
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         control = MqttSmartcar(context, binding.imageView)
         control!!.connectToMqttBroker()
+        val speedometer = binding.speedometerIndicator
         val backward = binding.backward
         val forward = binding.forward
         val stop = binding.stop

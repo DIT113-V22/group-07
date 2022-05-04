@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.greengarbageapp.activities.GameFragment
+import com.example.greengarbageapp.activities.MainActivity
 import org.eclipse.paho.client.mqttv3.*
 
 class MqttSmartcar : AppCompatActivity {
@@ -57,6 +59,7 @@ class MqttSmartcar : AppCompatActivity {
                     Log.i(TAG, successfulConnection)
                     mMqttClient?.subscribe("/smartcar/ultrasound/front", QOS, null)
                     mMqttClient?.subscribe("/smartcar/camera", QOS, null)
+                    mMqttClient?.subscribe("/smartcar/speedometer", QOS, null)
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
@@ -85,7 +88,11 @@ class MqttSmartcar : AppCompatActivity {
                         }
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView!!.setImageBitmap(bm)
-                    } else {
+                    } else if(topic == "/smartcar/speedometer"){
+
+                        //call the variable here
+                        //set text
+                    }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
                 }
