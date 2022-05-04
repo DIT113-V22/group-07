@@ -124,7 +124,7 @@ void loop() {
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
-     mqtt.publish(speedometer, String(car.getSpeed()));
+    mqtt.publish(speedometer, String(car.getSpeed()));
 #ifdef __SMCE__
     static auto previousFrame = 0UL;
     if (currentTime - previousFrame >= 65) {
