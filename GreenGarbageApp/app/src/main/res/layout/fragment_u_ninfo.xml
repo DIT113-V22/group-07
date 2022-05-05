@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:srcCompat="@drawable/e_sdg_logo_un_emblem_horizontal_web" />
+            app:srcCompat="@drawable/e_sdg_logo_un_emblem_horizontal_trans_web" />
 
         <TextView
             android:id="@+id/textView3"
