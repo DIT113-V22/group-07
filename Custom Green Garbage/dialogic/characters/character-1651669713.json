@@ -1,0 +1,21 @@
+{
+	"color": "#ff404c3c",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1651669713.json",
+	"mirror_portraits": false,
+	"name": "Can",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1651353000.cfg"
+}

@@ -1,0 +1,21 @@
+{
+	"color": "#ff0c863c",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": true,
+	"id": "character-1651427925.json",
+	"mirror_portraits": false,
+	"name": "Green Garbage Truck",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -45,
+	"offset_y": -200,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://src/textures/garbagetruck_2.png"
+		}
+	],
+	"scale": 35,
+	"theme": ""
+}

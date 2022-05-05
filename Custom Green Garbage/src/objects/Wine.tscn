@@ -2,8 +2,9 @@
 
 [ext_resource path="res://src/textures/label_wine_white.png" type="Texture" id=1]
 [ext_resource path="res://src/gd/Wine.gd" type="Script" id=2]
-[ext_resource path="res://src/objects/Wine_Bottle_White.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://.import/BOTTLE HIGH POLY.obj-82057b830e6f78a1612250afc1f44ee6.mesh" type="ArrayMesh" id=3]
 [ext_resource path="res://src/textures/rock_wall_02_diff_4k.jpg" type="Texture" id=4]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0313726, 0.00392157, 0.00392157, 1 )

@@ -1,0 +1,21 @@
+{
+	"color": "#ff467da2",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1651669761.json",
+	"mirror_portraits": false,
+	"name": "Bottle",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

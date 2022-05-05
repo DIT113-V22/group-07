@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/textures/pigwizcan-texture.png" type="Texture" id=1]
-[ext_resource path="res://src/objects/Pig-wizard-cola.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://.import/Pig-wizard-cola.obj-2ca841f5a8d95862a3b8de421c1db6d0.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://src/gd/Can.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -13,6 +13,7 @@ points = PoolVector3Array( 11.9666, 42.7956, 1.64038, -12.0298, 2.40874, -1.2817
 [node name="Can" type="Area"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 script = ExtResource( 3 )
+npc = "can"
 
 [node name="Pig-wizard-cola" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )

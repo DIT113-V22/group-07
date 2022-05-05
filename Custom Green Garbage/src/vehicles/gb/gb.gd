@@ -2,11 +2,11 @@ extends VehicleBody
 
 
 #vehicle force 
-export var max_engine = 70.0
-export var max_brake = 10.0
-export var max_steer = 0.18
+export var max_engine = 60.0
+export var max_brake = 5.0
+export var max_steer = 0.1
 var current_speed = 0.0
-export (float) var final_drive_ratio = 3.14
+export (float) var final_drive_ratio = 3.88
 export (float) var max_engine_rpm = 5000.0
 
 #Vehicle steering
@@ -90,4 +90,12 @@ func _physics_process(delta):
 	steering = steer_angle
 
 	last_pos = translation
+
+
+
+		
+	
+func _on_interaction_area_area_entered(area):
+	if area.is_in_group("NPC"):
+		area.start_dialog()
 

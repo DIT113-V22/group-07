@@ -1,4 +1,4 @@
-extends Area
+extends "res://src/objects/npc.gd"
 
 signal TrashCollected
 

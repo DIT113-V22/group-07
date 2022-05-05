@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/textures/overlay.png" type="Texture" id=1]
-[ext_resource path="res://src/objects/Tree.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://.import/Tree.obj-d326abe3d4dc3d16e8dbeb8aa4d289b0.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://src/textures/bark_loo.jpg" type="Texture" id=3]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 3 )
