@@ -1,6 +1,7 @@
 package com.example.greengarbageapp.activities
 
 import android.os.Bundle
+import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -19,6 +20,8 @@ import com.example.greengarbageapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(){
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration : AppBarConfiguration
+    
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
