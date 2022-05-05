@@ -5,16 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.greengarbageapp.R
 import com.example.greengarbageapp.databinding.FragmentAboutBinding
-import com.example.greengarbageapp.databinding.FragmentEndBinding
+import com.example.greengarbageapp.databinding.FragmentUNinfoBinding
 
-
-class AboutFragment : Fragment() {
-
+class UNinfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding = FragmentAboutBinding.inflate(inflater, container, false)
+        val binding = FragmentUNinfoBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
