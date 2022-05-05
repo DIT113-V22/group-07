@@ -35,4 +35,16 @@
         android:id="@+id/aboutFragment"
         android:name="com.example.greengarbageapp.activities.AboutFragment"
         android:label="About" />
+    <fragment
+        android:id="@+id/UNinfoFragment"
+        android:name="com.example.greengarbageapp.UNinfoFragment"
+        android:label="UNs SDGS Goal 12" />
+    <fragment
+        android:id="@+id/legalFragment"
+        android:name="com.example.greengarbageapp.LegalFragment"
+        android:label="Legal" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.greengarbageapp.ContactFragment"
+        android:label="Contact" />
 </navigation>

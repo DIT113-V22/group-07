@@ -28,31 +28,19 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/contact"
             android:layout_width="365dp"
-            android:layout_height="400dp"
+            android:layout_height="599dp"
             android:background="@color/white"
             android:fontFamily="@font/acme"
-            android:gravity="center"
-            android:text="@string/proposal"
+            android:gravity="left"
+            android:text="@string/contact"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.171"/>
-
-        <ImageView
-            android:id="@+id/imageView23"
-            android:layout_width="202dp"
-            android:layout_height="161dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:layout_constraintVertical_bias="0.141"
-            app:srcCompat="@drawable/garbage_truck" />
+            app:layout_constraintVertical_bias="0.171" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
