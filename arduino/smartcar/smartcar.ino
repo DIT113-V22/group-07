@@ -15,23 +15,22 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
- 
- 
+const String speedometer = "car/status/odometer/speed";
+
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
-DirectionlessOdometer odometer(arduinoRuntime, smartcarlib::pins::v2::leftOdometerPin, []() { odometer.update(); }, 100);
-DistanceCar car(arduinoRuntime, control, odometer);
  
 const auto pulsesPerMeter = 600;
 const auto oneSecond = 1000UL;
 const auto triggerPin = 6;
 const auto echoPin = 7;
 const unsigned int maxDistance = 100;
-int velocity = 0; 
+
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
+ 
 //Ultrasonic
 SR04 front(arduinoRuntime, triggerPin, echoPin, maxDistance);
  
@@ -50,8 +49,7 @@ std::vector<char> frameBuffer;
  
 void setup() {
   Serial.begin(9600);
-  carGo();
- 
+  
 #ifdef __SMCE__
   Camera.begin(QVGA, RGB888, 15);
   frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
@@ -78,36 +76,55 @@ void setup() {
  
   mqtt.subscribe("/smartcar/control/#", 1);
   mqtt.onMessage([](String topic, String message) {
-    if (topic == "/smartcar/control/throttle") {
-      car.setSpeed(message.toInt());
-    } else if (topic == "/smartcar/control/steering") {
-      car.setAngle(message.toInt());
-    } else if (topic== "/smartcar/speedometer"){
-            velocity = message.toInt();
-    else {
+    if (topic == "/smartcar/control/takeInput") {
+      takeInput(message);
+    } else {
       Serial.println(topic + " " + message);
     }
   });
 }
  
-void obstacle() {
-    const auto distance = front.getDistance();
- if (distance > 0 && distance < 100) {
-    car.setSpeed(0);
- }
-}
-  //  const auto speed = String(car.getSpeed());
-void carGo() {
-      car.setSpeed(60);
-}
- 
+void takeInput(String input) {
+        int inputSelection = input.substring(0,1).toInt();
+            int appInput;
+            if(input.length() > 1) {
+              unsigned int stringInput = input.substring(1).toInt(); 
+              appInput = stringInput;
+            }
+            
+            switch(inputSelection) {
+              case 2:  //forward
+                car.setSpeed(appInput); // incrementing number from app to go forward
+                break;
+              
+              case 3:  //backwards
+                car.setSpeed(-appInput); // incrementing number from app to go backwards
+                break;
+            
+              case 4:  //right
+                  car.setAngle(-appInput); // incrementing number from app to turn right
+                break;
+            
+              case 5:  //left
+                  car.setAngle(appInput); // incrementing number from app to turn right
+                break;
+                
+              case 7: //stop
+                car.setSpeed(0);
+                car.setAngle(0);
+              break;
+              
+              default:
+                break;
+            }
+        }
+
 void loop() {
- 
-  obstacle();
  
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
+    mqtt.publish(speedometer, String(car.getSpeed()));
 #ifdef __SMCE__
     static auto previousFrame = 0UL;
     if (currentTime - previousFrame >= 65) {
@@ -121,13 +138,10 @@ void loop() {
     if (currentTime - previousTransmission >= oneSecond) {
       previousTransmission = currentTime;
       const auto distance = String(front.getDistance());
+      mqtt.publish("/smartcar/speedometer", String(car.getSpeed()));
       mqtt.publish("/smartcar/ultrasound/front", distance);
     }
-    if(topic == "/smartcar/speedometer"){
-      const auto speed = String(car.getSpeed());
-      mqtt.publish("smartcar/speedometer", speed);
-      }
-    }
+    
   }
 #ifdef __SMCE__
   // Avoid over-using the CPU if we are running in the emulator
