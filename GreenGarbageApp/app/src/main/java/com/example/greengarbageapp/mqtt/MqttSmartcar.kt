@@ -5,32 +5,33 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greengarbageapp.activities.GameFragment
-import com.example.greengarbageapp.activities.MainActivity
 import org.eclipse.paho.client.mqttv3.*
+import kotlin.math.roundToInt
 
 class MqttSmartcar : AppCompatActivity {
 
     private val TAG = "SmartcarMqttController"
     private val LOCALHOST = "10.0.2.2"
     private val MQTT_SERVER = "tcp://$LOCALHOST:1883"
-    private val THROTTLE_CONTROL = "/smartcar/control/throttle"
-    private val STEERING_CONTROL = "/smartcar/control/steering"
+    private val THROTTLE_CONTROL = "/smartcar/control/takeInput"
+    private val STEERING_CONTROL = "/smartcar/control/takeInput"
     private val QOS = 1
     private val IMAGE_WIDTH = 320
     private val IMAGE_HEIGHT = 240
-
+    private var mTextView: TextView? = null
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
 
     private var context: Context? = null
 
-    constructor(context: Context?, mCameraView: ImageView?) {
+    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
+        this.mTextView = mTextView
     }
     constructor(){
     }
@@ -89,9 +90,13 @@ class MqttSmartcar : AppCompatActivity {
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView!!.setImageBitmap(bm)
                     } else if(topic == "/smartcar/speedometer"){
+                        val speed = message.toString()
+                        val speedNumb = speed.toDouble()
+                        val speedInKm = speedNumb * 3.6
+                        val testSpeed = Math.round(speedInKm * 100.0) / 100.00
+                        val speedDisplay = testSpeed.toString() + "km/h"
 
-                        //call the variable here
-                        //set text
+                        mTextView?.setText(speedDisplay)
                     }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
@@ -104,14 +109,14 @@ class MqttSmartcar : AppCompatActivity {
         }
     }
 
-    fun drive(throttleSpeed: Int, steeringAngle: Int, actionDescription: String?) {
+    fun drive(throttleSpeed: String, steeringAngle: String, actionDescription: String?) {
         if (!isConnected) {
             val notConnected = "Not connected (yet)"
             Log.e(TAG, notConnected)
             return
         }
         Log.i(TAG, actionDescription!!)
-        mMqttClient?.publish(THROTTLE_CONTROL, Integer.toString(throttleSpeed), QOS, null)
-        mMqttClient?.publish(STEERING_CONTROL, Integer.toString(steeringAngle), QOS, null)
+        mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed, QOS, null)
+        mMqttClient?.publish(STEERING_CONTROL, steeringAngle, QOS, null)
     }
 }
