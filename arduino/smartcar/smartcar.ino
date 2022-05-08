@@ -43,7 +43,7 @@ DirectionlessOdometer rightOdometer{ arduinoRuntime,
                                      smartcarlib::pins::v2::rightOdometerPin,
                                      []() { rightOdometer.update(); },
                                      pulsesPerMeter };
-SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
+SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer); // add distance
    
 std::vector<char> frameBuffer;
  
