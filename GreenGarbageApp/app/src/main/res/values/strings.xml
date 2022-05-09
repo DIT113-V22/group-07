@@ -12,8 +12,8 @@
     <string name="about_us">About us</string>
     <string name="UN">UNs Sustainable Development \nGoal 12</string>
     <string name="UN2015">In 2015 all United Nations Member States joined together for sustainable development and future. In UNs Sustainable Development Goal 12 - Responsible consumption and production, it presents the global “material footprint”, and it increased by 70 \% from 2000 to 2017. \nThis needs to change.\n\n\n\n\n\nFor more information, see https://sdgs.un.org/goals/goal12</string>
-    <string name="proposal">For the project, we plan to create a game that raises awareness about high levels of waste in all sorts of environments where the user is manually controlling the car on an app. The vehicle can explore the area whilst clearing up objects that are waste and everything that is not waste will be left in simulation without change.\n\n https://github.com/DIT113-V22/group-07</string>
+    <string name="proposal">For the project, we plan to create a game that raises awareness about high levels of waste in all sorts of environments where the user is manually controlling the car on an app. The vehicle can explore the area whilst clearing up objects that are waste and everything that is not waste will be left in simulation without change.</string>
     <string name="link">UNs SDGS - Goal 12</string>
-    <string name="github">"https://github.com/DIT113-V22/group-07"</string>
+    <string name="github_link">Visit: <a href ="https://github.com/DIT113-V22/group-07">GitHub</a></string>
     <string name="contact">Team members:\n\nAdrian Niklasson \ngusnikada@student.gu.se\n\nAgata Ciuchta \ngusciuag@student.gu.se\n\nAnna Törngren \ngusolsang@student.gu.se\n\nChristopher Andersson \ngusandchbh@student.gu.se\n\nFaiza Amjad \ngusamjfa@student.gu.se\n\nUmair Irshad \ngusirsum@student.gu.se</string>
 </resources>
