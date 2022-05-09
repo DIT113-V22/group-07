@@ -1,46 +1,334 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2018, The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     android:fillViewport="true"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:paddingTop="10dp"
     tools:context="com.example.greengarbageapp.activities.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/avataaars_an_"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name_AN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fontFamily="@font/acme"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:paddingStart="8dp"
+                        android:text="Adrian Niklasson"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/email_AN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:autoLink="email"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/ic_email"
+                        android:drawablePadding="5dp"
+                        android:minHeight="48dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="8dp"
+                        android:text="gusnikada@student.gu.se"
+                        android:textColorLink="@color/iceblue"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+        </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
-        <TextView
-            android:id="@+id/contact"
-            android:layout_width="365dp"
-            android:layout_height="599dp"
-            android:background="@color/white"
-            android:fontFamily="@font/acme"
-            android:gravity="left"
-            android:text="@string/contact"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.171" />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/avataaars_ac_"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_AC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/acme"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="Agata Ciuchta"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/email_AC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="email"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:text="gusciuag@student.gu.se"
+                android:textColorLink="@color/iceblue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/avataaars_at"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_AT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/acme"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="Anna Törngren"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/email_AT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="email"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:text="gusolsang@student.gu.se"
+                android:textColorLink="@color/iceblue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/avataaars_ca_"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_CA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/acme"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="Christopher Andersson"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/email_CA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="email"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:text="gusandchbh@student.gu.se"
+                android:textColorLink="@color/iceblue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/avataaars_fa_"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_FA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/acme"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="Faiza Amjad"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/email_FA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="email"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:text="gusamjfa@student.gu.se"
+                android:textColorLink="@color/iceblue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/avataaars_ui_"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_UI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/acme"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="Umair Irshad"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/email_UI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="email"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:text="gusirsum@student.gu.se"
+                android:textColorLink="@color/iceblue"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
