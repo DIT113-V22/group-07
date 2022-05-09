@@ -16,9 +16,8 @@
             android:title="Legal" />
         <item
             android:id="@+id/contactFragment"
-            android:icon="@drawable/ic_baseline_phone_24"
+            android:icon="@drawable/ic_email"
             android:title="Contact us" />
-
     </group>
 
 </menu>
