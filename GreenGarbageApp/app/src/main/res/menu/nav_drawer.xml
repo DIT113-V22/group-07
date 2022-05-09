@@ -17,7 +17,7 @@
         <item
             android:id="@+id/contactFragment"
             android:icon="@drawable/ic_baseline_phone_24"
-            android:title="Contact" />
+            android:title="Contact us" />
 
     </group>
 

@@ -27,36 +27,31 @@
             android:text="@string/proposal"
             android:textSize="24sp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+        <TextView
+            android:id="@+id/Read_moreTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/green_dark"
+            android:gravity="center"
+            android:text="Read more on GitHub:"
+            android:textSize="24sp"/>
 
-                <ImageView
-                    android:id="@+id/githubIv"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:src="@drawable/github_icon">
-                </ImageView>
+        <Button
+            android:id="@+id/github_linkTv"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/github_mark_32px"
+            android:text="@string/github"
+            android:background="@drawable/shadow_button"
+            android:fontFamily="@font/acme"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp">
 
-                <TextView
-                    android:id="@+id/github_linkTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/white"
-                    android:autoLink="web"
-                    android:paddingStart="8dp"
-                    android:gravity="center_vertical"
-                    android:text="https://github.com/DIT113-V22/group-07"
-                    android:fontFamily="@font/acme"
-                    android:textColorLink="@color/iceblue"
-                    android:textSize="18dp">
-
-                </TextView>
-
-            </LinearLayout>
+        </Button>
 
         <ImageView
             android:layout_width="match_parent"
