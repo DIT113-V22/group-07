@@ -32,5 +32,4 @@ abstract class PlayerDatabase: RoomDatabase() { //Singleton, only one instance
             }
         }
     }
-
 }
