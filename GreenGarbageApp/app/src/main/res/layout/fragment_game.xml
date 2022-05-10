@@ -47,7 +47,7 @@
         <ImageButton
             android:id="@+id/forward"
             android:layout_width="match_parent"
-            android:layout_height="87dp"
+            android:layout_height="wrap_content"
             android:layout_weight="0"
             android:backgroundTint="@color/background"
             android:text="@string/forward"
@@ -92,7 +92,7 @@
         <ImageButton
             android:id="@+id/backward"
             android:layout_width="match_parent"
-            android:layout_height="85dp"
+            android:layout_height="wrap_content"
             android:layout_weight="0"
             android:backgroundTint="@color/background"
             android:text="@string/backward"
@@ -107,7 +107,7 @@
 
         <TextView
             android:id="@+id/speedometerIndicator"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:fontFamily="sans-serif-medium"
