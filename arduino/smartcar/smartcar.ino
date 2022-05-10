@@ -15,8 +15,6 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
-const String speedometer = "car/status/odometer/speed";
-
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
@@ -124,7 +122,7 @@ void loop() {
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
-    mqtt.publish(speedometer, String(car.getSpeed()));
+   
 #ifdef __SMCE__
     static auto previousFrame = 0UL;
     if (currentTime - previousFrame >= 65) {

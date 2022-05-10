@@ -47,7 +47,7 @@
         <ImageButton
             android:id="@+id/forward"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="87dp"
             android:layout_weight="0"
             android:backgroundTint="@color/background"
             android:text="@string/forward"
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/background"
                 android:text="@string/left"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24"/>
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24" />
 
             <ImageButton
                 android:id="@+id/stop"
@@ -92,18 +92,27 @@
         <ImageButton
             android:id="@+id/backward"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:layout_weight="0"
-            android:textColor="#FAFAFA"
             android:backgroundTint="@color/background"
             android:text="@string/backward"
-            app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24"/>
+            android:textColor="#FAFAFA"
+            app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24" />
+
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="55dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/speedometer" />
 
         <TextView
             android:id="@+id/speedometerIndicator"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16sp" />
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/_0_00km_h"
+            android:textColor="#0C0B0B"
+            android:textSize="19sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
