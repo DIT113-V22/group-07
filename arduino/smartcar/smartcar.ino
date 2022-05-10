@@ -118,9 +118,24 @@ void takeInput(String input) {
                 break;
             }
         }
+        
+void obstacleAvoid (){
+  int distance = front.getDistance();
+  if(distance > 0 && distance < 80){
+      car.setSpeed(0);
+      delay(1500); // delay before the next step to make sure the car is standing still
+      car.overrideMotorSpeed(25,-25); // turn on spot, always turning to the right
+    delay(1500);
+     car.setAngle (0);
+     car.setSpeed(-10); // incase the car was going to fast and didnt manage to stop in time before hitting the object
+     delay(900);
+     car.setSpeed(15);
+  }
+} // method finished and can continue with the manual input
+
 
 void loop() {
- 
+ obstacleAvoid ();
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
