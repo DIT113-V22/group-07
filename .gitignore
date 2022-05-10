@@ -74,4 +74,4 @@ google-services.json
 .DS_Store
 
 # ignore .import folder
-*.import
+**/.import
