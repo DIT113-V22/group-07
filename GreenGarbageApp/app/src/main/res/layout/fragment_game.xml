@@ -96,7 +96,7 @@
             android:layout_weight="0"
             android:backgroundTint="@color/background"
             android:text="@string/backward"
-            android:textColor="#FAFAFA"
+            android:textColor="#@string/backward"
             app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24" />
 
         <ImageView
