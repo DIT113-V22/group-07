@@ -72,7 +72,7 @@
                 android:textColor="#FAFAFA"
                 android:backgroundTint="@color/background"
                 app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
-                android:text="@string/right" />
+                android:text="@string/right"/>
         </LinearLayout>
 
         <ImageButton
