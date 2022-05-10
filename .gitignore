@@ -72,3 +72,6 @@ google-services.json
 
 # MSC
 .DS_Store
+
+# ignore .import folder
+*.import
