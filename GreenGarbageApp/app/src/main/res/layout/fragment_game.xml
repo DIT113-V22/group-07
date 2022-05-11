@@ -89,7 +89,7 @@
             android:layout_width="76dp"
             android:layout_height="55dp"
             android:layout_gravity="start"
-            app:srcCompat="@drawable/speedometer" />
+            app:srcCompat="@drawable/speedometer"/>
 
         <TextView
             android:id="@+id/speedometerIndicator"
