@@ -26,7 +26,9 @@ class GameFragment : Fragment() {
     private var control: MqttSmartcar? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+
+                            
+        savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         control = MqttSmartcar(context, binding.imageView, binding.speedometerIndicator)
@@ -88,7 +90,8 @@ class GameFragment : Fragment() {
                 result = "5 $turnL"
             }
             6 -> {
-                result = "6 $forward" // when turning
+
+                result = "6 $forward" // whhen turning
             }
         }
         return result
