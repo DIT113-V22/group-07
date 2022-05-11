@@ -88,7 +88,7 @@ class GameFragment : Fragment() {
                 result = "5 $turnL"
             }
             6 -> {
-                result = "6 $forward" // whhen turning
+                result = "6 $forward" // when turning
             }
         }
         return result
