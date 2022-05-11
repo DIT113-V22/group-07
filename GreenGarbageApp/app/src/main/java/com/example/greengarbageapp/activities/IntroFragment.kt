@@ -21,8 +21,7 @@ class IntroFragment : Fragment() {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val binding =  FragmentIntroBinding.inflate(inflater, container, false)
-        binding.button.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_gameFragment))
-        binding.cancelButton?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_startFragment))
+        binding.buttonPlay?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_gameFragment))
         return binding.root
     }
 }

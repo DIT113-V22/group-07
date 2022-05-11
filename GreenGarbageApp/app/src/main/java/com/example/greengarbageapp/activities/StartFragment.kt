@@ -17,7 +17,7 @@ class StartFragment : Fragment() {
         savedInstanceState: Bundle?): View {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentStartBinding.inflate(inflater, container, false)
-        binding.button1.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_introFragment))
+        binding.buttonStart.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_introFragment))
         return binding.root
     }
 

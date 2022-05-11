@@ -82,10 +82,10 @@ class MqttSmartcar : AppCompatActivity {
                         val payload = message.payload
                         val colors = IntArray(IMAGE_WIDTH * IMAGE_HEIGHT)
                         for (ci in colors.indices) {
-                            val r = payload[3 * ci]
-                            val g = payload[3 * ci + 1]
-                            val b = payload[3 * ci + 2]
-                            colors[ci] = Color.rgb(r.toInt(), g.toInt(), b.toInt())
+                            val r: Int = payload[3 * ci].toInt() and 0xFF
+                            val g: Int = payload[3 * ci + 1].toInt() and 0xFF
+                            val b: Int = payload[3 * ci + 2].toInt() and 0xFF
+                            colors[ci] = Color.rgb(r, g, b)
                         }
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView!!.setImageBitmap(bm)
@@ -95,8 +95,9 @@ class MqttSmartcar : AppCompatActivity {
                         val speedInKm = speedNumb * 3.6
                         val testSpeed = Math.round(speedInKm * 100.0) / 100.00
                         val speedDisplay = testSpeed.toString() + "km/h"
-
                         mTextView?.setText(speedDisplay)
+                        mTextView?.setText(speed)
+
                     }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }

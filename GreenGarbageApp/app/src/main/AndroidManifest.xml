@@ -12,24 +12,32 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="keyboardHidden|orientation|screenSize"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:configChanges="keyboardHidden|orientation|screenSize"
         android:theme="@style/Theme.GreenGarbageApp">
 
-        <activity android:name=".mqtt.MqttSmartcar" android:exported="true">
+        <activity
+            android:name=".activities.Splash_screen"
+            android:theme="@style/Theme.SplashScreen"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
 
         <activity
+            android:name=".mqtt.MqttSmartcar"
+            android:exported="true"></activity>
+        <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="fullSensor"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+
         </activity>
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
