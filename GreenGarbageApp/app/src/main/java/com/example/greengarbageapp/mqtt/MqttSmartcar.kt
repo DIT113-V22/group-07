@@ -26,12 +26,14 @@ class MqttSmartcar : AppCompatActivity {
     private var mCameraView: ImageView? = null
 
     private var context: Context? = null
+    private var distance: TextView? = null
 
-    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?) {
+    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?, distance: TextView?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
-        this.mTextView = mTextView
+        this.mTextView = mTextView //speedometer
+        this.distance = distance
     }
     constructor(){
     }
@@ -61,6 +63,7 @@ class MqttSmartcar : AppCompatActivity {
                     mMqttClient?.subscribe("/smartcar/ultrasound/front", QOS, null)
                     mMqttClient?.subscribe("/smartcar/camera", QOS, null)
                     mMqttClient?.subscribe("/smartcar/speedometer", QOS, null)
+                    mMqttClient?.subscribe("/smartcar/distance", QOS, subscriptionCallback = null)
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
@@ -89,6 +92,7 @@ class MqttSmartcar : AppCompatActivity {
                         }
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView!!.setImageBitmap(bm)
+
                     } else if(topic == "/smartcar/speedometer"){
                         val speed = message.toString()
                         val speedNumb = speed.toDouble()
@@ -98,6 +102,9 @@ class MqttSmartcar : AppCompatActivity {
                         mTextView?.setText(speedDisplay)
                         mTextView?.setText(speed)
 
+                    } else if(topic == "/smartcar/distance"){
+                        val mDistance = message.toString()
+                        distance?.text = mDistance
                     }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
