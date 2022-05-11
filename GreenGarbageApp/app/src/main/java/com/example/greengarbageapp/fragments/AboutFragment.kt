@@ -1,4 +1,4 @@
-package com.example.greengarbageapp.activities
+package com.example.greengarbageapp.fragments
 
 import android.content.Intent
 import android.net.Uri
@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import com.example.greengarbageapp.R
 import com.example.greengarbageapp.databinding.FragmentAboutBinding
-import com.example.greengarbageapp.databinding.FragmentEndBinding
 
 
 class AboutFragment : Fragment() {
