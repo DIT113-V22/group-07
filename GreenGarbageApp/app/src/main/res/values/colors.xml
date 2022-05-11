@@ -11,4 +11,8 @@
     <color name="green_light">#45F592</color>
     <color name="background">#E5EDE9</color>
     <color name="dark_grey">#434343</color>
+    <color name="iceblue">#039BE5</color>
+    <color name="orange">#EC8B10</color>
+    <color name="button_blue">#67AFF1</color>
+    <color name="grey">#2B2B2B</color>
 </resources>
