@@ -1,4 +1,4 @@
-package com.example.greengarbageapp.activities
+package com.example.greengarbageapp.fragments
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle

@@ -14,15 +14,6 @@
         android:paddingTop="150dp">
 
         <ImageView
-            android:id="@+id/GGIv"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/gg_3" />
-
-        <ImageView
             android:id="@+id/GG_logoIv"
             android:layout_width="match_parent"
             android:layout_height="80dp"
@@ -48,6 +39,31 @@
             app:strokeColor="@color/grey"
             app:strokeWidth="3dp" />
 
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/button_blue"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="ADD"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="30dp"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="3dp" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
 
 </LinearLayout>
