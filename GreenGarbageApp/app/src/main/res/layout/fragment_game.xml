@@ -72,7 +72,7 @@
                 android:textColor="#FAFAFA"
                 android:backgroundTint="@color/background"
                 app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
-                android:text="@string/right" />
+                android:text="@string/right"/>
         </LinearLayout>
 
         <ImageButton
@@ -85,11 +85,20 @@
             android:text="@string/backward"
             app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24"/>
 
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="55dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/speedometer"/>
+
         <TextView
             android:id="@+id/speedometerIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16sp" />
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/_0_00km_h"
+            android:textColor="#0C0B0B"
+            android:textSize="19sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

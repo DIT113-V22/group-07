@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import org.eclipse.paho.client.mqttv3.*
+import kotlin.math.roundToInt
 
 class MqttSmartcar : AppCompatActivity {
 
@@ -90,7 +91,13 @@ class MqttSmartcar : AppCompatActivity {
                         mCameraView!!.setImageBitmap(bm)
                     } else if(topic == "/smartcar/speedometer"){
                         val speed = message.toString()
+                        val speedNumb = speed.toDouble()
+                        val speedInKm = speedNumb * 3.6
+                        val testSpeed = Math.round(speedInKm * 100.0) / 100.00
+                        val speedDisplay = testSpeed.toString() + "km/h"
+                        mTextView?.setText(speedDisplay)
                         mTextView?.setText(speed)
+
                     }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
