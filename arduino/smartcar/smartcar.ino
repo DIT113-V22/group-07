@@ -117,14 +117,6 @@ void takeInput(String input) {
                 break;
             }
         }
-
-
-void loop() {
- 
-  if (mqtt.connected()) {
-    mqtt.loop();
-    const auto currentTime = millis();
-
         
 void obstacleAvoid (){
   int distance = front.getDistance();
