@@ -22,6 +22,8 @@ class IntroFragment : Fragment() {
 
         val binding =  FragmentIntroBinding.inflate(inflater, container, false)
         binding.buttonPlay?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_gameFragment))
+        binding.leaderboard?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_leaderboardFragment))
+
         return binding.root
     }
 }

@@ -47,7 +47,7 @@ class StartFragment : Fragment() {
         val button = binding.buttonAdd
         val userName = binding.userName!!.text.toString()
         if (userName.isNotEmpty()) {
-            val player = Player(0, userName, 0, 0)
+            val player = Player(0, userName, 0, 1)
             mPlayerViewModel.addPlayer(player)
             userNameAdded = true
             text?.setVisibility(View.GONE)
