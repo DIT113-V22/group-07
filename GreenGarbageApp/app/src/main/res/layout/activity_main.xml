@@ -10,6 +10,7 @@
     tools:context=".activities.MainActivity">
 
     <ImageView
+        android:id="@+id/moon_lightgreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/half_circle_lightgreen"
@@ -21,6 +22,26 @@
         android:layout_height="wrap_content"
         android:src="@drawable/half_circle_darkgreen"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_music_on"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:onClick="playSong"
+        android:padding="0dp"
+        android:layout_margin="20dp"
+        android:text="PLAY/PAUSE"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.drawerlayout.widget.DrawerLayout
