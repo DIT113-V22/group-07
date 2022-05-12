@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity(){
 
     fun playSong(view: View) {
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
+        mediaPlayer.isLooping = true
+
         if(!mediaPlayer.isPlaying){
 
             Toast.makeText(this,"Music is playing", Toast.LENGTH_SHORT).show()
