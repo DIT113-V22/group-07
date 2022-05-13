@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_introFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -47,4 +50,9 @@
         android:id="@+id/contactFragment"
         android:name="com.example.greengarbageapp.fragments.ContactFragment"
         android:label="Contact us" />
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.greengarbageapp.fragments.LeaderboardFragment"
+        android:label="Leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
 </navigation>
