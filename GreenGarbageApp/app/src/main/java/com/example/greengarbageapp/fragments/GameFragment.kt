@@ -1,13 +1,17 @@
 package com.example.greengarbageapp.fragments
 
+import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
+import com.example.joystickjhr.JoystickJhr
+
 
 
 class GameFragment : Fragment() {
@@ -20,10 +24,13 @@ class GameFragment : Fragment() {
     private var turnR = 0
     private var turnL = 0
     private var STOP = 7 // For Arduino switch case "7"
+    private var lastDirection = 0
+
 
 
     private var control: MqttSmartcar? = null
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,41 +42,46 @@ class GameFragment : Fragment() {
             context,
             binding.cameraViewIv,
             binding.speedometerIndicatorTv,
-            binding.distance
-        ) // ID i xml filen
+            binding.distance, binding.joystick) // ID i xml filen
         control!!.connectToMqttBroker()
-        val backward = binding.backward
-        val forward = binding.forward
-        val stop = binding.stop
-        val left = binding.left
-        val right = binding.right
-        backward.setOnClickListener {
-            control!!.drive(increase(3), STRAIGHT_ANGLE.toString(), "Moving backward")
-        }
-        forward.setOnClickListener {
-            control!!.drive(increase(2), STRAIGHT_ANGLE.toString(), "Moving forward")
-        }
 
-        stop.setOnClickListener {
-            control!!.drive(STOP.toString(), STRAIGHT_ANGLE.toString(), "Stopping")
-        }
+        val joystick = binding.joystick
+        joystick.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                with(joystick) {
+                    move(event);
+                    joyX();
+                    joyY();
+                    angle();
+                    distancia()
+                };
 
-        left.setOnClickListener {
-            control!!.drive(
-                increase(6),
-                increase(4),
-                "Moving forward left"
-            ) // does not increase speed
-        }
-        right.setOnClickListener {
-            control!!.drive(
-                increase(6),
-                increase(5),
-                "Moving forward right"
-            ) // does not increase speed
-        }
+                val direction = joystick.direccion;
 
+                if (lastDirection != direction) {
+                    lastDirection = direction;
+                    if (direction == JoystickJhr.STICK_UP) {
+                        control!!.drive(increase(2),  STRAIGHT_ANGLE.toString(),  "Moving forward") }
+                } else if (direction == JoystickJhr.STICK_UPRIGHT) {
+                } else if (direction == JoystickJhr.STICK_RIGHT) {
+                    control!!.drive(increase(6), increase(5), "Moving forward right") // does not increase speed
+                } else if (direction == JoystickJhr.STICK_NONE) {
+                    control!!.drive(STOP.toString(), STRAIGHT_ANGLE.toString(), "Stopping")
+                } else if (direction == JoystickJhr.STICK_DOWNRIGHT) {
+                } else if (direction == JoystickJhr.STICK_DOWN) {
+                    control!!.drive(increase(3), STRAIGHT_ANGLE.toString(), "Moving backward")
+                } else if (direction == JoystickJhr.STICK_DOWNLEFT) {
+                } else if (direction == JoystickJhr.STICK_LEFT) {
+                    control!!.drive(increase(6), increase(4), "Moving forward left") // does not increase speed
+                } else if (direction == JoystickJhr.STICK_UPLEFT) {
+                }
+                return true
+
+            }
+
+        })
         return binding.root
+
     }
 
     fun increase(pointer: Int): String {

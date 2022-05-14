@@ -7,8 +7,8 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.joystickjhr.JoystickJhr
 import org.eclipse.paho.client.mqttv3.*
-import kotlin.math.roundToInt
 
 class MqttSmartcar : AppCompatActivity {
 
@@ -24,16 +24,18 @@ class MqttSmartcar : AppCompatActivity {
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
+    private var joystick: JoystickJhr? = null
 
     private var context: Context? = null
     private var distance: TextView? = null
 
-    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?, distance: TextView?) {
+    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?, distance: TextView?, joystick: JoystickJhr?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
         this.mTextView = mTextView //speedometer
         this.distance = distance
+        this.joystick= joystick
     }
     constructor(){
     }

@@ -44,104 +44,75 @@
         android:layout_weight="1"
         android:contentDescription="@string/cameraview" />
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
             android:background="@color/white"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
             <ImageView
                 android:id="@+id/speedometerIv"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/speedometer"/>
+                app:srcCompat="@drawable/speedometer" />
 
             <TextView
                 android:id="@+id/speedometerIndicatorTv"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="@string/_0_00km_h"
                 android:layout_gravity="center_vertical"
-                android:textColor="#0C0B0B"
                 android:layout_weight="1"
-                android:textSize="25sp"/>
+                android:text="@string/_0_00km_h"
+                android:textColor="#0C0B0B"
+                android:textSize="25sp" />
 
             <ImageView
                 android:id="@+id/distanceIv"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/distance"/>
+                app:srcCompat="@drawable/distance" />
 
             <TextView
                 android:id="@+id/distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_0m"
-                android:textColor="#0C0B0B"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:textSize="25sp"/>
+                android:text="@string/_0m"
+                android:textColor="#0C0B0B"
+                android:textSize="25sp" />
 
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/forward"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:backgroundTint="@color/background"
-            android:text="@string/forward"
-            android:textColor="#FAFAFA"
-            app:srcCompat="@drawable/ic_outline_arrow_circle_up_24" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/background"
-                android:text="@string/left"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24"/>
-
-            <ImageButton
-                android:id="@+id/stop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/background"
-                android:text="@string/stop"
-                app:srcCompat="@drawable/ic_baseline_cancel_24_2"/>
-
-            <ImageButton
-                android:id="@+id/right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#FAFAFA"
-                android:backgroundTint="@color/background"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
-                android:text="@string/right"/>
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/backward"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:backgroundTint="@color/background"
-            android:text="@string/backward"
-            android:textColor="#FAFAFA"
-            app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24" />
+        <com.example.joystickjhr.JoystickJhr
+            android:id="@+id/joystick"
+            android:layout_width="165dp"
+            android:layout_height="179dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTintMode="add"
+            app:alphaCircleFirst="300"
+            app:alphaCircleSecond="100"
+            app:colorFirst="#8BC34A"
+            app:colorSecond="#8B0018"
+            app:colorText="#D5D8E7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.809"
+            app:radioCircle="0.4"
+            app:relleno="true"
+            app:textJoy=""
+            app:textSizeJoy="70"
+            app:xtextOffset="-55"
+            app:ytextOffset="-15"
+            tools:ignore="MissingClass" />
 
     </LinearLayout>
 
