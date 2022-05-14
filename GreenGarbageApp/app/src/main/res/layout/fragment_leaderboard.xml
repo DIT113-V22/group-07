@@ -1,54 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".fragments.LeaderboardFragment">
+    android:background="@color/background"
+    android:paddingTop="0dp"
+    tools:context=".fragments.LeaderboardFragment"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_height="200dp"
+        android:paddingBottom="15dp"
+        app:lottie_url="https://assets4.lottiefiles.com/packages/lf20_xldzoar8.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
-    <TextView
-        android:id="@+id/lb_username"
-        android:layout_width="142dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:text="Username"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lb_distance"
-        android:layout_width="107dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:text="Distance"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/lb_username"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/button_blue">
 
-    <TextView
-        android:id="@+id/lb_points"
-        android:layout_width="102dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Points"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/lb_distance"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lb_username"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:text="Username"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/lb_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/white"
+            android:text="Distance"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/lb_points"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/white"
+            android:text="Points"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:orientation="vertical"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/first_place"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/second_place"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/third_place"/>
+
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>
