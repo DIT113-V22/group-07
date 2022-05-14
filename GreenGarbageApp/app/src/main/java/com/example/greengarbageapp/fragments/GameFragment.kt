@@ -30,13 +30,14 @@ class GameFragment : Fragment() {
     ): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
-
+        
         control = MqttSmartcar(
             context,
             binding.cameraViewIv,
             binding.speedometerIndicatorTv,
             binding.distance
         ) // ID i xml filen
+
         control!!.connectToMqttBroker()
         val backward = binding.backward
         val forward = binding.forward
