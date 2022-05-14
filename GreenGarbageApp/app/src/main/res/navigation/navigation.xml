@@ -25,6 +25,26 @@
         <action
             android:id="@+id/action_introFragment_to_leaderboardFragment"
             app:destination="@id/leaderboardFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_plasticFragment"
+            app:destination="@id/plasticFragment"
+            android:label="Plastic"/>
+        <action
+            android:id="@+id/action_introFragment_to_food_wasteFragment"
+            app:destination="@id/food_wasteFragment"
+            android:label="Food waste"/>
+        <action
+            android:id="@+id/action_introFragment_to_paperFragment"
+            app:destination="@id/paperFragment"
+            android:label="Paper"/>
+        <action
+            android:id="@+id/action_introFragment_to_glassFragment"
+            app:destination="@id/glasFragment"
+            android:label="Glass"/>
+        <action
+            android:id="@+id/action_introFragment_to_canFragment"
+            app:destination="@id/canFragment"
+            android:label="Metal"/>
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -55,4 +75,44 @@
         android:name="com.example.greengarbageapp.fragments.LeaderboardFragment"
         android:label="Leaderboard"
         tools:layout="@layout/fragment_leaderboard" />
+    <fragment
+        android:id="@+id/plasticFragment"
+        android:name="com.example.greengarbageapp.fragments.PlasticFragment"
+        android:label="Plastic Pollution" >
+        <action
+            android:id="@+id/action_plasticFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canFragment"
+        android:name="com.example.greengarbageapp.fragments.CanFragment"
+        android:label="Can" >
+        <action
+            android:id="@+id/action_canFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/food_wasteFragment"
+        android:name="com.example.greengarbageapp.fragments.Food_wasteFragment"
+        android:label="Food waste" >
+        <action
+            android:id="@+id/action_food_wasteFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/glasFragment"
+        android:name="com.example.greengarbageapp.fragments.GlassFragment"
+        android:label="Glass" >
+        <action
+            android:id="@+id/action_glasFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paperFragment"
+        android:name="com.example.greengarbageapp.fragments.PaperFragment"
+        android:label="Paper" >
+        <action
+            android:id="@+id/action_paperFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
 </navigation>
