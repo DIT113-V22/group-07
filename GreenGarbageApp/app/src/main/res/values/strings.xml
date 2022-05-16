@@ -10,7 +10,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">about</string>
     <string name="about_us">About us</string>
-    <string name="_0_00km_h">0.00km/h</string>
+    <string name="_0_00km_h">0.00 km/h</string>
     <string name="UN">UNs Sustainable Development \nGoal 12</string>
     <string name="link">Read more: UNs SDGS - Goal 12</string>
     <string name="UN_link"><a href="https://sdgs.un.org/goals/goal12">Read more: UNs SDGS - Goal 12</a></string>

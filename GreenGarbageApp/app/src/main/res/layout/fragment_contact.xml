@@ -9,7 +9,9 @@
     android:fillViewport="true"
     android:orientation="vertical"
     android:gravity="top"
-    android:paddingTop="10dp"
+    android:paddingTop="50dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
     tools:context="com.example.greengarbageapp.activities.MainActivity">
 
     <LinearLayout

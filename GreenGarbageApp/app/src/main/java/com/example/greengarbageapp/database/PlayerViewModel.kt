@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class PlayerViewModel(application: Application): AndroidViewModel(application){
 
 
-    private val readAllData: LiveData<List<Player>>
+    val readAllData: LiveData<List<Player>>
     private val repository: PlayerRepository
 
     init {

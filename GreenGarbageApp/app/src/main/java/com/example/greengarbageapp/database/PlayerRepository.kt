@@ -9,5 +9,4 @@ class PlayerRepository (private val playerDao: PlayerDao){
     suspend fun addPlayer(player: Player){
         playerDao.addPlayer(player)
     }
-
 }

@@ -21,11 +21,10 @@ class StartFragment : Fragment() {
     private lateinit var mPlayerViewModel: PlayerViewModel
     private var userNameAdded: Boolean = false
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        mPlayerViewModel = ViewModelProvider(this).get(PlayerViewModel::class.java)
+        mPlayerViewModel = ViewModelProvider(this)[PlayerViewModel::class.java]
         val binding = FragmentStartBinding.inflate(inflater, container, false)
         if (userNameAdded){
             val inputUserName = binding.userName
@@ -48,7 +47,7 @@ class StartFragment : Fragment() {
         val button = binding.buttonAdd
         val userName = binding.userName!!.text.toString()
         if (userName.isNotEmpty()) {
-            val player = Player(0, userName, 0.0, 0)
+            val player = Player(0, userName, 0, 1)
             mPlayerViewModel.addPlayer(player)
             userNameAdded = true
             text?.setVisibility(View.GONE)
