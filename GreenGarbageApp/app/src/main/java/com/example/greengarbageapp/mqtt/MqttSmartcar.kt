@@ -100,8 +100,6 @@ class MqttSmartcar : AppCompatActivity {
                         val testSpeed = Math.round(speedInKm * 100.0) / 100.00
                         val speedDisplay = testSpeed.toString() + "km/h"
                         speedometer?.text = speedDisplay
-                        speedometer?.text = speed
-
                     } else if(topic == "/smartcar/distance"){
                         val mDistance = message.toString()
                         distance?.text = mDistance
