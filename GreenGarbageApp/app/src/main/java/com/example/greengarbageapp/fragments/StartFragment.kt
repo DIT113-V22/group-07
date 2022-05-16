@@ -18,13 +18,13 @@ import com.example.greengarbageapp.databinding.FragmentStartBinding
 
 
 class StartFragment : Fragment() {
-    private lateinit var mPlayerViewModel: PlayerViewModel
+
     private var userNameAdded: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        mPlayerViewModel = ViewModelProvider(this)[PlayerViewModel::class.java]
+
         val binding = FragmentStartBinding.inflate(inflater, container, false)
         if (userNameAdded){
             val inputUserName = binding.userName
@@ -47,8 +47,6 @@ class StartFragment : Fragment() {
         val button = binding.buttonAdd
         val userName = binding.userName!!.text.toString()
         if (userName.isNotEmpty()) {
-            val player = Player(0, userName, 0, 1)
-            mPlayerViewModel.addPlayer(player)
             userNameAdded = true
             text?.setVisibility(View.GONE)
             button?.setVisibility(View.GONE)
@@ -60,7 +58,8 @@ class StartFragment : Fragment() {
     private fun navigateToIntro(binding: FragmentStartBinding) {
         val userName = binding.userName!!.text.toString()
         if (userName.isNotEmpty() && userNameAdded){
-            findNavController().navigate(R.id.action_startFragment_to_introFragment)
+            val action = StartFragmentDirections.actionStartFragmentToIntroFragment(userName)
+            findNavController().navigate(action)
         } else if (userName.isNotEmpty() && !userNameAdded){
             Toast.makeText(requireContext(), "Please add your username", Toast.LENGTH_SHORT).show()
         } else {

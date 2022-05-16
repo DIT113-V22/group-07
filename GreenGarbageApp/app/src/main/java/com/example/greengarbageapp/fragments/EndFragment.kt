@@ -15,4 +15,6 @@ class EndFragment : Fragment() {
         val binding = FragmentEndBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+
     }
