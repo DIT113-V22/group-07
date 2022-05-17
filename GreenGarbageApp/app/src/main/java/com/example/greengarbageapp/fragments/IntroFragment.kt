@@ -16,19 +16,13 @@ import com.example.greengarbageapp.databinding.FragmentIntroBinding
 
 class IntroFragment : Fragment() {
 
-    private val args by navArgs<IntroFragmentArgs>()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val binding =  FragmentIntroBinding.inflate(inflater, container, false)
-        val playername = args.playername
-        binding.buttonPlay.setOnClickListener {
-            val action = IntroFragmentDirections.actionIntroFragmentToGameFragment(playername)
-            findNavController().navigate(action)
-        }
-        binding.leaderboard?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_leaderboardFragment))
+
+        binding.buttonPlay.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_gameFragment))
 
         return binding.root
     }

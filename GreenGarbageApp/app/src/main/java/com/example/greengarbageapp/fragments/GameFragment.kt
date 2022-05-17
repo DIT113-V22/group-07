@@ -25,7 +25,6 @@ class GameFragment : Fragment() {
 
 
     private var control: MqttSmartcar? = null
-    private val args by navArgs<GameFragmentArgs>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -39,10 +38,9 @@ class GameFragment : Fragment() {
         ) // ID i xml filen
 
         binding.endGame.setOnClickListener {
-            val playername = args.playername
-            val points = 10
+            val points = 11
             val distance = binding.distance.text.toString().toInt()
-            val action = GameFragmentDirections.actionGameFragmentToEndFragment(playername, distance, points)
+            val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
             findNavController().navigate(action)
         }
 

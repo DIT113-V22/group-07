@@ -19,12 +19,6 @@
             android:layout_height="170dp"
             android:src="@drawable/planet_earth" />
 
-        <Button
-            android:id="@+id/leaderboard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Leaderboard" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
