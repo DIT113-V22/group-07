@@ -26,10 +26,10 @@ class IntroFragment : Fragment() {
 
         // Trash imageButtons:
         //binding.plasticIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_plasticFragment))
-        binding.paperIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_paperFragment))
+        //binding.paperIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_paperFragment))
         //binding.canIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_canFragment))
-        binding.appleIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_food_wasteFragment))
-        binding.bottleIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_glassFragment))
+        //binding.appleIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_food_wasteFragment))
+        //binding.bottleIb?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_glassFragment))
 
         //Can
         super.onCreateView(inflater, container, savedInstanceState)

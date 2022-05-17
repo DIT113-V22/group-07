@@ -48,7 +48,7 @@
                 android:fontFamily="@font/acme"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="@string/metal.tx" />
+                android:text="@string/glass.tx" />
         </LinearLayout>
     </ScrollView>
 
