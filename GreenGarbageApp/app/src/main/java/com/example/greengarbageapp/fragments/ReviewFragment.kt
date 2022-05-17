@@ -21,12 +21,13 @@ class ReviewFragment : Fragment() {
         val inputReview = binding.Rbutton
         val rateStars = binding.rBar
         val textAfterReview = binding.tyText
-
+        val textImprove = binding.improve
         inputReview.setOnClickListener(){
             reviewAdded = true
             inputReview?.setVisibility(View.GONE)
             rateStars?.setVisibility(View.GONE)
             textAfterReview?.text = "Thanks for your feedback!"
+            textImprove?.setVisibility(View.GONE)
         }
         return binding.root
     }

@@ -6,31 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="180dp"
+    android:background="@color/white"
     tools:context="com.example.greengarbageapp.activities.MainActivity">
+
 
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/acme"
+
+        android:gravity="center"
         android:padding="8dp"
 
-        android:fontFamily="@font/acme"
-        android:textColor="@color/green_dark"
-        android:gravity="center"
+        android:paddingBottom="20dp"
         android:text="@string/help_us_improve_the_app"
-        android:textSize="35sp"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:textColor="@color/green_dark"
+        android:textSize="35sp"
+        android:id="@+id/improve"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="95dp"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:src="@drawable/smile" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:src="@drawable/smile"
+        android:paddingBottom="15dp"
+        android:paddingTop="10dp"/>
+
     <RatingBar
         android:id="@+id/rBar"
         android:layout_width="wrap_content"
@@ -38,7 +40,11 @@
         android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:stepSize="0.5"
-        android:theme="@style/Widget.AppCompat.RatingBar" />
+        android:progressTint="@color/cololr_yellow"
+        android:theme="@style/Widget.AppCompat.RatingBar"
+        android:paddingBottom="8dp"
+        android:paddingTop="10dp"/>
+
 
     <Button
         android:id="@+id/Rbutton"
