@@ -38,7 +38,7 @@ class GameFragment : Fragment() {
         ) // ID i xml filen
 
         binding.endGame.setOnClickListener {
-            val points = 11
+            val points = 0
             val distance = binding.distance.text.toString().toInt()
             val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
             findNavController().navigate(action)

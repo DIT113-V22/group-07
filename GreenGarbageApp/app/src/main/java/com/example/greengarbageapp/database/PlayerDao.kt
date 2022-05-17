@@ -14,7 +14,7 @@ interface PlayerDao {
 
     // Order from highest points to lowest, limit to 10 results, only include if player has earned points
     //Changed to show top 3
-    @Query("SELECT * FROM player_table WHERE player_points > 0 ORDER BY player_points DESC LIMIT 3")
+    @Query("SELECT * FROM player_table WHERE player_points > 0 ORDER BY player_distance DESC LIMIT 3")
 
     fun readAllData(): LiveData<List<Player>>
 
