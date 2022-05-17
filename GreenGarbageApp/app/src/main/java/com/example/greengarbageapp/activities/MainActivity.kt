@@ -1,6 +1,11 @@
 package com.example.greengarbageapp.activities
 
+import android.media.AudioManager
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -12,13 +17,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.example.greengarbageapp.R
 import com.example.greengarbageapp.databinding.ActivityMainBinding
-
+import java.io.IOException
 
 
 class MainActivity : AppCompatActivity(){
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration : AppBarConfiguration
-    
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,5 +47,38 @@ class MainActivity : AppCompatActivity(){
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         return NavigationUI.navigateUp(navController, appBarConfiguration)
+    }
+
+    private var mediaPlayer=MediaPlayer()
+    private val url = "https://www.bensound.com/bensound-music/bensound-ukulele.mp3"
+
+    fun playSong(view: View) {
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
+        mediaPlayer.isLooping = true
+
+        if(!mediaPlayer.isPlaying){
+
+            Toast.makeText(this,"Music is playing", Toast.LENGTH_SHORT).show()
+            try {
+                mediaPlayer.setDataSource(url)
+                mediaPlayer.prepare()
+                mediaPlayer.start()
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }else {
+            Toast.makeText(this,"Music stopped", Toast.LENGTH_SHORT).show()
+
+            try {
+
+                mediaPlayer.pause()
+                mediaPlayer.stop()
+                mediaPlayer.reset()
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
     }
 }

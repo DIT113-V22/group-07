@@ -22,16 +22,22 @@ class GameFragment : Fragment() {
     private var STOP = 7 // For Arduino switch case "7"
 
 
-
     private var control: MqttSmartcar? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-
-                            
-        savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
-        control = MqttSmartcar(context, binding.imageView, binding.speedometerIndicator, binding.distance) // ID i xml filen
+        
+        control = MqttSmartcar(
+            context,
+            binding.cameraViewIv,
+            binding.speedometerIndicatorTv,
+            binding.distance
+        ) // ID i xml filen
+
         control!!.connectToMqttBroker()
         val backward = binding.backward
         val forward = binding.forward
@@ -50,10 +56,18 @@ class GameFragment : Fragment() {
         }
 
         left.setOnClickListener {
-            control!!.drive(increase(6), increase(4), "Moving forward left") // does not increase speed
+            control!!.drive(
+                increase(6),
+                increase(4),
+                "Moving forward left"
+            ) // does not increase speed
         }
         right.setOnClickListener {
-            control!!.drive(increase(6), increase(5),"Moving forward right") // does not increase speed
+            control!!.drive(
+                increase(6),
+                increase(5),
+                "Moving forward right"
+            ) // does not increase speed
         }
 
         return binding.root
@@ -76,14 +90,14 @@ class GameFragment : Fragment() {
                 result = "3 $backwards"
             }
             4 -> {
-                if(turnL != 0) {
+                if (turnL != 0) {
                     turnL -= INCREASE_BY
                 }
                 turnR += INCREASE_BY
                 result = "4 $turnR"
             }
             5 -> {
-                if(turnR != 0) {
+                if (turnR != 0) {
                     turnR -= INCREASE_BY
                 }
                 turnL += INCREASE_BY
@@ -91,7 +105,7 @@ class GameFragment : Fragment() {
             }
             6 -> {
 
-                result = "6 $forward" // whhen turning
+                result = "6 $forward" // when turning
             }
         }
         return result
