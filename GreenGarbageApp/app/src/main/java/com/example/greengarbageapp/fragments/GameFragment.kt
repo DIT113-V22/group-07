@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
 
@@ -24,10 +26,7 @@ class GameFragment : Fragment() {
 
     private var control: MqttSmartcar? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         
@@ -37,6 +36,14 @@ class GameFragment : Fragment() {
             binding.speedometerIndicatorTv,
             binding.distance
         ) // ID i xml filen
+
+        binding.endGame.setOnClickListener {
+            val points = 0
+            val distance = binding.distance.text.toString().toInt()
+            val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
+            findNavController().navigate(action)
+        }
+
 
         control!!.connectToMqttBroker()
         val backward = binding.backward
