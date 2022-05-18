@@ -1,4 +1,5 @@
-#include <vector>
+
+ #include <vector>
  
 #include <MQTT.h>
 #include <WiFi.h>
@@ -26,6 +27,24 @@ const auto oneSecond = 1000UL;
 const auto triggerPin = 6;
 const auto echoPin = 7;
 const unsigned int maxDistance = 100;
+
+// Car movements
+const auto forward =30;
+const auto forwardTurn=20;
+const auto reverse =-10;
+const auto delayTurn = 800;
+
+
+
+int counter = 0;
+int hitObject = false;
+
+//infrared
+const int frontSide = 0;
+GP2Y0A02 frontIR(arduinoRuntime, frontSide);
+
+
+
 
 //Top Sensor
 GY50 gyroscope(arduinoRuntime, 37);
@@ -73,50 +92,33 @@ void setup() {
     delay(1000);
   }
  
-  mqtt.subscribe("/smartcar/control/#", 1);
+ mqtt.subscribe("/smartcar/control/#", 1);
   mqtt.onMessage([](String topic, String message) {
-    if (topic == "/smartcar/control/takeInput") {
-      takeInput(message);
+    if (topic == "/smartcar/control/throttle") {
+      car.setSpeed(message.toInt());
+    } else if (topic == "/smartcar/control/steering") {
+      car.setAngle(message.toInt());
     } else {
-      Serial.println(topic + " " + message);
+      Serial.println(topic + " let's go " + message);
     }
   });
 }
- 
-void takeInput(String input) {
-        int inputSelection = input.substring(0,1).toInt();
-            int appInput;
-            if(input.length() > 1) {
-              unsigned int stringInput = input.substring(1).toInt(); 
-              appInput = stringInput;
-            }
-            
-            switch(inputSelection) {
-              case 2:  //forward
-                car.setSpeed(appInput); // incrementing number from app to go forward
-                break;
-              
-              case 3:  //backwards
-                car.setSpeed(-appInput); // incrementing number from app to go backwards
-                break;
-            
-              case 4:  //right
-                  car.setAngle(-appInput); // incrementing number from app to turn right
-                break;
-            
-              case 5:  //left
-                  car.setAngle(appInput); // incrementing number from app to turn right
-                break;
-                
-              case 7: //stop
-                car.setSpeed(0);
-                car.setAngle(0);
-              break;
-              
-              default:
-                break;
-            }
-        }
+
+        
+int countObj() {
+  int distance = frontIR.getDistance();
+     int val = digitalRead(frontSide);
+  if( (distance < 0.1) &&  (hitObject == false)) {
+    counter++;
+    hitObject = true;
+    Serial.print ("Counter = ");
+    Serial.println (counter);
+  }else if ( (distance > 0.05) && (hitObject == true) ) {
+    hitObject = false;
+}
+return counter;
+}
+
         
 void obstacleAvoid (){
   int distance = front.getDistance();
@@ -134,7 +136,7 @@ void obstacleAvoid (){
 
 
 void loop() {
- obstacleAvoid ();
+  countObj();
   if (mqtt.connected()) {
     mqtt.loop();
     const auto currentTime = millis();
@@ -155,6 +157,8 @@ void loop() {
       mqtt.publish("/smartcar/speedometer", String(car.getSpeed()));
       mqtt.publish("/smartcar/ultrasound/front", distance);
       mqtt.publish("/smartcar/distance", String(car.getDistance()));
+      mqtt.publish("/smartcar/count",String(countObj()));
+
     }
     
   }

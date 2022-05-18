@@ -37,12 +37,12 @@
         android:gravity="center"
         android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/cameraViewIv"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:contentDescription="@string/cameraview" />
+        <ImageView
+            android:id="@+id/cameraViewIv"
+            android:layout_width="match_parent"
+            android:layout_height="448dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/cameraview" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -87,32 +87,38 @@
                 android:textColor="#0C0B0B"
                 android:textSize="25sp" />
 
+            <ImageView
+                android:id="@+id/countT"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.6"
+                app:srcCompat="@drawable/trashcan" />
+
+            <TextView
+                android:id="@+id/count"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                />
+
         </LinearLayout>
 
-        <com.example.joystickjhr.JoystickJhr
-            android:id="@+id/joystick"
-            android:layout_width="165dp"
-            android:layout_height="179dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTintMode="add"
-            app:alphaCircleFirst="300"
-            app:alphaCircleSecond="100"
-            app:colorFirst="#8BC34A"
-            app:colorSecond="#8B0018"
-            app:colorText="#D5D8E7"
+        <io.github.controlwear.virtual.joystick.android.JoystickView
+            android:id="@+id/joystickView_left"
+            android:layout_width="280dp"
+            android:layout_height="241dp"
+            android:background="@drawable/circle"
+            app:JV_backgroundSizeRatio="50%"
+            app:JV_buttonImage="@drawable/greenearth"
+            app:JV_buttonSizeRatio="60%"
+            app:JV_fixedCenter="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.569"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.809"
-            app:radioCircle="0.4"
-            app:relleno="true"
-            app:textJoy=""
-            app:textSizeJoy="70"
-            app:xtextOffset="-55"
-            app:ytextOffset="-15"
-            tools:ignore="MissingClass" />
+            app:layout_constraintVertical_bias="0.886" />
 
     </LinearLayout>
 
