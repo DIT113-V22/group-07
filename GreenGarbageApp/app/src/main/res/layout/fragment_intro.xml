@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="40dp">
+        android:paddingTop="0dp">
 
         <ImageView
             android:id="@+id/planetIv"
@@ -27,18 +27,19 @@
             android:background="@color/white"
             android:fontFamily="@font/acme"
             android:gravity="center_horizontal"
-            android:paddingBottom="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
             android:text="@string/edu_game"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:paddingBottom="0dp"
             android:background="@color/white"
-            android:orientation="vertical"
-            android:paddingBottom="10dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,50 +51,98 @@
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/acme"
                 android:padding="8dp"
-                android:text="Collect trash"
+                android:text="Collect trash - Earn points"
                 android:textAllCaps="true"
                 android:textColor="@color/orange"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:drawableEndCompat="@drawable/ic_star"
                 app:drawableStartCompat="@drawable/ic_star" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/white"
-                android:drawablePadding="5dp"
-                android:fontFamily="@font/acme"
-                android:padding="8dp"
-                android:text="Earn points"
-                android:textAllCaps="true"
-                android:textColor="@color/orange"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:drawableEndCompat="@drawable/ic_star"
-                app:drawableStartCompat="@drawable/ic_star" />
+        </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/white"
-                android:drawablePadding="5dp"
-                android:fontFamily="@font/acme"
-                android:padding="8dp"
-                android:text="Save planet"
-                android:textAllCaps="true"
-                android:textColor="@color/orange"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:drawableEndCompat="@drawable/ic_star"
-                app:drawableStartCompat="@drawable/ic_star" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click on icons"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:drawableEndCompat="@drawable/ic_double_arrow_right"
+            app:drawableStartCompat="@drawable/ic_double_arrow_left"
+            android:layout_marginTop="40dp"/>
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+
+            <ImageButton
+                android:id="@+id/appleIb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/background"
+                android:src="@drawable/apple"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <ImageButton
+                android:id="@+id/bottleIb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/background"
+                android:src="@drawable/bottle"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <ImageButton
+                android:id="@+id/canIb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/background"
+                android:src="@drawable/can"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <ImageButton
+                android:id="@+id/plasticIb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/background"
+                android:src="@drawable/plastic"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <ImageButton
+                android:id="@+id/paperIb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/background"
+                android:src="@drawable/paper"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
 
         </LinearLayout>
 
@@ -102,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/button_blue"
             android:fontFamily="@font/holtwood_one_sc"
             android:text="PLAY"
