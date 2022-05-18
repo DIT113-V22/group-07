@@ -14,6 +14,7 @@ import androidx.room.PrimaryKey
     // these fields correspond to columns in the table
     var id: Int = 0
     var playerName: String? = null
+    @ColumnInfo(name = "player_distance")
     var distance: Int = 0
     @ColumnInfo(name = "player_points")
     var points: Int = 0

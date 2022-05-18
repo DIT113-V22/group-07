@@ -7,8 +7,8 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import io.github.controlwear.virtual.joystick.android.JoystickView
 import org.eclipse.paho.client.mqttv3.*
+import kotlin.math.roundToInt
 
 class MqttSmartcar : AppCompatActivity {
 
@@ -38,7 +38,8 @@ class MqttSmartcar : AppCompatActivity {
         this.joystick = joystick
         this.count = count
     }
-
+    constructor(){
+    }
     override fun onResume() {
         super.onResume()
         connectToMqttBroker()
@@ -103,8 +104,6 @@ class MqttSmartcar : AppCompatActivity {
                         val testSpeed = Math.round(speedInKm * 100.0) / 100.00
                         val speedDisplay = testSpeed.toString() + "km/h"
                         speedometer?.text = speedDisplay
-                        speedometer?.text = speed
-
                     } else if(topic == "/smartcar/distance"){
                         val mDistance = message.toString()
                         distance?.text = mDistance
