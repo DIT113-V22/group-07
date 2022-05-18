@@ -41,6 +41,16 @@ class GameFragment : Fragment() {
             val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
             findNavController().navigate(action)
         }
+
+        binding.endGame.setOnClickListener {
+            val points = 0
+            val distance = binding.distance.text.toString().toInt()
+            val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
+            findNavController().navigate(action)
+        }
+
+
+
         control!!.connectToMqttBroker()
 
 
