@@ -24,6 +24,37 @@ class IntroFragment : Fragment() {
 
         binding.buttonPlay.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_introFragment_to_gameFragment))
 
+        //Can
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding.canIb?.setOnClickListener{
+            val dialog = CanFragment()
+            dialog.show(childFragmentManager,"customDialog")
+        }
+        //Plastic
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding.plasticIb?.setOnClickListener{
+            val dialog = PlasticFragment()
+            dialog.show(childFragmentManager,"customDialog")
+        }
+        //Food waste
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding.appleIb?.setOnClickListener{
+            val dialog = FoodWasteFragment()
+            dialog.show(childFragmentManager,"customDialog")
+        }
+        //Glass
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding.bottleIb?.setOnClickListener{
+            val dialog = GlassFragment()
+            dialog.show(childFragmentManager,"customDialog")
+        }
+        //Paper
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding.paperIb?.setOnClickListener{
+            val dialog = PaperFragment()
+            dialog.show(childFragmentManager,"customDialog")
+        }
+
         return binding.root
     }
 }
