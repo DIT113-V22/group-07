@@ -30,6 +30,7 @@ class MqttSmartcar : AppCompatActivity {
     private var distance: TextView? = null
 
     constructor(context: Context?, mCameraView: ImageView?, speedometer: TextView?, distance: TextView?, joystick: JoystickView, count: TextView?) {
+
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
@@ -103,7 +104,6 @@ class MqttSmartcar : AppCompatActivity {
                         val testSpeed = Math.round(speedInKm * 100.0) / 100.00
                         val speedDisplay = testSpeed.toString() + "km/h"
                         speedometer?.text = speedDisplay
-                        speedometer?.text = speed
 
                     } else if(topic == "/smartcar/distance"){
                         val mDistance = message.toString()
