@@ -13,12 +13,6 @@
         android:orientation="vertical"
         android:paddingTop="0dp">
 
-        <Button
-            android:id="@+id/leaderboard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Leaderboard" />
-
         <ImageView
             android:id="@+id/planetIv"
             android:layout_width="match_parent"

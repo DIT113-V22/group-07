@@ -20,7 +20,7 @@ class MqttSmartcar : AppCompatActivity {
     private val QOS = 1
     private val IMAGE_WIDTH = 320
     private val IMAGE_HEIGHT = 240
-    private var mTextView: TextView? = null
+    private var speedometer: TextView? = null
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
@@ -28,11 +28,11 @@ class MqttSmartcar : AppCompatActivity {
     private var context: Context? = null
     private var distance: TextView? = null
 
-    constructor(context: Context?, mCameraView: ImageView?, mTextView: TextView?, distance: TextView?) {
+    constructor(context: Context?, mCameraView: ImageView?, speedometer: TextView?, distance: TextView?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
-        this.mTextView = mTextView //speedometer
+        this.speedometer = speedometer
         this.distance = distance
     }
     constructor(){
@@ -99,9 +99,7 @@ class MqttSmartcar : AppCompatActivity {
                         val speedInKm = speedNumb * 3.6
                         val testSpeed = Math.round(speedInKm * 100.0) / 100.00
                         val speedDisplay = testSpeed.toString() + "km/h"
-                        mTextView?.setText(speedDisplay)
-                        mTextView?.setText(speed)
-
+                        speedometer?.text = speedDisplay
                     } else if(topic == "/smartcar/distance"){
                         val mDistance = message.toString()
                         distance?.text = mDistance
