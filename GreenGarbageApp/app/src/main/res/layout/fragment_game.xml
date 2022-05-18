@@ -4,37 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:paddingTop="10dp">
 
         <ImageView
             android:id="@+id/GGTruckIv"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_marginTop="5dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="0dp"
-            app:srcCompat="@drawable/garbagetruck_2"/>
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/garbagetruck_2" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/endGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Save" />
-
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -44,55 +41,79 @@
         android:gravity="center"
         android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/cameraViewIv"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:contentDescription="@string/cameraview" />
+        <ImageView
+            android:id="@+id/cameraViewIv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/cameraview" />
 
-    <LinearLayout
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/diskette" />
+
+            <Button
+                android:id="@+id/endGame"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:fontFamily="@font/acme"
+                android:text="Save"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
             android:background="@color/white"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
             <ImageView
                 android:id="@+id/speedometerIv"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/speedometer"/>
+                app:srcCompat="@drawable/speedometer" />
 
             <TextView
                 android:id="@+id/speedometerIndicatorTv"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="@string/_0_00km_h"
                 android:layout_gravity="center_vertical"
-                android:textColor="#0C0B0B"
                 android:layout_weight="1"
-                android:textSize="25sp"/>
+                android:text="@string/_0_00km_h"
+                android:textColor="#0C0B0B"
+                android:textSize="25sp" />
 
             <ImageView
                 android:id="@+id/distanceIv"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/distance"/>
+                app:srcCompat="@drawable/distance" />
 
-        <TextView
-            android:id="@+id/distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="0"
-            android:textColor="#0C0B0B"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="0"
+                android:textColor="#0C0B0B"
+                android:textSize="25sp" />
 
         </LinearLayout>
 
@@ -119,7 +140,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/background"
                 android:text="@string/left"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24"/>
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24" />
 
             <ImageButton
                 android:id="@+id/stop"
@@ -127,17 +148,17 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/background"
                 android:text="@string/stop"
-                app:srcCompat="@drawable/ic_baseline_cancel_24_2"/>
+                app:srcCompat="@drawable/ic_baseline_cancel_24_2" />
 
             <ImageButton
                 android:id="@+id/right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#FAFAFA"
                 android:backgroundTint="@color/background"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
-                android:text="@string/right"/>
+                android:text="@string/right"
+                android:textColor="#FAFAFA"
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24" />
         </LinearLayout>
 
         <ImageButton
