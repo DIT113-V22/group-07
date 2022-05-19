@@ -23,7 +23,6 @@
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/garbagetruck_2" />
 
-
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -84,10 +83,10 @@
             android:layout_width="wrap_content"
             android:layout_height="5dp" />
 
-        <LinearLayout
+       <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@drawable/border_grey"
+            android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="10dp"
@@ -123,65 +122,42 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="0"
+                android:text="@string/_0m"
                 android:textColor="#0C0B0B"
                 android:textSize="25sp" />
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/countT"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.6"
+                app:srcCompat="@drawable/trashcan" />
 
-        <ImageButton
-            android:id="@+id/forward"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:backgroundTint="@color/background"
-            android:text="@string/forward"
-            android:textColor="#FAFAFA"
-            app:srcCompat="@drawable/ic_outline_arrow_circle_up_24" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/left"
+            <TextView
+                android:id="@+id/count"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/background"
-                android:text="@string/left"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24" />
+                android:textSize="25sp"
+                />
 
-            <ImageButton
-                android:id="@+id/stop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/background"
-                android:text="@string/stop"
-                app:srcCompat="@drawable/ic_baseline_cancel_24_2" />
-
-            <ImageButton
-                android:id="@+id/right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/background"
-                android:text="@string/right"
-                android:textColor="#FAFAFA"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24" />
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/backward"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:backgroundTint="@color/background"
-            android:text="@string/backward"
-            android:textColor="#FAFAFA"
-            app:srcCompat="@drawable/ic_baseline_arrow_circle_down_24" />
+        <io.github.controlwear.virtual.joystick.android.JoystickView
+            android:id="@+id/joystickView_left"
+            android:layout_width="280dp"
+            android:layout_height="241dp"
+            android:background="@drawable/circle"
+            app:JV_backgroundSizeRatio="50%"
+            app:JV_buttonImage="@drawable/greenearth"
+            app:JV_buttonSizeRatio="60%"
+            app:JV_fixedCenter="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.886" />
 
     </LinearLayout>
 
