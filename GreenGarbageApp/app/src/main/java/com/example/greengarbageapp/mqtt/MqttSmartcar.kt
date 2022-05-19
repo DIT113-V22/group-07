@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import io.github.controlwear.virtual.joystick.android.JoystickView
 import org.eclipse.paho.client.mqttv3.*
 import kotlin.math.roundToInt
 
@@ -15,25 +16,28 @@ class MqttSmartcar : AppCompatActivity {
     private val TAG = "SmartcarMqttController"
     private val LOCALHOST = "10.0.2.2"
     private val MQTT_SERVER = "tcp://$LOCALHOST:1883"
-    private val THROTTLE_CONTROL = "/smartcar/control/takeInput"
-    private val STEERING_CONTROL = "/smartcar/control/takeInput"
+    private val THROTTLE_CONTROL = "/smartcar/control/throttle"
+    private val STEERING_CONTROL = "/smartcar/control/steering"
     private val QOS = 1
     private val IMAGE_WIDTH = 320
     private val IMAGE_HEIGHT = 240
     private var speedometer: TextView? = null
     private var mMqttClient: MqttClient? = null
+    private var count : TextView?=null
     private var isConnected = false
     private var mCameraView: ImageView? = null
-
+    private var joystick: JoystickView? = null
     private var context: Context? = null
     private var distance: TextView? = null
 
-    constructor(context: Context?, mCameraView: ImageView?, speedometer: TextView?, distance: TextView?) {
+    constructor(context: Context?, mCameraView: ImageView?, speedometer: TextView?, distance: TextView?, joystick: JoystickView, count: TextView?) {
         mMqttClient = MqttClient(context, MQTT_SERVER, TAG)
         this.mCameraView = mCameraView
         this.context = context
         this.speedometer = speedometer
         this.distance = distance
+        this.joystick = joystick
+        this.count = count
     }
     constructor(){
     }
@@ -53,7 +57,7 @@ class MqttSmartcar : AppCompatActivity {
         })
     }
 
-     fun connectToMqttBroker() {
+    fun connectToMqttBroker() {
         if (!isConnected) {
             mMqttClient?.connect(TAG, "", object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken) {
@@ -64,6 +68,7 @@ class MqttSmartcar : AppCompatActivity {
                     mMqttClient?.subscribe("/smartcar/camera", QOS, null)
                     mMqttClient?.subscribe("/smartcar/speedometer", QOS, null)
                     mMqttClient?.subscribe("/smartcar/distance", QOS, subscriptionCallback = null)
+                    mMqttClient?.subscribe("/smartcar/count", QOS, null)
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
@@ -103,6 +108,9 @@ class MqttSmartcar : AppCompatActivity {
                     } else if(topic == "/smartcar/distance"){
                         val mDistance = message.toString()
                         distance?.text = mDistance
+                    } else if(topic == "/smartcar/count"){
+                        val mCount = message.toString()
+                        count?.text = mCount
                     }else{
                         Log.i(TAG, "[MQTT] Topic: $topic | Message: $message")
                     }
@@ -115,14 +123,15 @@ class MqttSmartcar : AppCompatActivity {
         }
     }
 
-    fun drive(throttleSpeed: String, steeringAngle: String, actionDescription: String?) {
+    fun drive(throttleSpeed: Int, steeringAngle: Int, actionDescription: String?) {
         if (!isConnected) {
             val notConnected = "Not connected (yet)"
             Log.e(TAG, notConnected)
             return
         }
         Log.i(TAG, actionDescription!!)
-        mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed, QOS, null)
-        mMqttClient?.publish(STEERING_CONTROL, steeringAngle, QOS, null)
+        mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed.toString(), QOS, null)
+        mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
     }
 }
+
