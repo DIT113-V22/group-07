@@ -21,6 +21,7 @@ class GameFragment : Fragment() {
     private var currentSpeed= 0
     private var currentAngle = 0
     private var control: MqttSmartcar? = null
+    private var speedCap = 30
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -29,9 +30,6 @@ class GameFragment : Fragment() {
     ): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
-
-
-
 
         control = MqttSmartcar(context, binding.cameraViewIv, binding.speedometerIndicatorTv, binding.distance, binding.joystickViewLeft, binding.count)
 
@@ -49,7 +47,13 @@ class GameFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-
+        binding.obstacleAvoid.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                control!!.avoidObstacle("true", "boolean from togglebutton")
+            } else {
+                control!!.avoidObstacle("false", "boolean from togglebutton")
+            }
+        }
 
         control!!.connectToMqttBroker()
 
@@ -78,17 +82,15 @@ class GameFragment : Fragment() {
                     sendMovement(speedGo, angleGo)
                     currentAngle = angleGo
                     currentSpeed = speedGo
-
                 }
             }
-
         })
         return binding.root
     }
 
 
     private fun driveF(strength: Int): Int {
-        return (strength * 0.6).toInt()
+        return (strength * 0.2).toInt()
     }
 
     private fun driveB(strength: Int): Int {
