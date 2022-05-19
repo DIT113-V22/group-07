@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/blue_light"
     android:orientation="vertical"
     tools:context=".fragments.EndFragment">
 
@@ -13,7 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/border_neutral"
         android:orientation="vertical"
         android:padding="10dp"
@@ -35,8 +34,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/acme"
                 android:paddingEnd="5dp"
-                android:textColor="@color/green_dark"
                 android:text="Name:"
+                android:textColor="@color/green_dark"
                 android:textSize="24sp" />
 
             <EditText
@@ -101,94 +100,53 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/add_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/add" />
-
-            <Button
-                android:id="@+id/add_score"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:fontFamily="@font/acme"
-                android:text="Add"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+            android:background="@drawable/border_round"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/white"
+            android:text="Add"
+            android:padding="10dp"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_add" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="150dp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/home_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:src="@drawable/home" />
-
-            <Button
-                android:id="@+id/home_end"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/button_blue"
-                android:fontFamily="@font/acme"
-                android:text="Home"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+            android:background="@drawable/border_round"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text=" Home"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_home" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/leaderboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:src="@drawable/podium" />
-
-            <Button
-                android:id="@+id/leaderboard"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/button_blue"
-                android:fontFamily="@font/acme"
-                android:text="Leaderboard"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+            android:background="@drawable/border_round"
+            android:fontFamily="@font/acme"
+            android:padding="10dp"
+            android:text=" Leaderboard"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_events" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="148dp"
-        android:src="@drawable/grass"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
