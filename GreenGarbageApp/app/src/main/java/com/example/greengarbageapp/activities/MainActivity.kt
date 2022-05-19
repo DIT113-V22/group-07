@@ -7,7 +7,6 @@ import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity(){
             }
         }
         // QR-code scanner
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_game)
         val qrButton: ImageButton = findViewById(R.id.qr_button)
         qrButton.setOnClickListener{
             val intentIntegrator = IntentIntegrator(this)
@@ -63,12 +62,12 @@ class MainActivity : AppCompatActivity(){
         if (result != null) {
             AlertDialog.Builder(this)
                 .setMessage("Would you like to go to ${result.contents}?")
-                .setPositiveButton("Yes", DialogInterface.OnClickListener { dialogInterface, i ->
+                .setPositiveButton("Yes") { dialogInterface, i ->
                     val intent = Intent(Intent.ACTION_WEB_SEARCH)
-                    intent.putExtra(SearchManager.QUERY,result.contents)
+                    intent.putExtra(SearchManager.QUERY, result.contents)
                     startActivity(intent)
-                })
-                .setNegativeButton("No",DialogInterface.OnClickListener { dialogInterface, i ->  })
+                }
+                .setNegativeButton("No") { dialogInterface, i -> }
                 .create()
                 .show()
 
