@@ -1,11 +1,16 @@
 package com.example.greengarbageapp.activities
 
+import android.app.SearchManager
+import android.content.DialogInterface
+import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -17,6 +22,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.example.greengarbageapp.R
 import com.example.greengarbageapp.databinding.ActivityMainBinding
+import com.google.zxing.integration.android.IntentIntegrator
 import java.io.IOException
 
 
@@ -40,6 +46,32 @@ class MainActivity : AppCompatActivity(){
             } else {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             }
+        }
+        // QR-code scanner
+        setContentView(R.layout.activity_main)
+        val qrButton: ImageButton = findViewById(R.id.qr_button)
+        qrButton.setOnClickListener{
+            val intentIntegrator = IntentIntegrator(this)
+            intentIntegrator.setDesiredBarcodeFormats(listOf(IntentIntegrator.QR_CODE))
+            intentIntegrator.initiateScan()
+        }
+    }
+    //Display results in the alert dialog box after scanning QR-code
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val result = IntentIntegrator.parseActivityResult(resultCode, data)
+        if (result != null) {
+            AlertDialog.Builder(this)
+                .setMessage("Would you like to go to ${result.contents}?")
+                .setPositiveButton("Yes", DialogInterface.OnClickListener { dialogInterface, i ->
+                    val intent = Intent(Intent.ACTION_WEB_SEARCH)
+                    intent.putExtra(SearchManager.QUERY,result.contents)
+                    startActivity(intent)
+                })
+                .setNegativeButton("No",DialogInterface.OnClickListener { dialogInterface, i ->  })
+                .create()
+                .show()
+
         }
     }
 

@@ -53,6 +53,12 @@
             android:background="@color/white"
             android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/qr_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_qr_scan" />
+
             <ImageView
                 android:id="@+id/speedometerIv"
                 android:layout_width="0dp"
