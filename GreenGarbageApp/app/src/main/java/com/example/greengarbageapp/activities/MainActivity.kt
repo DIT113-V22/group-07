@@ -1,13 +1,11 @@
 package com.example.greengarbageapp.activities
 
 import android.app.SearchManager
-import android.content.DialogInterface
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
@@ -46,15 +44,8 @@ class MainActivity : AppCompatActivity(){
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             }
         }
-        // QR-code scanner
-        setContentView(R.layout.fragment_game)
-        val qrButton: ImageButton = findViewById(R.id.qr_button)
-        qrButton.setOnClickListener{
-            val intentIntegrator = IntentIntegrator(this)
-            intentIntegrator.setDesiredBarcodeFormats(listOf(IntentIntegrator.QR_CODE))
-            intentIntegrator.initiateScan()
-        }
     }
+
     //Display results in the alert dialog box after scanning QR-code
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -70,7 +61,6 @@ class MainActivity : AppCompatActivity(){
                 .setNegativeButton("No") { dialogInterface, i -> }
                 .create()
                 .show()
-
         }
     }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
+import com.google.zxing.integration.android.IntentIntegrator
 
 
 class GameFragment : Fragment() {
@@ -28,6 +29,7 @@ class GameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
         
@@ -68,6 +70,13 @@ class GameFragment : Fragment() {
                 increase(5),
                 "Moving forward right"
             ) // does not increase speed
+        }
+        // QR code scan
+        val qrButton = binding.qrButton
+        qrButton.setOnClickListener{
+            val intentIntegrator = IntentIntegrator(activity)
+            intentIntegrator.setDesiredBarcodeFormats(listOf(IntentIntegrator.QR_CODE))
+            intentIntegrator.initiateScan()
         }
 
         return binding.root
