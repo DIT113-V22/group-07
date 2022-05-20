@@ -27,12 +27,12 @@ class EndFragment : Fragment() {
 
         binding.distanceEnd.text = args.distance.toString()
         binding.pointsEnd.text = args.points.toString()
-        val distance = binding.distanceEnd.text.toString().toInt()
-        val points = binding.pointsEnd.text.toString().toInt()
 
         binding.addScore.setOnClickListener {
             if (checkInput(binding)) {
                 val username = binding.usernameEnd.text.toString()
+                val distance = binding.distanceEnd.text.toString().toInt()
+                val points = binding.pointsEnd.text.toString().toInt()
                 addToDatabase(username, distance, points)
                 binding.addScore.setVisibility(View.GONE)
                 Toast.makeText(requireContext(), "Saved!", Toast.LENGTH_SHORT).show()
