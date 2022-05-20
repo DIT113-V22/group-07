@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
 import io.github.controlwear.virtual.joystick.android.JoystickView
@@ -24,24 +23,15 @@ class GameFragment : Fragment() {
     private var speedCap = 30
 
     @SuppressLint("SetTextI18n")
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
 
         control = MqttSmartcar(context, binding.cameraViewIv, binding.speedometerIndicatorTv, binding.distance, binding.joystickViewLeft, binding.count)
+        control!!.connectToMqttBroker()
 
         binding.endGame.setOnClickListener {
-            val points = 0
-            val distance = binding.distance.text.toString().toInt()
-            val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
-            findNavController().navigate(action)
-        }
-
-        binding.endGame.setOnClickListener {
-            val points = 0
+            val points = binding.count.text.toString().toInt()
             val distance = binding.distance.text.toString().toInt()
             val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
             findNavController().navigate(action)
@@ -54,9 +44,6 @@ class GameFragment : Fragment() {
                 control!!.avoidObstacle("false", "boolean from togglebutton")
             }
         }
-
-        control!!.connectToMqttBroker()
-
 
         //joystick is combined version from https://github.com/controlwear/virtual-joystick-android
         val joystick = binding.joystickViewLeft
