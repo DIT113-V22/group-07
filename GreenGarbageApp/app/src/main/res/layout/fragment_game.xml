@@ -23,10 +23,14 @@
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/garbagetruck_2" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <ToggleButton
+            android:id="@+id/obstacleAvoid"
+            android:layout_width="10dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:textOff="Off"
+            android:textOn="On"
+            />
 
     </LinearLayout>
 
