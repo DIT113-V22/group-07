@@ -1,25 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/objects/bottle.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://src/gd/bottle.gd" type="Script" id=2]
+[ext_resource path="res://src/objects/RayCast.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/objects/bottle.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.592157, 1, 0.941176, 1 )
+albedo_color = Color( 0.443137, 0.0666667, 0.0666667, 1 )
 
-[sub_resource type="ConvexPolygonShape" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.788235, 0.788235, 0.788235, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 144.392, -290.907, 54.6288, -154.287, -401.529, -10.9987, -154.88, -403.067, 5.76892, -71.6172, 485.186, -19.9248, 30.9027, -374.14, -153.371, -44.4534, 262.294, 148.112, 148.11, 262.391, -44.4338, -19.9313, -444.851, 143.641, -52.743, 261.907, -144.717, 105.244, 259.793, 113.511, -154.629, 264.461, -2.61673, 134.49, -451.692, -45.5404, -95.5044, -436.16, -112.389, 72.6879, 262.107, -136.436, 73.9734, 479.802, 5.83042, -127.396, -388.291, 88.9503, 81.2338, -407.894, 131.493, -135.519, 252.043, -77.343, -136.441, 262.063, 72.6864, -2.66032, 482.028, 74.2912, 106.611, -408.814, -111.811, 22.8674, 479.591, -70.745, 39.6687, 265.139, 149.688, -115.124, -472.585, 14.536, 149.687, 265.184, 39.6445, 14.5513, -472.596, -115.1, 101.068, -472.856, 57.7791, 156.67, -374.302, 5.76218, -77.5586, -388.686, -135.856, -2.58393, -375.307, 157.026, -85.5051, -386.978, 130.141, -55.968, 489.827, -64.8308, -2.60465, 264.551, -154.622, -135.862, -388.709, -77.5404, -93.9747, 260.315, 122.045, 122.048, 260.361, -93.9638, 139.232, -389.27, -69.314, -110.428, 251.668, -110.432, 131.514, -407.881, 81.2107, -62.555, 481.825, 40.0544, -19.3781, -391.983, -153.778, -63.0727, -471.392, 100.74, -153.381, -374.02, 30.877, 49.2361, -482.459, -28.7157, 131.542, 262.739, 81.228, 39.0594, 469.226, 64.0221, 65.1718, 477.67, -36.5445, -97.8307, -472.548, -63.2387, 80.2303, -369.599, -134.955, -122.538, -450.845, 74.3422, -144.723, 261.92, -52.7249, 74.3349, -450.867, -122.517, 40.4531, -472.259, 109.557, 39.5779, -410.922, 149.335, -52.3824, -379.136, 146.922, -11.278, -452.909, -140.268, -110.709, -388.123, -110.713, 71.6309, 241.806, 137.559, 113.957, -396.689, 105.613, 125.968, -451.784, 65.8867, -28.7358, -482.458, 49.2181, -140.291, -452.888, -11.259, 100.762, -471.39, -63.0496, -151.589, -353.144, -35.6385 )
 
-[node name="bottle" type="Area"]
-script = ExtResource( 2 )
+[node name="Bottle" type="Spatial"]
+script = ExtResource( 3 )
 
-[node name="shape" type="MeshInstance" parent="."]
-transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0 )
+[node name="bottle" type="MeshInstance" parent="."]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 mesh = ExtResource( 1 )
-material/0 = null
-material/1 = SubResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0 )
-shape = SubResource( 2 )
+[node name="StaticBody" type="StaticBody" parent="bottle"]
 
-[connection signal="body_entered" from="." to="." method="_on_bottle_body_entered"]
+[node name="CollisionShape" type="CollisionShape" parent="bottle/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="RayCast" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3, 0, 0, 0, 0.0619373, -2.99936, 0, 2.99936, 0.0619373, 0, 1.3263, -0.0124699 )

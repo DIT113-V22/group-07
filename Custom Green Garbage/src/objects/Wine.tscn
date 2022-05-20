@@ -1,34 +1,31 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/textures/label_wine_white.png" type="Texture" id=1]
-[ext_resource path="res://src/gd/Wine.gd" type="Script" id=2]
+[ext_resource path="res://src/objects/RayCast.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/objects/Wine_Bottle_White.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://src/textures/rock_wall_02_diff_4k.jpg" type="Texture" id=4]
+[ext_resource path="res://src/objects/Wine.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0313726, 0.00392157, 0.00392157, 1 )
-
-[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 4 )
-
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -0.00202233, 0.00250924, -0.0353147, 0.00232309, 0.187632, 0.0364523, -0.00193796, 0.187661, 0.0364861, -0.0066199, 0.307863, -0.013435, 0.0361893, 0.18105, -0.00827129, -0.0263299, 0.00310764, 0.024502, 0.0327284, 0.00818058, 0.0175395, -0.0360758, 0.187641, -0.00619832, -0.0019367, 0.189775, -0.03608, -0.0318994, 0.0123225, -0.0190555, 0.0304313, 0.00878408, -0.0214047, 0.00246219, 0.310134, 0.0138121, 0.0295164, 0.189154, 0.0211359, -0.0313162, 0.187149, 0.0190904, 0.0131824, 0.0083991, 0.0348353, 0.0190962, 0.187146, -0.0313153, 0.0138205, 0.310134, -0.00434507, -0.0228497, 0.18078, -0.0291339, -0.0361674, 0.0123676, 0.00874186, -0.0134334, 0.305591, 0.00699845, -0.0147182, 0.012926, 0.0342713, -0.0187011, 0.185034, 0.0316867, 0.0151639, 0.0123655, -0.0340276, 0.0335111, 0.00238234, -0.0109114, -0.0148515, 0.0116502, -0.0341984, 0.0190708, 0.182881, 0.0316577, 0.0364081, 0.183305, 0.00658042, 0.0367009, 0.0117908, -0.0062474, 0.0274333, 0.180792, -0.0249555, 0.00700702, 0.305591, -0.013435, -0.0353109, 0.00251515, -0.00202353, 0.00927565, 0.310134, 0.0115434, -0.031451, 0.187284, -0.0187866, -0.0134334, 0.307863, -0.00662134, -0.0360425, 0.187612, 0.00657713, 0.0201769, 0.00242614, 0.0290523, -0.00624601, 0.01179, 0.0367011, 0.00865237, 0.185267, -0.0357851, -0.00888853, 0.310134, 0.0115434, -0.0146108, 0.187367, -0.0336482, 0.0216492, 0.00974108, 0.030234, -0.027169, 0.0146457, 0.0254471, -0.0362752, 0.0119428, -0.00838253, 0.0366647, 0.0119337, 0.00662568, -0.00838061, 0.0119499, -0.0362758, 0.0339085, 0.185143, -0.014551, -0.00827082, 0.181053, 0.0361935, -0.0241557, 0.00290089, -0.026368, 0.0218235, 0.00855588, -0.0300934, 0.00874222, 0.0123773, -0.0361673, 0.0138205, 0.307863, 0.00472218, 0.00865774, 0.178935, 0.0361927, -0.0249696, 0.180809, 0.0274503, -0.0273469, 0.0137288, -0.0252266, 0.0338737, 0.18298, 0.0149204, -0.0109078, 0.00241098, 0.0335047, -0.0340306, 0.0123432, 0.0151583, 0.00662669, 0.0119338, 0.0366646, 0.0115518, 0.310134, -0.00889004, -0.00435127, 0.312436, -0.0111663, -0.00435127, 0.310134, 0.0138121, 0.0342751, 0.0129405, -0.0147113, 0.0364889, 0.187635, -0.00193941, -0.0336522, 0.187372, -0.0146082 )
 
-[node name="Wine" type="Area"]
-script = ExtResource( 2 )
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
 
-[node name="Shape" type="MeshInstance" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+[node name="Wine_Bottle_White" type="MeshInstance" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 mesh = ExtResource( 3 )
 material/0 = SubResource( 1 )
 material/1 = SubResource( 1 )
-material/2 = SubResource( 2 )
-material/3 = SubResource( 3 )
+material/2 = SubResource( 1 )
+material/3 = SubResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 4 )
+[node name="StaticBody" type="StaticBody" parent="Wine_Bottle_White"]
 
-[connection signal="body_entered" from="." to="." method="_on_Wine_body_entered"]
+[node name="CollisionShape" type="CollisionShape" parent="Wine_Bottle_White/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RayCast" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.2, 0, 0, 0, 0.00412916, -0.199957, 0, 0.199957, 0.00412916, -0.0229474, 0.494272, 0.00471155 )

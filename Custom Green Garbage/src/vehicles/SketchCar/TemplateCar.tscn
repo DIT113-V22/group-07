@@ -42,7 +42,7 @@ export(int, 100) var direction_pin = 99
 extents = Vector3( 0.640356, 0.600141, 1.15557 )
 
 [node name="Truck" type="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72607, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.233, 0 )
 script = SubResource( 1 )
 extern_class = "RayCar"
 right_wheels = [ NodePath("RightBack"), NodePath("RightFront") ]
@@ -51,28 +51,28 @@ left_motor = NodePath("BuiltinAttachments/Left BrushedMotor")
 right_motor = NodePath("BuiltinAttachments/Right BrushedMotor")
 
 [node name="LeftBack" type="RayCast" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.934, 0, 0.675 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.934, -0.0500002, 0.58278 )
 enabled = true
 cast_to = Vector3( 0, -1.2, 0 )
 script = ExtResource( 1 )
 extern_class = "RayWheel"
 
 [node name="LeftFront" type="RayCast" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.934, 0, -0.669 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.934, 0.05, -0.563139 )
 enabled = true
 cast_to = Vector3( 0, -1.2, 0 )
 script = ExtResource( 1 )
 extern_class = "RayWheel"
 
 [node name="RightBack" type="RayCast" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.934, 0, 0.675 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.934, 0.00472379, 0.582992 )
 enabled = true
 cast_to = Vector3( 0, -1.2, 0 )
 script = ExtResource( 1 )
 extern_class = "RayWheel"
 
 [node name="RightFront" type="RayCast" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.934, 0, -0.669 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.934, -0.05, -0.639039 )
 enabled = true
 cast_to = Vector3( 0, -1.2, 0 )
 script = ExtResource( 1 )

@@ -1,10 +1,7 @@
-extends Area
-
-signal TrashCollected
+extends Spatial
 
 
-
-func _on_Wine_body_entered(body):
-	emit_signal("TrashCollected")
-	queue_free()
-	
+func _process(delta):
+	if  $RayCast.is_colliding():
+		queue_free()
+		
