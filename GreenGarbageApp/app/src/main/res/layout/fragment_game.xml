@@ -23,6 +23,13 @@
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/garbagetruck_2" />
 
+        <ImageButton
+            android:id="@+id/blink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_blinker"
+            />
+
         <ToggleButton
             android:id="@+id/obstacleAvoid"
             android:layout_width="10dp"
