@@ -54,4 +54,5 @@ class MqttClient(context: Context?, serverUrl: String?, clientId: String?) {
             e.printStackTrace()
         }
     }
+
 }

@@ -20,6 +20,7 @@ class GameFragment : Fragment() {
     private var currentSpeed= 0
     private var currentAngle = 0
     private var control: MqttSmartcar? = null
+    private var speedCap = 30
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -34,6 +35,14 @@ class GameFragment : Fragment() {
             val distance = binding.distance.text.toString().toInt()
             val action = GameFragmentDirections.actionGameFragmentToEndFragment(distance, points)
             findNavController().navigate(action)
+        }
+
+        binding.obstacleAvoid.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                control!!.avoidObstacle("true", "boolean from togglebutton")
+            } else {
+                control!!.avoidObstacle("false", "boolean from togglebutton")
+            }
         }
 
         //joystick is combined version from https://github.com/controlwear/virtual-joystick-android
@@ -60,17 +69,15 @@ class GameFragment : Fragment() {
                     sendMovement(speedGo, angleGo)
                     currentAngle = angleGo
                     currentSpeed = speedGo
-
                 }
             }
-
         })
         return binding.root
     }
 
 
     private fun driveF(strength: Int): Int {
-        return (strength * 0.6).toInt()
+        return (strength * 0.2).toInt()
     }
 
     private fun driveB(strength: Int): Int {

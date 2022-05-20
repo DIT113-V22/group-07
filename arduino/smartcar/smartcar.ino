@@ -16,6 +16,7 @@ WiFiClient net;
 //empty for local host connection
 const char ssid[] = " ";
 const char pass[] = " ";
+bool avoidObstacle = false; // boolean for obstacleAvoid() method to be active or not.
 
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
@@ -33,8 +34,6 @@ const auto forward =30;
 const auto forwardTurn=20;
 const auto reverse =-10;
 const auto delayTurn = 800;
-
-
 
 int counter = 0;
 int hitObject = false;
@@ -93,11 +92,18 @@ void setup() {
   }
  
  mqtt.subscribe("/smartcar/control/#", 1);
+ mqtt.subscribe("/smartcar/detectObstacle", 1);
   mqtt.onMessage([](String topic, String message) {
     if (topic == "/smartcar/control/throttle") {
       car.setSpeed(message.toInt());
     } else if (topic == "/smartcar/control/steering") {
       car.setAngle(message.toInt());
+    } else if (topic == "/smartcar/detectObstacle") {
+        if (message == "false"){  
+              avoidObstacle = false;
+          }else{
+              avoidObstacle = true;
+            }
     } else {
       Serial.println(topic + " let's go " + message);
     }
@@ -118,8 +124,7 @@ int countObj() {
 }
 return counter;
 }
-
-        
+     
 void obstacleAvoid (){
   int distance = front.getDistance();
   if(distance > 0 && distance < 80){
@@ -150,6 +155,10 @@ void loop() {
                    false, 0);
     }
 #endif
+
+if(avoidObstacle == true){
+   obstacleAvoid();
+}
     static auto previousTransmission = 0UL;
     if (currentTime - previousTransmission >= oneSecond) {
       previousTransmission = currentTime;
