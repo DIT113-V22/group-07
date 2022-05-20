@@ -1,10 +1,13 @@
 package com.example.greengarbageapp.fragments
 
+import android.app.SearchManager
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
@@ -80,6 +83,23 @@ class GameFragment : Fragment() {
         }
 
         return binding.root
+    }
+    // Open alert box to proceed to search engine after scanning the QR-code
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val result = IntentIntegrator.parseActivityResult(resultCode, data)
+        if (result != null) {
+            AlertDialog.Builder(requireContext())
+                .setMessage("Would you like to go to ${result.contents}?")
+                .setPositiveButton("Yes") { dialogInterface, i ->
+                    val intent = Intent(Intent.ACTION_WEB_SEARCH)
+                    intent.putExtra(SearchManager.QUERY, result.contents)
+                    startActivity(intent)
+                }
+                .setNegativeButton("No") { dialogInterface, i -> }
+                .create()
+                .show()
+        }
     }
 
     fun increase(pointer: Int): String {

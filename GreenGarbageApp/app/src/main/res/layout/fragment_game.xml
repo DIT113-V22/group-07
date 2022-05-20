@@ -53,8 +53,6 @@
             android:background="@color/white"
             android:orientation="horizontal">
 
-
-
             <ImageView
                 android:id="@+id/speedometerIv"
                 android:layout_width="0dp"
