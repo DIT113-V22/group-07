@@ -27,17 +27,32 @@
             android:id="@+id/blink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/ic_blinker"
             />
+      
+        <Space
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"/>
 
-        <ToggleButton
+        <Switch
             android:id="@+id/obstacleAvoid"
-            android:layout_width="10dp"
-            android:layout_height="37dp"
-            android:layout_weight="1"
-            android:textOff="Off"
-            android:textOn="On"
-            />
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Avoid Obstacle"
+            android:textColorLink="#0DDCBD"
+            android:textStyle="bold"
+            android:padding="2dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"   
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 
