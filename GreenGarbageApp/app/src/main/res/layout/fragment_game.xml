@@ -23,19 +23,18 @@
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/garbagetruck_2" />
 
-        <ImageButton
-            android:id="@+id/blink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_blinker"
-            />
-      
         <Space
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
             android:layout_gravity="center_horizontal"/>
+
+        <ImageButton
+            android:id="@+id/blink"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@drawable/ic_blinker" />
 
         <Switch
             android:id="@+id/obstacleAvoid"
@@ -46,12 +45,11 @@
             android:textColorLink="#0DDCBD"
             android:textStyle="bold"
             android:padding="2dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+            tools:ignore="UseSwitchCompatOrMaterialXml"/>
 
         <Space
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"   
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
