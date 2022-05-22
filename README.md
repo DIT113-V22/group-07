@@ -6,7 +6,7 @@ Project proposal
 :video_game: What are you going to make?
 ---------------------------
 
-For the project, we plan to create a game that raises awareness about high levels of waste in all sorts of environments where the user is manually controlling the car on an app. The vehicle can explore the area whilst clearing up objects that are waste and everything that is not waste will be left in simulation without change. With this being the minimum viable product and the scope having the possibility to expand in reference to features.
+For the project, we plan to create a game that raises awareness about high levels of waste in all sorts of environments where the user is manually controlling the garbage truck on an app. The vehicle can explore the area whilst clearing up objects that are waste and everything that is not waste will be left in simulation without change. With this being the minimum viable product and the scope having the possibility to expand in reference to features.
 
 :deciduous_tree: Why will you make it? What problem does it solve?
 -------------------------------------------------
@@ -21,11 +21,12 @@ With our educational game, we would like to raise awareness about waste pollutio
 :articulated_lorry: How are you going to make it?
 -----------------------------
 
-We are planning to create a custom modded vehicle in the form of a garbage truck that will be simulated in SMCE.
-Using sensors to indicate when trash is collected; a red flash appears and green will indicate ‘not waste’.
-Altering between sound as an alternative way to indicate what is collected as the truck drives over objects.
-Plan is to use the already existing world since it suits the environment we aim to have in the game.
+We are planning to use a modded vehicle ([Garbage Truck](https://www.kenney.nl/assets/car-kit)) the form of a garbage truck that will be simulated in SMCE.
+Using sensors to indicate when trash is collected and add it to the trash counter.
+We will create an world that suits the environment we aim to have in the game.
 Kotlin will be used to create the app and controller of the vehicle itself.
+The app will give the gamer game instructions, educational context about waste and pollution and keep a track on how the game is going.
+When the gamer is done playing, the gamer are able to store the result and check if the result got reasch thhe top 3. 
 
 :chains: What kind of technology are you going to use?
 ---------------------------------------------
