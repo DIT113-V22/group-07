@@ -24,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ToggleButton
         android:id="@+id/btnPlay"
         android:layout_width="40dp"
@@ -38,6 +39,7 @@
         android:onClick="playSong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"

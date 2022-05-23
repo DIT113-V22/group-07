@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/lb_username"
-        android:layout_width="142dp"
-        android:layout_height="40dp"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="Username"
@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/lb_distance"
-        android:layout_width="107dp"
-        android:layout_height="73dp"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="Distance"
@@ -30,12 +30,23 @@
 
     <TextView
         android:id="@+id/lb_points"
-        android:layout_width="102dp"
-        android:layout_height="53dp"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:text="Points"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/lb_distance"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lb_review"
+        android:layout_width="76dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="Review"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/lb_points"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
