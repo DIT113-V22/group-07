@@ -21,7 +21,7 @@ class NavigationTest{
     fun testFragmentsNavigation() {
 
         // SETUP
-        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
+        ActivityScenario.launch(MainActivity::class.java)
 
         // Navigation to start fragment
         onView(withId(R.id.button_start)).perform(click())
@@ -29,18 +29,55 @@ class NavigationTest{
         // verify
         onView(withId(R.id.button_play)).check(matches(isDisplayed()))
 
-        /*
-        @TODO lägg till pop up äpple grejerna
-        // Navigation
+        // Navigation to apple
         onView(withId(R.id.appleIb)).perform(click())
 
         // verify
-        onView(withId(R.drawable.apple)).check(matches(isDisplayed()))
+        onView(withId(R.id.appleID)).check(matches(isDisplayed()))
         pressBack()
 
         // verify
         onView(withId(R.id.appleIb)).check(matches(isDisplayed()))
-         */
+
+        // Navigation to bottle
+        onView(withId(R.id.bottleIb)).perform(click())
+
+        // verify
+        onView(withId(R.id.bottleID)).check(matches(isDisplayed()))
+        pressBack()
+
+        // verify
+        onView(withId(R.id.bottleIb)).check(matches(isDisplayed()))
+
+        // Navigation to can
+        onView(withId(R.id.canIb)).perform(click())
+
+        //verify
+        onView(withId(R.id.canID)).check(matches(isDisplayed()))
+        pressBack()
+
+        //verify
+        onView(withId(R.id.canIb)).check(matches(isDisplayed()))
+
+        // Navigation to plastic bottle
+        onView(withId(R.id.plasticIb)).perform(click())
+
+        //verify
+        onView(withId(R.id.plasticID)).check(matches(isDisplayed()))
+        pressBack()
+
+        //verify
+        onView(withId(R.id.plasticIb)).check(matches(isDisplayed()))
+
+        // Navigation to paper
+        onView(withId(R.id.paperIb)).perform(click())
+
+        //verify
+        onView(withId(R.id.paperID)).check(matches(isDisplayed()))
+        pressBack()
+
+        //verify
+        onView(withId(R.id.button_play)).check(matches(isDisplayed()))
 
         // Navigation to game intro fragment
         onView(withId(R.id.button_play)).perform(click())
@@ -54,7 +91,21 @@ class NavigationTest{
         // verify
         onView(withId(R.id.add_score)).check(matches(isDisplayed()))
 
-        // @TODO fortsätt från end > leaderboard > pressback hela vägen
+        // Navigation to leaderboard fragment
+        onView(withId(R.id.leaderboard)).perform(click())
+
+        // verify
+        onView(withId(R.id.lb_username)).check(matches(isDisplayed()))
+        pressBack()
+
+        // verify
+        onView(withId(R.id.leaderboard)).check(matches(isDisplayed()))
+
+        // Navigation to home screen and test is complete
+        onView(withId(R.id.home_end)).perform(click())
+
+        // verify
+        onView(withId(R.id.button_start)).check(matches(isDisplayed()))
 
     }
 }
