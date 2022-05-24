@@ -44,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/orange"
-                android:hint="Enter Your Name Here"
+                android:textSize="14sp"
+                android:hint="Enter username no longer than 5 letters"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
@@ -121,7 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/orange"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:hint="Enter a number between 1 and 5"
             android:inputType="number" />
 

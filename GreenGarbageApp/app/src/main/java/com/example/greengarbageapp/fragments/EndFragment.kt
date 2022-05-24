@@ -58,6 +58,10 @@ class EndFragment : Fragment() {
         val userName = binding.usernameEnd.text.toString()
         if (userName.isEmpty()){
             return false }
+        if(userName.toCharArray().size > 5){
+            Toast.makeText(requireContext(), "Username should be shorter than 6 letters", Toast.LENGTH_SHORT).show()
+            return false
+        }
         return true
     }
 

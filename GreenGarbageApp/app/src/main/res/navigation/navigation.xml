@@ -57,6 +57,10 @@
         android:name="com.example.greengarbageapp.fragments.ContactFragment"
         android:label="Contact us" />
     <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.greengarbageapp.fragments.ReviewFragment"
+        android:label="Review app"/>
+    <fragment
         android:id="@+id/leaderboardFragment"
         android:name="com.example.greengarbageapp.fragments.LeaderboardFragment"
         android:label="Leaderboard"
