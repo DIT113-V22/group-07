@@ -22,7 +22,8 @@ class GameFragment : Fragment() {
     private var currentSpeed= 0
     private var currentAngle = 0
     private var control: MqttSmartcar? = null
-    private var speedCap = 30
+    private var carSpeed = 60
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -83,11 +84,11 @@ class GameFragment : Fragment() {
 
 
     private fun driveF(strength: Int): Int {
-        return (strength * 0.2).toInt()
+        return ((strength / 100) * carSpeed)
     }
 
     private fun driveB(strength: Int): Int {
-        return (strength * 0.2 * REVERSE).toInt()
+        return ((strength / 100 * REVERSE) * carSpeed)
     }
 
     private fun turnF(angle: Int): Int {
