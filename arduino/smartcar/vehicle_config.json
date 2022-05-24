@@ -1,5 +1,5 @@
-{      "from_scratch": true, 
-   "vehicle": "TemplateCar",
+{      
+   "vehicle": "GarbageTruck",
    "slots": {
       "Front": {
          "class": "AnalogRaycast",
