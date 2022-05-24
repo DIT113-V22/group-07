@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ExternClass.gd" type="Script" id=1]
+[ext_resource path="res://src/vehicles/SketchCar/truck/garbageTruck.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends \"res://ExternClass.gd\"
+
+export(Array, NodePath) var cosmetic_wheels
+export(Array, NodePath) var right_wheels
+export(Array, NodePath) var left_wheels
+
+export(NodePath) onready var left_motor
+export(NodePath) onready var right_motor
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends \"res://ExternClass.gd\"
+
+export(int, 100) var forward_pin = 0
+export(int, 100) var backward_pin = 0
+export(int, 100) var enable_pin = 0
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends \"res://ExternClass.gd\"
+
+export(NodePath) var node = \"\"
+export(int, 256) var pin = 205;
+"
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends \"res://ExternClass.gd\"
+
+export(NodePath) var _forward_reference
+export(bool) var provides_direction = true
+export(int, 100) var distance_pin = 99
+export(int, 100) var direction_pin = 99
+"
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( 0.594167, 0.663053, 1.18135, 0.480589, 1.18546, -0.61454, 0.406217, 0.1875, -1.25494, -0.487087, 1.18546, -0.61454, -0.464825, 0.16155, 1.2536, -0.412483, 0.1875, -1.25494, 0.444311, -0.0134443, 0.745692, -0.583861, 0.919229, 0.890115, 0.486243, 1.1922, 0.4102, 0.525686, 0.691498, -1.17984, -0.483881, 0.0382742, -0.428972, -0.532069, 0.691498, -1.17984, -0.613564, 0.583486, 1.17984, 0.474103, 0.0420876, -0.451966, -0.4875, 1.1861, 0.406, 0.460106, 0.160091, 1.2578, -0.287944, -0.0134443, 0.908655, 0.281561, -0.0134443, -0.475013, 0.417186, 0.772984, -1.20683, 0.607181, 1.07109, 0.393279, -0.613564, 1.07109, 0.393279, 0.569158, 0.32988, 0.267064, -0.484395, 0.0375438, 0.871648, -0.575541, 0.32988, 0.267064, -0.42345, 0.772984, -1.20683, -0.4777, 0.312143, 1.28856, 0.577478, 0.919229, 0.890115, 0.498561, 0.0137975, 0.745692, 0.500283, 0.3, -1.12317, -0.506666, 0.3, -1.12317, -0.6, 0.662992, 1.18001, -0.405102, 0.0132005, -0.454034, 0.607181, 0.583486, 1.17984, 0.471436, 0.312143, 1.28856, -0.613564, 0.962602, 0.339043, 0.607181, 0.962602, 0.339043, 0.426154, 0.011319, 0.871544, 0.4875, 1.19373, 0.119157, 0.594164, 0.716141, 1.12826, -0.431051, 0.0131895, 0.869001, 0.48357, 0.162778, 1.22339, 0.422048, 0.0167634, -0.451502, 0.48347, 0.162764, -0.88129, -0.486052, 0.166155, 1.21387, -0.430425, 0.0140442, -0.427601, 0.0100228, 0.716136, 1.12821, -0.485603, 0.166658, -0.873627, 0.479669, 0.0357521, 0.874198 )
+
+[node name="TemplateCar" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72607, 0 )
+script = SubResource( 1 )
+extern_class = "RayCar"
+right_wheels = [ NodePath("RightBack"), NodePath("RightFront") ]
+left_wheels = [ NodePath("LeftBack"), NodePath("LeftFront") ]
+left_motor = NodePath("BuiltinAttachments/Left BrushedMotor")
+right_motor = NodePath("BuiltinAttachments/Right BrushedMotor")
+
+[node name="LeftBack" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.72, 0.75, 0.729 )
+enabled = true
+cast_to = Vector3( 0, -1.2, 0 )
+script = ExtResource( 1 )
+extern_class = "RayWheel"
+
+[node name="LeftFront" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.782, 0.75, -1.656 )
+enabled = true
+cast_to = Vector3( 0, -1.2, 0 )
+script = ExtResource( 1 )
+extern_class = "RayWheel"
+
+[node name="RightBack" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.752, 0.75, 0.811 )
+enabled = true
+cast_to = Vector3( 0, -1.2, 0 )
+script = ExtResource( 1 )
+extern_class = "RayWheel"
+
+[node name="RightFront" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.731, 0.75, -1.687 )
+enabled = true
+cast_to = Vector3( 0, -1.2, 0 )
+script = ExtResource( 1 )
+extern_class = "RayWheel"
+
+[node name="AttachmentSlots" type="Spatial" parent="."]
+
+[node name="Front" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.00857857, 0.717679, -2.67923 )
+
+[node name="Front2" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323695, 0.87124, -2.68556 )
+
+[node name="FrontTop" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0463231, 1.3073, -2.16197 )
+
+[node name="Left" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.974, 0.4, 0 )
+
+[node name="Right" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.974, 0.4, 0 )
+
+[node name="Back" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.4, 1.36349 )
+
+[node name="BuiltinAttachments" type="Spatial" parent="."]
+
+[node name="Left BrushedMotor" type="Node" parent="BuiltinAttachments"]
+script = SubResource( 2 )
+extern_class = "BrusedMotor"
+forward_pin = 12
+backward_pin = 14
+enable_pin = 13
+
+[node name="Right BrushedMotor" type="Node" parent="BuiltinAttachments"]
+script = SubResource( 2 )
+extern_class = "BrusedMotor"
+forward_pin = 25
+backward_pin = 26
+enable_pin = 27
+
+[node name="Gyroscope" type="Node" parent="BuiltinAttachments"]
+script = SubResource( 3 )
+extern_class = "Gyroscope"
+node = NodePath("../..")
+
+[node name="Left Odometer" type="Spatial" parent="BuiltinAttachments"]
+script = SubResource( 4 )
+extern_class = "Odometer"
+_forward_reference = NodePath("../..")
+distance_pin = 35
+direction_pin = 34
+
+[node name="Right Odometer" type="Spatial" parent="BuiltinAttachments"]
+script = SubResource( 4 )
+extern_class = "Odometer"
+_forward_reference = NodePath("../..")
+distance_pin = 36
+direction_pin = 39
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null

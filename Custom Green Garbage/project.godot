@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/vehicles/attachments/AnalogRaycast.gd"
 }, {
-"base": "Node",
-"class": "Interaction",
-"language": "GDScript",
-"path": "res://src/Interaction/Interaction.gd"
-}, {
 "base": "Spatial",
 "class": "Shooty",
 "language": "GDScript",
@@ -36,7 +31,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AnalogRaycast": "",
-"Interaction": "",
 "Shooty": "",
 "ShootyVisualizer": "",
 "UltraSonic": ""
