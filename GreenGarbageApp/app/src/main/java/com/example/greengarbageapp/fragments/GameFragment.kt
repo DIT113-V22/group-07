@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.greengarbageapp.R
 import com.example.greengarbageapp.databinding.FragmentGameBinding
 import com.example.greengarbageapp.mqtt.MqttSmartcar
 import io.github.controlwear.virtual.joystick.android.JoystickView
@@ -20,14 +22,13 @@ class GameFragment : Fragment() {
     private var currentSpeed= 0
     private var currentAngle = 0
     private var control: MqttSmartcar? = null
-    private var carSpeed = 60
-
+    private var speedCap = 30
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val binding = FragmentGameBinding.inflate(inflater, container, false)
-
+        val blink = binding.blink
         control = MqttSmartcar(context, binding.cameraViewIv, binding.speedometerIndicatorTv, binding.distance, binding.joystickViewLeft, binding.count)
         control!!.connectToMqttBroker()
 
@@ -55,12 +56,15 @@ class GameFragment : Fragment() {
                 if (angle in 90..180) {
                     speedGo = turnF(angle)
                     angleGo = driveF(strength)
+                    blink.setAnimation(null)
                 } else if (angle in 0..89) {
                     speedGo = turnF(angle)
                     angleGo = driveF(strength)
                 } else if (angle > 0 && angle >= 270) {
                     speedGo = turnB(angle)
                     angleGo = driveB(strength)
+                    val anim = AnimationUtils.loadAnimation(context, R.anim.blink)
+                    blink.startAnimation(anim)
                 } else {
                     speedGo = turnB(angle)
                     angleGo = driveB(strength)
@@ -70,6 +74,7 @@ class GameFragment : Fragment() {
                     sendMovement(speedGo, angleGo)
                     currentAngle = angleGo
                     currentSpeed = speedGo
+
                 }
             }
         })
@@ -78,11 +83,11 @@ class GameFragment : Fragment() {
 
 
     private fun driveF(strength: Int): Int {
-        return ((strength / 100) * carSpeed)
+        return (strength * 0.2).toInt()
     }
 
     private fun driveB(strength: Int): Int {
-        return ((strength / 100 * REVERSE) * carSpeed)
+        return (strength * 0.2 * REVERSE).toInt()
     }
 
     private fun turnF(angle: Int): Int {

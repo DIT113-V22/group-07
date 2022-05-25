@@ -91,10 +91,4 @@ dependencies {
     // Lottie animations
     def lottieVersion = "5.0.3"
     implementation "com.airbnb.android:lottie:$lottieVersion"
-
-    // Testing
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0')
-    androidTestImplementation('androidx.test:runner:1.4.0')
-    androidTestImplementation('androidx.test:rules:1.4.0')
-
 }

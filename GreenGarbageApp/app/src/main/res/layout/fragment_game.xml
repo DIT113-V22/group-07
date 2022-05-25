@@ -7,45 +7,16 @@
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingTop="10dp">
-
-        <ImageView
-            android:id="@+id/GGTruckIv"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/garbagetruck_2" />
-
-        <Space
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"/>
-
-        <Switch
-
-            android:id="@+id/obstacleAvoid"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:text="Avoid Obstacle"
-            android:textColorLink="#0DDCBD"
-            android:textStyle="bold"
-            android:padding="2dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"/>
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/GGTruckIv"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@drawable/garbagetruck_2"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,24 +27,21 @@
         <ImageView
             android:id="@+id/cameraViewIv"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="@string/cameraview" />
 
         <Space
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="5dp" />
 
         <LinearLayout
-            android:id="@+id/endGame"
-            android:layout_width="wrap_content"
+            android:layout_width="365dp"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:background="@drawable/border_round"
-            android:layout_gravity="end">
+            android:background="@color/white">
 
+<<<<<<< HEAD
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
@@ -86,96 +54,156 @@
                 android:id="@+id/savegame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+=======
+            <Switch
+                android:id="@+id/obstacleAvoid"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+>>>>>>> e7f29a81e5f53e687cc8e7c07bcf8320c9784593
                 android:layout_gravity="center"
                 android:fontFamily="@font/acme"
                 android:gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/diskette"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:text="Avoid Obstacle"
+                android:textColorLink="@color/green_light"
+                android:textSize="20sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <ImageButton
+                android:id="@+id/blink"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@drawable/ic_blinker" />
+
+            <LinearLayout
+                android:id="@+id/endGame"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/border_round"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/diskette" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/acme"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
+                    android:text="Save"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/speedometerIv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/speedometer" />
+
+                <TextView
+                    android:id="@+id/speedometerIndicatorTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/_0_00km_h"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/distanceIv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/distance" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/countT"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/trashcan" />
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:text="0"
+                    android:textSize="25sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <Space
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="5dp" />
-
-       <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp">
-
-            <ImageView
-                android:id="@+id/speedometerIv"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/speedometer" />
-
-            <TextView
-                android:id="@+id/speedometerIndicatorTv"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/_0_00km_h"
-                android:textColor="#0C0B0B"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:id="@+id/distanceIv"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/distance" />
-
-            <TextView
-                android:id="@+id/distance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="0"
-                android:textColor="#0C0B0B"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:id="@+id/countT"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="0.6"
-                app:srcCompat="@drawable/trashcan" />
-
-            <TextView
-                android:id="@+id/count"
-                android:text="0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="25sp"
-                />
-
-        </LinearLayout>
 
         <io.github.controlwear.virtual.joystick.android.JoystickView
             android:id="@+id/joystickView_left"
-            android:layout_width="280dp"
-            android:layout_height="241dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:background="@drawable/circle"
             app:JV_backgroundSizeRatio="50%"
             app:JV_buttonImage="@drawable/greenearth"
             app:JV_buttonSizeRatio="60%"
-            app:JV_fixedCenter="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.886" />
+            app:JV_fixedCenter="false" />
 
     </LinearLayout>
 

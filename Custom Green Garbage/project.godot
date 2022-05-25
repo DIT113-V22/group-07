@@ -39,6 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GreenGarbage"
+run/main_scene="res://src/environments/example/Example.tscn"
 config/icon="res://icon.png"
 
 [autoload]

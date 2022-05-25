@@ -114,7 +114,7 @@ void setup() {
 int countObj() {
   int distance = frontIR.getDistance();
      int val = digitalRead(frontSide);
-  if( (distance < 0.1) &&  (hitObject == false)) {
+  if( (distance < 0.3) &&  (hitObject == false)) {
     counter++;
     hitObject = true;
     Serial.print ("Counter = ");
