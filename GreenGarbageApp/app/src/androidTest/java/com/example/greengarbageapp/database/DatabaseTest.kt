@@ -40,7 +40,7 @@ class DatabaseTest {
     // Checks if insertion in to the database works
     @Test
     fun insertion() = runBlocking {
-        val player = Player(1, "Christopher", 10, 10)
+        val player = Player(1, "Christopher", 10, 10, 5)
         dao.addPlayer(player)
         val allPlayers = dao.readAllData().getOrAwaitValue()
         assertThat(allPlayers).contains(player)
@@ -51,9 +51,9 @@ class DatabaseTest {
     @Test
     fun sorted() = runBlocking {
         val playerList: ArrayList<Player> = ArrayList()
-        playerList.add(Player(1, "Player1", 500, 32))
-        playerList.add(Player(2, "Player2", 999, 200))
-        playerList.add(Player(3, "Player3", 1500, 77))
+        playerList.add(Player(1, "Player1", 500, 32, 4))
+        playerList.add(Player(2, "Player2", 999, 200, 1))
+        playerList.add(Player(3, "Player3", 1500, 77, 2))
         playerList.forEach{
             database.playerDao().addPlayer(it)
         }
