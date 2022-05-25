@@ -120,7 +120,7 @@ class NavigationTest{
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.button_play)).perform(click())
-        onView(withId(R.id.savegame)).perform(click())
+        onView(withId(R.id.endGame)).perform(click())
         onView(withId(R.id.home_end)).check(matches(isDisplayed()))
     }
     @Test
@@ -128,8 +128,8 @@ class NavigationTest{
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.button_play)).perform(click())
-        onView(withId(R.id.savegame)).perform(click())
+        onView(withId(R.id.endGame)).perform(click())
         pressBack()
-        onView(withId(R.id.savegame)).check(matches(isDisplayed()))
+        onView(withId(R.id.endGame)).check(matches(isDisplayed()))
     }
 }
