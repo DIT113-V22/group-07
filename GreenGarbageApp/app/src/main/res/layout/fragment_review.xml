@@ -9,22 +9,23 @@
     tools:context=".fragments.ReviewFragment"
     android:orientation="vertical">
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:src="@drawable/thumb"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:layout_gravity="center"
         android:background="@color/button_blue">
 
-        <View
-            android:layout_width="27dp"
-            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/lb_username"
@@ -54,38 +55,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="350dp"
         android:orientation="horizontal"
+        android:layout_gravity="center"
         android:background="@color/white">
-
-        <LinearLayout
-            android:layout_width="41dp"
-            android:layout_height="350dp"
-            android:orientation="vertical"
-            android:paddingTop="0dp"
-            android:paddingBottom="0dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
-
-
-
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
