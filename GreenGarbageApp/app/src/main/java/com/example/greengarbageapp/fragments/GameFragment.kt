@@ -49,6 +49,14 @@ class GameFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.obstacleAvoid.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                control!!.avoidObstacle("true", "boolean from togglebutton")
+            } else {
+                control!!.avoidObstacle("false", "boolean from togglebutton")
+            }
+        }
+
         val backward = binding.backward
         val forward = binding.forward
         val stop = binding.stop
