@@ -12,7 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/border_neutral"
         android:orientation="vertical"
         android:padding="10dp"
@@ -104,26 +104,28 @@
             android:id="@+id/add_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:background="@drawable/border_round"
             android:backgroundTint="@color/orange"
             android:fontFamily="@font/acme"
-            android:textColor="@color/white"
-            android:text="Add"
             android:padding="10dp"
+            android:text="Add"
+            android:textColor="@color/white"
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/ic_add" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="150dp" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/mother_earth" />
 
         <TextView
             android:id="@+id/home_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_round"
+            android:background="@drawable/button_background"
             android:fontFamily="@font/acme"
+            android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
             android:text=" Home"
@@ -131,18 +133,19 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/ic_home" />
 
-        <Space
-            android:layout_width="match_parent"
+        <View
+            android:layout_width="wrap_content"
             android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/leaderboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_round"
+            android:background="@drawable/button_background"
             android:fontFamily="@font/acme"
             android:padding="10dp"
             android:text=" Leaderboard"
+            android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/ic_events" />
