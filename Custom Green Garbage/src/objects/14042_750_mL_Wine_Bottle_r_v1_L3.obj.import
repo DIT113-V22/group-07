@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/14042_750_mL_Wine_Bottle_r_v1_L3.obj-65699c3f70195208513fcff37d4f9108.mesh"
+
+[deps]
+
+files=[ "res://.import/14042_750_mL_Wine_Bottle_r_v1_L3.obj-65699c3f70195208513fcff37d4f9108.mesh" ]
+
+source_file="res://src/objects/14042_750_mL_Wine_Bottle_r_v1_L3.obj"
+dest_files=[ "res://.import/14042_750_mL_Wine_Bottle_r_v1_L3.obj-65699c3f70195208513fcff37d4f9108.mesh", "res://.import/14042_750_mL_Wine_Bottle_r_v1_L3.obj-65699c3f70195208513fcff37d4f9108.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
