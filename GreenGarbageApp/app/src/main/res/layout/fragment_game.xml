@@ -184,7 +184,7 @@
             android:id="@+id/joystickView_left"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:background="@drawable/cloud"
+            android:background="@drawable/circle"
             app:JV_backgroundSizeRatio="50%"
             app:JV_buttonImage="@drawable/greenearth"
             app:JV_buttonSizeRatio="60%"
