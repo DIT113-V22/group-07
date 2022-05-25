@@ -105,7 +105,117 @@ transform = Transform( 0.950679, -0.310095, -0.00640351, 0.310095, 0.9507, -0.00
 enabled = true
 cast_to = Vector3( 0, 2, 0 )
 
+[node name="RayCast22" type="RayCast" parent="."]
+transform = Transform( 0.918407, -0.39554, -0.00816796, 0.39554, 0.918442, -0.00168408, 0.00816797, -0.00168411, 0.999961, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast23" type="RayCast" parent="."]
+transform = Transform( 0.795121, -0.606315, -0.0125205, 0.606315, 0.795208, -0.0042289, 0.0125205, -0.00422892, 0.999909, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 0.960255, 0.279066, 0.00576276, -0.279066, 0.960271, -0.000820396, -0.00576276, -0.000820396, 0.999983, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast24" type="RayCast" parent="."]
+transform = Transform( 0.605639, -0.795565, -0.0164286, 0.795565, 0.605806, -0.00814008, 0.0164286, -0.00814011, 0.999828, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast25" type="RayCast" parent="."]
+transform = Transform( 0.369907, -0.928867, -0.0191813, 0.928866, 0.370175, -0.0130059, 0.0191813, -0.0130059, 0.999728, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast26" type="RayCast" parent="."]
+transform = Transform( 0.056222, -0.998202, -0.020613, 0.998201, 0.0566233, -0.0194808, 0.020613, -0.0194809, 0.999595, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast27" type="RayCast" parent="."]
+transform = Transform( -0.229488, -0.9731, -0.0200947, 0.9731, -0.228965, -0.0253783, 0.0200947, -0.0253783, 0.999473, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast28" type="RayCast" parent="."]
+transform = Transform( -0.535043, -0.84464, -0.017442, 0.84464, -0.53439, -0.0316853, 0.017442, -0.0316854, 0.999343, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast29" type="RayCast" parent="."]
+transform = Transform( -0.776726, -0.629699, -0.0130034, 0.629699, -0.775969, -0.036674, 0.0130034, -0.0366741, 0.99924, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast30" type="RayCast" parent="."]
+transform = Transform( -0.943769, -0.330525, -0.00682542, 0.330525, -0.942941, -0.040122, 0.00682538, -0.0401221, 0.999169, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast31" type="RayCast" parent="."]
+transform = Transform( -0.997897, -0.0647617, -0.00133737, 0.0647615, -0.997045, -0.0412393, 0.00133732, -0.0412393, 0.999146, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast32" type="RayCast" parent="."]
+transform = Transform( -0.974715, 0.223389, 0.004613, -0.22339, -0.973873, -0.0407608, -0.00461306, -0.0407608, 0.999156, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast33" type="RayCast" parent="."]
+transform = Transform( -0.888462, 0.458845, 0.00947521, -0.458846, -0.887657, -0.0389804, -0.00947528, -0.0389805, 0.999193, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast34" type="RayCast" parent="."]
+transform = Transform( -0.735563, 0.677308, 0.0139865, -0.677308, -0.734823, -0.0358244, -0.0139866, -0.0358244, 0.999258, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast35" type="RayCast" parent="."]
+transform = Transform( -0.501162, 0.865166, 0.0178658, -0.865166, -0.500522, -0.030986, -0.0178659, -0.030986, 0.999358, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast36" type="RayCast" parent="."]
+transform = Transform( -0.244545, 0.969429, 0.0200188, -0.969429, -0.244014, -0.0256891, -0.0200189, -0.0256891, 0.999468, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast37" type="RayCast" parent="."]
+transform = Transform( 0.027311, 0.999412, 0.020638, -0.999412, 0.0277264, -0.0200776, -0.0206381, -0.0200776, 0.999584, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast38" type="RayCast" parent="."]
+transform = Transform( 0.294707, 0.955382, 0.0197288, -0.955382, 0.295008, -0.0145582, -0.0197288, -0.0145582, 0.999698, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast39" type="RayCast" parent="."]
+transform = Transform( 0.54266, 0.839771, 0.0173414, -0.839771, 0.542856, -0.0094401, -0.0173414, -0.00944009, 0.999804, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast40" type="RayCast" parent="."]
+transform = Transform( 0.739042, 0.673513, 0.0139082, -0.673513, 0.739154, -0.00538652, -0.0139082, -0.0053865, 0.999888, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast41" type="RayCast" parent="."]
+transform = Transform( 0.899594, 0.436629, 0.00901648, -0.436629, 0.899638, -0.0020725, -0.00901649, -0.00207249, 0.999956, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast42" type="RayCast" parent="."]
+transform = Transform( 0.990682, 0.136153, 0.0028116, -0.136153, 0.990687, -0.000192326, -0.0028116, -0.000192316, 0.999995, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 2, 0 )
+
+[node name="RayCast43" type="RayCast" parent="."]
+transform = Transform( 0.99583, -0.0911868, -0.00188301, 0.0911869, 0.995833, -8.60598e-05, 0.00188301, -8.60542e-05, 0.999997, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 2, 0 )
