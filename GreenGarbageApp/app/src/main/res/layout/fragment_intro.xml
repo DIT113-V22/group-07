@@ -5,39 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="50dp"
     tools:context=".activities.MainActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/planetIv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="0dp">
+        android:layout_height="170dp"
+        android:src="@drawable/planet_earth" />
 
-        <ImageView
-            android:id="@+id/planetIv"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:src="@drawable/planet_earth" />
+    <LinearLayout
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/border_neutral"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="@color/white"
             android:fontFamily="@font/acme"
             android:gravity="center_horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
             android:text="@string/edu_game"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:paddingBottom="0dp"
             android:background="@color/white"
             android:orientation="vertical">
 
@@ -45,12 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/white"
-                android:drawablePadding="5dp"
+                android:gravity="center"
                 android:fontFamily="@font/acme"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:text="Collect trash - Earn points"
                 android:textAllCaps="true"
                 android:textColor="@color/orange"
@@ -61,107 +54,106 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click on icons"
-            android:gravity="center"
-            android:drawablePadding="5dp"
-            android:layout_gravity="center"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            app:drawableEndCompat="@drawable/ic_double_arrow_right"
-            app:drawableStartCompat="@drawable/ic_double_arrow_left"
-            android:layout_marginTop="40dp"/>
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:paddingTop="10dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="Click on icons"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:drawableEndCompat="@drawable/ic_double_arrow_right"
+        app:drawableStartCompat="@drawable/ic_double_arrow_left" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
 
-            <ImageButton
-                android:id="@+id/appleIb"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@color/background"
-                android:src="@drawable/apple"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
+        <ImageButton
+            android:id="@+id/appleIb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/apple" />
 
-            <ImageButton
-                android:id="@+id/bottleIb"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@color/background"
-                android:src="@drawable/bottle"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
+        <ImageButton
+            android:id="@+id/bottleIb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bottle" />
 
-            <ImageButton
-                android:id="@+id/canIb"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@color/background"
-                android:src="@drawable/can"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
+        <ImageButton
+            android:id="@+id/canIb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/can" />
 
-            <ImageButton
-                android:id="@+id/plasticIb"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@color/background"
-                android:src="@drawable/plastic"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp" />
+        <ImageButton
+            android:id="@+id/plasticIb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plastic" />
 
-            <ImageButton
-                android:id="@+id/paperIb"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@color/background"
-                android:src="@drawable/paper"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/button_blue"
-            android:fontFamily="@font/holtwood_one_sc"
-            android:text="PLAY"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="34sp"
-            app:cornerRadius="30dp"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="3dp" />
+        <ImageButton
+            android:id="@+id/paperIb"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/paper" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/button_blue"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="PLAY"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="30dp"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="3dp" />
 
 </LinearLayout>
