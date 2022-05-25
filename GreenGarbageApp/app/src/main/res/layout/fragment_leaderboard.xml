@@ -25,7 +25,7 @@
         android:orientation="horizontal"
         android:background="@color/button_blue">
 
-        <Space
+        <View
             android:layout_width="50dp"
             android:layout_height="50dp"/>
 
@@ -80,7 +80,7 @@
             android:paddingTop="0dp"
             android:paddingBottom="0dp">
 
-            <Space
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="30dp"/>
 
@@ -89,7 +89,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/first_place"/>
 
-            <Space
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="70dp"/>
 
@@ -98,7 +98,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/second_place"/>
 
-            <Space
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="70dp"/>
 
