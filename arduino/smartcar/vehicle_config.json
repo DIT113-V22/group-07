@@ -8,6 +8,48 @@
             "pin": 0
          }
       },
+      "Front3": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 18
+         }
+      },
+      "Front4": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 86
+         }
+      },
+      "Front5": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 1
+         }
+      },
+      "Front6": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 2
+         }
+      },
+      "Front7": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 3
+         }
+      },
+      "Front8": {
+         "class": "AnalogRaycast",
+         "name": "Front Infrared",
+         "props": {
+            "pin": 4
+         }
+      },
        "Front2": {
          "class": "Camera",
          "name": "Front Camera",
