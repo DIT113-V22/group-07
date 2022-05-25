@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="ExtraText">
     android:shape="rectangle">
-    <solid android:color="#DCDBD8" />
+    <solid android:color="@color/button_blue" />
     <stroke
         android:width="2dp"
         android:color="@color/grey"/>

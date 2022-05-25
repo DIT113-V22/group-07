@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_X12_+X1_Rock_Pack.obj-7e9a8ba7616d74df2300371cdb07cb8d.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_X12_+X1_Rock_Pack.obj-7e9a8ba7616d74df2300371cdb07cb8d.mesh" ]
+
+source_file="res://src/objects/tree_X12_+X1_Rock_Pack.obj"
+dest_files=[ "res://.import/tree_X12_+X1_Rock_Pack.obj-7e9a8ba7616d74df2300371cdb07cb8d.mesh", "res://.import/tree_X12_+X1_Rock_Pack.obj-7e9a8ba7616d74df2300371cdb07cb8d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

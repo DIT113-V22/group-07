@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_leaf"
             android:title="@string/UN" />
         <item
+            android:id="@+id/legalFragment"
+            android:icon="@drawable/ic_baseline_balance_24"
+            android:title="Legal" />
+        <item
             android:id="@+id/contactFragment"
             android:icon="@drawable/ic_email"
             android:title="Contact us" />
@@ -18,6 +22,7 @@
             android:id="@id/reviewFragment"
             android:icon="@drawable/thumb"
             android:title="Review application" />
+
     </group>
 
 </menu>

@@ -49,6 +49,10 @@
         android:name="com.example.greengarbageapp.fragments.UNinfoFragment"
         android:label="UNs SDGS Goal 12" />
     <fragment
+        android:id="@+id/legalFragment"
+        android:name="com.example.greengarbageapp.fragments.LegalFragment"
+        android:label="Legal" />
+    <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.greengarbageapp.fragments.ContactFragment"
         android:label="Contact us" />
