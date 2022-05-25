@@ -17,95 +17,119 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class NavigationTest{
 
+    // val delay = Thread.sleep(3000)
+
     @Test
-    fun testFragmentsNavigation() {
-
-        // SETUP
+    fun test_navigation_to_apple() {
         ActivityScenario.launch(MainActivity::class.java)
-
-        // Navigation to start fragment
         onView(withId(R.id.button_start)).perform(click())
-
-        // verify
-        onView(withId(R.id.button_play)).check(matches(isDisplayed()))
-
-        // Navigation to apple
         onView(withId(R.id.appleIb)).perform(click())
-
-        // verify
         onView(withId(R.id.appleID)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_navigation_to_apple_and_back() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.appleIb)).perform(click())
         pressBack()
-
-        // verify
         onView(withId(R.id.appleIb)).check(matches(isDisplayed()))
+    }
 
-        // Navigation to bottle
+    @Test
+    fun test_navigation_to_bottle() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.bottleIb)).perform(click())
-
-        // verify
         onView(withId(R.id.bottleID)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_navigation_to_bottle_and_back() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.bottleIb)).perform(click())
         pressBack()
-
-        // verify
         onView(withId(R.id.bottleIb)).check(matches(isDisplayed()))
+    }
 
-        // Navigation to can
+    @Test
+    fun test_navigation_to_can() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.canIb)).perform(click())
-
-        //verify
         onView(withId(R.id.canID)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_navigation_to_can_and_back() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.canIb)).perform(click())
         pressBack()
-
-        //verify
         onView(withId(R.id.canIb)).check(matches(isDisplayed()))
+    }
 
-        // Navigation to plastic bottle
+    @Test
+    fun test_navigation_to_plastic() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.plasticIb)).perform(click())
-
-        //verify
         onView(withId(R.id.plasticID)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_navigation_to_plastic_and_back() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.plasticIb)).perform(click())
         pressBack()
-
-        //verify
         onView(withId(R.id.plasticIb)).check(matches(isDisplayed()))
+    }
 
-        // Navigation to paper
+    @Test
+    fun test_navigation_to_paper() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.paperIb)).perform(click())
-
-        //verify
         onView(withId(R.id.paperID)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_navigation_to_paper_and_back() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.paperIb)).perform(click())
         pressBack()
+        onView(withId(R.id.paperIb)).check(matches(isDisplayed()))
+    }
 
-        //verify
-        onView(withId(R.id.button_play)).check(matches(isDisplayed()))
-
-        // Navigation to game intro fragment
+    @Test
+    fun test_intro_to_game() {
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
         onView(withId(R.id.button_play)).perform(click())
-
-        // verify
         onView(withId(R.id.speedometerIv)).check(matches(isDisplayed()))
-
-        // Navigation to end fragment
-        onView(withId(R.id.endGame)).perform(click())
-
-        // verify
-        onView(withId(R.id.add_score)).check(matches(isDisplayed()))
-
-        // Navigation to leaderboard fragment
-        onView(withId(R.id.leaderboard)).perform(click())
-
-        // verify
-        onView(withId(R.id.lb_username)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_intro_to_game_and_back(){
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.button_play)).perform(click())
         pressBack()
+        onView(withId(R.id.button_play)).check(matches(isDisplayed()))
+    }
 
-        // verify
-        onView(withId(R.id.leaderboard)).check(matches(isDisplayed()))
-
-        // Navigation to home screen and test is complete
-        onView(withId(R.id.home_end)).perform(click())
-
-        // verify
-        onView(withId(R.id.button_start)).check(matches(isDisplayed()))
-
+    @Test
+    fun test_intro_to_end_screen(){
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.button_play)).perform(click())
+        onView(withId(R.id.savegame)).perform(click())
+        onView(withId(R.id.home_end)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun test_intro_to_end_screen_and_back(){
+        ActivityScenario.launch(MainActivity::class.java)
+        onView(withId(R.id.button_start)).perform(click())
+        onView(withId(R.id.button_play)).perform(click())
+        onView(withId(R.id.savegame)).perform(click())
+        pressBack()
+        onView(withId(R.id.savegame)).check(matches(isDisplayed()))
     }
 }

@@ -83,6 +83,7 @@
                 android:src="@drawable/diskette" />
 
             <TextView
+                android:id="@+id/savegame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
