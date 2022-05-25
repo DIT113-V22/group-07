@@ -40,5 +40,5 @@ jobs:
           profile: Nexus 6
           api-level: 29
           arch: x86_64
-          working-directory: ./GreenGarbeApp
+          working-directory: ./GreenGarbageApp
           script: ./gradlew connectedCheck --stacktrace
