@@ -14,6 +14,11 @@
             android:id="@+id/contactFragment"
             android:icon="@drawable/ic_email"
             android:title="Contact us" />
+        <item
+            android:id="@id/reviewFragment"
+            android:icon="@drawable/thumb"
+            android:title="Users reviews" />
+
     </group>
 
 </menu>
