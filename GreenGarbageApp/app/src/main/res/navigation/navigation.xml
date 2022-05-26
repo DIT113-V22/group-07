@@ -49,13 +49,13 @@
         android:name="com.example.greengarbageapp.fragments.UNinfoFragment"
         android:label="UNs SDGS Goal 12" />
     <fragment
-        android:id="@+id/legalFragment"
-        android:name="com.example.greengarbageapp.fragments.LegalFragment"
-        android:label="Legal" />
-    <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.greengarbageapp.fragments.ContactFragment"
         android:label="Contact us" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.greengarbageapp.fragments.ReviewFragment"
+        android:label="Review app"/>
     <fragment
         android:id="@+id/leaderboardFragment"
         android:name="com.example.greengarbageapp.fragments.LeaderboardFragment"

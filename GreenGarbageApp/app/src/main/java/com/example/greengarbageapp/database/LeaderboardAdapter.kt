@@ -20,6 +20,7 @@ class LeaderboardAdapter: RecyclerView.Adapter<LeaderboardAdapter.LeaderboardVie
         holder.binding.lbUsername.text = currentPlayer.playerName
         holder.binding.lbDistance.text = currentPlayer.distance.toString()
         holder.binding.lbPoints.text = currentPlayer.points.toString()
+
     }
 
     fun setData(player: List<Player>){

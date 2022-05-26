@@ -31,22 +31,22 @@
             android:layout_weight="1"
             android:contentDescription="@string/cameraview" />
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="@color/white">
+            android:layout_height="5dp" />
 
-            <View
-                android:layout_width="10dp"
-                android:layout_height="50dp"
-                android:layout_weight="0"/>
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <Switch
                 android:id="@+id/obstacleAvoid"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:fontFamily="@font/acme"
                 android:gravity="center"
                 android:text="Avoid Obstacle"
@@ -54,28 +54,21 @@
                 android:textSize="20sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-            <View
-                android:layout_width="20dp"
-                android:layout_height="50dp"
-                android:layout_weight="0"/>
-
             <ImageButton
                 android:id="@+id/blink"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:backgroundTint="#00FFFFFF"
+                android:paddingEnd="10dp"
                 app:srcCompat="@drawable/ic_blinker" />
-
-            <View
-                android:layout_width="20dp"
-                android:layout_height="50dp"
-                android:layout_weight="0"/>
 
             <LinearLayout
                 android:id="@+id/endGame"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_weight="1"
                 android:background="@drawable/border_round"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
@@ -104,22 +97,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="365dp"
             android:layout_height="50dp"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0"/>
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/speedometerIv"
@@ -138,16 +126,14 @@
             </LinearLayout>
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="50dp"
-                android:layout_weight="0"/>
-
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/distanceIv"
@@ -166,15 +152,14 @@
             </LinearLayout>
 
             <View
-                android:layout_width="10dp"
-                android:layout_height="50dp"
-                android:layout_weight="0"/>
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/countT"
@@ -188,12 +173,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:textColor="@color/black"
                     android:text="0"
+                    android:textColor="@color/black"
                     android:textSize="25sp" />
             </LinearLayout>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <ImageButton
             android:id="@+id/forward"
@@ -218,7 +207,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/background"
                 android:text="@string/left"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24"/>
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_left_24" />
 
             <ImageButton
                 android:id="@+id/stop"
@@ -226,17 +215,17 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/background"
                 android:text="@string/stop"
-                app:srcCompat="@drawable/ic_baseline_cancel_24_2"/>
+                app:srcCompat="@drawable/ic_baseline_cancel_24_2" />
 
             <ImageButton
                 android:id="@+id/right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#FAFAFA"
                 android:backgroundTint="@color/background"
-                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24"
-                android:text="@string/right"/>
+                android:text="@string/right"
+                android:textColor="#FAFAFA"
+                app:srcCompat="@drawable/ic_baseline_arrow_circle_right_24" />
         </LinearLayout>
 
         <ImageButton

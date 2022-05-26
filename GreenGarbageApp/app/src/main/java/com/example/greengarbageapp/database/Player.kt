@@ -18,18 +18,21 @@ import androidx.room.PrimaryKey
     var distance: Int = 0
     @ColumnInfo(name = "player_points")
     var points: Int = 0
+    @ColumnInfo(name = "player_review")
+    var review : Int = 0
         @Ignore
      constructor()
 
-    constructor(id: Int, playerName: String, distance: Int, points: Int){
+    constructor(id: Int, playerName: String, distance: Int, points: Int, review : Int){
         this.id = id
         this.playerName = playerName
         this.distance = distance
         this.points = points
+        this.review = review
     }
 
     override fun toString(): String {
-        return "Player(id=$id, playerName=$playerName, distance=$distance, points=$points)"
+        return "Player(id=$id, playerName=$playerName, distance=$distance, points=$points, review=$review)"
     }
 
     override fun equals(other: Any?): Boolean {
@@ -42,7 +45,7 @@ import androidx.room.PrimaryKey
         if (playerName != other.playerName) return false
         if (distance != other.distance) return false
         if (points != other.points) return false
-
+        if (review !=other.review) return false
         return true
     }
 
@@ -51,6 +54,7 @@ import androidx.room.PrimaryKey
         result = 31 * result + (playerName?.hashCode() ?: 0)
         result = 31 * result + distance
         result = 31 * result + points
+        result = 31 * result + review
         return result
     }
 
