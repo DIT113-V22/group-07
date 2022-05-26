@@ -40,9 +40,12 @@ int hitObject = false;
 
 //infrared
 const int frontSide = 0;
+const int rightIR = 86;
+const int leftIR = 18;
+
 GP2Y0A02 frontIR(arduinoRuntime, frontSide);
-
-
+GP2Y0A02 frontIRA(arduinoRuntime, rightIR);
+GP2Y0A02 frontIRB(arduinoRuntime, leftIR);
 
 
 //Top Sensor
@@ -143,20 +146,21 @@ void takeInput(String input) {
             }
         }
 
+
         
 int countObj() {
   int distance = frontIR.getDistance();
-     int val = digitalRead(frontSide);
-  if( (distance < 0.3) &&  (hitObject == false)) {
+  if( (distance == 0) &&  (hitObject == false)) {
     counter++;
     hitObject = true;
     Serial.print ("Counter = ");
     Serial.println (counter);
-  }else if ( (distance > 0.05) && (hitObject == true) ) {
+  }else if ( (distance == 1) && (hitObject == true) ) {
     hitObject = false;
 }
 return counter;
 }
+
      
 void obstacleAvoid (){
   int distance = front.getDistance();
