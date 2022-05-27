@@ -43,7 +43,7 @@ The truck has been composed with a variety of sensors such as gyroscope for basi
 
 [Wiki Link](https://github.com/DIT113-V22/group-07/wiki) - for further information about the project and how to get started.
 
-[Diagrams](https://github.com/DIT113-V22/group-07/wiki/Diagrams) - Use case diagram, Componenet diagram and more.
+[Diagrams](https://github.com/DIT113-V22/group-07/wiki/Diagrams) - A selection of use case and component diagrams.
 
 
 ----------------
