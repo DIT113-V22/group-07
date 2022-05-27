@@ -6,7 +6,7 @@ Project proposal
 :video_game: What are you going to make?
 ---------------------------
 
-For the project, we plan to create a game that raises awareness about high levels of waste in all sorts of environments where the user is manually controlling the garbage truck on an app. The vehicle can explore the area whilst clearing up objects that are waste and everything that is not waste will be left in simulation without change. With this being the minimum viable product and the scope having the possibility to expand in reference to features.
+For the project, we plan to create a game that raises awareness about high levels of waste in our environment where the user is manually controlling the garbage truck on an app. The vehicle can explore the area whilst clearing up objects that are waste by collecting them upon detection and collision. We will use the app to communicate information about waste pollution.
 
 :deciduous_tree: Why will you make it? What problem does it solve?
 -------------------------------------------------
