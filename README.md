@@ -34,7 +34,7 @@ When the gamer is done playing, the gamer are able to store the result and check
 :chains: What kind of technology are you going to use?
 ---------------------------------------------
 
-We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.
+We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.Diagram
 
 
 🏗️ Software Architecture
@@ -42,7 +42,10 @@ We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, 
 The truck has been composed with a variety of sensors such as gyroscope for basic orientation, ultrasensor to help with detection of obstacles and the infrared sensor is in place to detect certain close by objects. There has been basic implementation of the odometer and speedometer to calculate distance and speed.
 
 [Wiki Link](https://github.com/DIT113-V22/group-07/wiki) - for further information about the project and how to get started.
-[Diagrams](https://github.com/DIT113-V22/group-07/wiki/Diagrams) - Use case diagram, Component diagram and more.
+
+[Diagrams](https://github.com/DIT113-V22/group-07/wiki/Diagrams) - Use case diagram, Componenet diagram and more.
+
+
 ----------------
 		
 :e-mail: Team members:
