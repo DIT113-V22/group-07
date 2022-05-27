@@ -16,6 +16,7 @@ import com.example.greengarbageapp.mqtt.MqttSmartcar
 class GameFragment : Fragment() {
 
     private var STRAIGHT_ANGLE = 0
+    private var TURN_LIMIT = 50
     private var forward = 0
     private var backwards = 0
     private val limitBack = 30
@@ -95,12 +96,18 @@ class GameFragment : Fragment() {
         var result = ""
         when (pointer) {
             2 -> {
+                if (backwards != 0) {
+                    backwards -= INCREASE_BY
+                }
                 if (forward != limitForward) {
                     forward += INCREASE_BY
                 }
                 result = "2 $forward"
             }
             3 -> {
+                if (forward != 0) {
+                    forward -= INCREASE_BY
+                }
                 if (backwards != limitBack) {
                     backwards += INCREASE_BY
                 }
@@ -110,18 +117,23 @@ class GameFragment : Fragment() {
                 if (turnL != 0) {
                     turnL -= INCREASE_BY
                 }
-                turnR += INCREASE_BY
+                if (turnR != TURN_LIMIT) {
+                    turnR += INCREASE_BY
+                }
                 result = "4 $turnR"
             }
             5 -> {
                 if (turnR != 0) {
                     turnR -= INCREASE_BY
+                    "4 $turnR"
+                }
+                if (turnL != TURN_LIMIT) {
+                    turnL += INCREASE_BY
                 }
                 turnL += INCREASE_BY
                 result = "5 $turnL"
             }
             6 -> {
-
                 result = "6 $forward" // when turning
             }
         }

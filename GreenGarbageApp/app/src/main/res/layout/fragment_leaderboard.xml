@@ -31,40 +31,39 @@
 
         <TextView
             android:id="@+id/lb_username"
-            android:layout_width="83dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:fontFamily="@font/acme"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Username"
+            android:fontFamily="@font/acme"
+            android:text="@string/username"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/lb_distance"
-            android:layout_width="68dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/acme"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Distance"
+            android:fontFamily="@font/acme"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:text="@string/distance"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/lb_points"
-            android:layout_width="39dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:fontFamily="@font/acme"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Points"
+            android:fontFamily="@font/acme"
             android:textColor="@color/white"
-            android:textSize="24sp" />
-
+            android:text="@string/points"
+            android:textSize="24sp"/>
 
     </LinearLayout>
 
@@ -75,7 +74,7 @@
         android:background="@color/white">
 
         <LinearLayout
-            android:layout_width="41dp"
+            android:layout_width="50dp"
             android:layout_height="350dp"
             android:orientation="vertical"
             android:paddingTop="0dp"
@@ -83,37 +82,41 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"/>
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/first_place" />
+                android:src="@drawable/first_place"
+                tools:ignore="ContentDescription" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="70dp" />
+                android:layout_height="70dp"/>
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/second_place" />
+                android:src="@drawable/second_place"
+                tools:ignore="ContentDescription" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="70dp" />
+                android:layout_height="70dp"/>
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/third_place" />
+                android:src="@drawable/third_place"
+                tools:ignore="ContentDescription" />
+
 
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="350dp"
             android:layout_weight="1" />
 

@@ -17,7 +17,7 @@
         <item
             android:id="@id/reviewFragment"
             android:icon="@drawable/thumb"
-            android:title="Users reviews" />
+            android:title="User reviews" />
 
     </group>
 
