@@ -39,9 +39,9 @@ We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, 
 
 🏗️ Software Architecture
 ---------------------------------------------
-The truck has been composed with a variety of sensors such as gyroscope for basic orientation, ultrasensor to help with detection of obstacles and the infrared sensor is in place to detect certain objects, 'trash' at a close range (this sensor will count the object after it has collided with a distance of 0). There is also the odometer/speedometer which is helping calculate distance and speed.
+The truck has been composed with a variety of sensors such as gyroscope for basic orientation, ultrasensor to help with detection of obstacles and the infrared sensor is in place to detect certain close by objects. There has been basic implementation of the odometer and speedometer to calculate distance and speed.
 
-[Wiki Link](https://github.com/DIT113-V22/group-07/wiki) - for all information about the project and how to get started.
+[Wiki Link](https://github.com/DIT113-V22/group-07/wiki) - for further information about the project and how to get started.
 ----------------
 		
 :e-mail: Team members:
