@@ -24,7 +24,7 @@ class ReviewFragment : Fragment() {
 
         mPlayerViewModel = ViewModelProvider(this)[PlayerViewModel::class.java]
 
-        mPlayerViewModel.readAllData.observe(viewLifecycleOwner) { player ->
+        mPlayerViewModel.loadUsers.observe(viewLifecycleOwner) { player ->
             adapter.setData(player)
         }
         return binding.root

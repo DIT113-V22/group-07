@@ -23,7 +23,7 @@ class GameFragment : Fragment() {
     private val limitForward = 100
     private var turnR = 0
     private var turnL = 0
-    private var STOP = 7 // For Arduino switch case "7"
+    private var STOP = 7
 
 
     private var control: MqttSmartcar? = null
@@ -134,7 +134,7 @@ class GameFragment : Fragment() {
                 result = "5 $turnL"
             }
             6 -> {
-                result = "6 $forward" // when turning
+                result = "6 $forward" // used when turning
             }
         }
         return result

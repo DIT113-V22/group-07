@@ -9,4 +9,5 @@ class PlayerRepository (private val playerDao: PlayerDao){
     suspend fun addPlayer(player: Player){
         playerDao.addPlayer(player)
     }
+    val loadUsers: LiveData<List<Player>> = playerDao.loadUsers()
 }
