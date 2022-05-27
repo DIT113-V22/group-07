@@ -30,7 +30,7 @@ When the gamer is done playing, the gamer are able to store the result and check
 :chains: What kind of technology are you going to use?
 ---------------------------------------------
 
-We will use Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Java, CSS and a variety of other programming languages.
+We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.
 
 
 Software Architecture
