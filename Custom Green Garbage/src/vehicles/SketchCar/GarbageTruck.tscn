@@ -81,40 +81,19 @@ extern_class = "RayWheel"
 [node name="AttachmentSlots" type="Spatial" parent="."]
 
 [node name="Front" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00857857, 0.717679, -2.67923 )
-
-[node name="Front3" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00857857, 0.361651, -2.67923 )
-
-[node name="Front6" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00857857, 0.513569, -2.67923 )
-
-[node name="Front8" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31997, 0.513569, -2.67923 )
-
-[node name="Front7" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340087, 0.513569, -2.67923 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, 0.489941, -2.87205 )
 
 [node name="Front4" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.586043, 0.571021, -2.67923 )
-
-[node name="Front5" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.608257, 0.571021, -2.67923 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52368, 0.700457, -2.67923 )
 
 [node name="Front2" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323695, 0.87124, -2.68556 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0110257, 1.06962, -2.67923 )
+
+[node name="Front3" type="Position3D" parent="AttachmentSlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505208, 0.700457, -2.67923 )
 
 [node name="FrontTop" type="Position3D" parent="AttachmentSlots"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0463231, 1.3073, -2.16197 )
-
-[node name="Left" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.974, 0.4, 0 )
-
-[node name="Right" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.974, 0.4, 0 )
-
-[node name="Back" type="Position3D" parent="AttachmentSlots"]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.4, 1.36349 )
 
 [node name="BuiltinAttachments" type="Spatial" parent="."]
 

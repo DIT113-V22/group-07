@@ -8,46 +8,18 @@
             "pin": 0
          }
       },
-      "Front3": {
-         "class": "AnalogRaycast",
-         "name": "Front Infrared",
-         "props": {
-            "pin": 18
-         }
-      },
       "Front4": {
          "class": "AnalogRaycast",
-         "name": "Front Infrared",
+         "name": "IR Right",
          "props": {
             "pin": 86
          }
       },
-      "Front5": {
+      "Front3": {
          "class": "AnalogRaycast",
-         "name": "Front Infrared",
+         "name": "IR Left",
          "props": {
-            "pin": 1
-         }
-      },
-      "Front6": {
-         "class": "AnalogRaycast",
-         "name": "Front Infrared",
-         "props": {
-            "pin": 2
-         }
-      },
-      "Front7": {
-         "class": "AnalogRaycast",
-         "name": "Front Infrared",
-         "props": {
-            "pin": 3
-         }
-      },
-      "Front8": {
-         "class": "AnalogRaycast",
-         "name": "Front Infrared",
-         "props": {
-            "pin": 4
+            "pin": 18
          }
       },
        "Front2": {
@@ -72,27 +44,6 @@
          "props": {
             "trigger_pin": 6,
             "echo_pin": 7
-         }
-      },
-      "Left": {
-         "class": "AnalogRaycast",
-         "name": "Left Infrared",
-         "props": {
-            "pin": 1
-         }
-      },
-      "Right": {
-         "class": "AnalogRaycast",
-         "name": "Right Infrared",
-         "props": {
-            "pin": 2
-         }
-      },
-      "Back": {
-         "class": "AnalogRaycast",
-         "name": "Back Infrared",
-         "props": {
-            "pin": 3
          }
       }
    },
