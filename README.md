@@ -1,4 +1,8 @@
-# Green Garbage
+<p align="center">
+<img width="550" alt="GG_logo" src="https://user-images.githubusercontent.com/91566171/167687486-58728f32-b9b0-404c-940a-92c4faaba427.png">
+</p>
+
+***
 
 Project proposal
 ----------------
@@ -33,9 +37,12 @@ When the gamer is done playing, the gamer are able to store the result and check
 We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.
 
 
-Software Architecture
+🏗️ Software Architecture
 ---------------------------------------------
 The truck has been composed with a variety of sensors such as gyroscope for basic orientation, ultrasensor to help with detection of obstacles and the infrared sensor is in place to detect certain objects, 'trash' at a close range (this sensor will count the object after it has collided with a distance of 0). There is also the odometer/speedometer which is helping calculate distance and speed.
+
+[Wiki Link](https://github.com/DIT113-V22/group-07/wiki) - for all information about the project and how to get started.
+----------------
 		
 :e-mail: Team members:
 ---------------------------------------------
