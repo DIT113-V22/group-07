@@ -28,6 +28,18 @@ shape = SubResource( 2 )
 [node name="RayCast" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.197197, 0.0333605, 0.0006889, 0, 0.00412916, -0.199957, -0.0333676, 0.197155, 0.00407128, 0, 0.722433, 0 )
 
+[node name="RayCast4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.197197, 0.0333605, 0.0006889, 0, 0.00412916, -0.199957, -0.0333676, 0.197155, 0.00407128, 0.000478563, 0.583527, 0.00282823 )
+
+[node name="RayCast5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.197197, 0.0333605, 0.0006889, 0, 0.00412916, -0.199957, -0.0333676, 0.197155, 0.00407128, 0.00100688, 0.43018, 0.0059505 )
+
+[node name="RayCast6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.197197, 0.0333605, 0.0006889, 0, 0.00412916, -0.199957, -0.0333676, 0.197155, 0.00407128, 0.00159988, 0.258058, 0.00945503 )
+
+[node name="RayCast7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.197197, 0.0333605, 0.0006889, 0, 0.00412916, -0.199957, -0.0333676, 0.197155, 0.00407128, 0.00214749, 0.0991122, 0.0126913 )
+
 [node name="RayCast2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.189487, 0.0639867, 0.000688804, -0.000649909, 0.00407711, -0.199957, -0.0639871, 0.189444, 0.00407072, 0, 0.722433, 0 )
 

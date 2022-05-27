@@ -1,13 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/textures/greengrovee.jpg" type="Texture" id=1]
-[ext_resource path="res://src/objects/landscene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/environments/example/Example.gd" type="Script" id=3]
 [ext_resource path="res://src/objects/Bottle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/objects/CoffeCup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/objects/Wine.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/objects/BlueBarrel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/objects/BottleTest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/objects/Can.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/objects/tree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/objects/Dog.tscn" type="PackedScene" id=14]
@@ -15,7 +13,6 @@
 [ext_resource path="res://src/objects/Mountainland.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/objects/polytree.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/objects/natureepack.tscn" type="PackedScene" id=20]
-[ext_resource path="res://src/objects/planet.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/objects/treepath.tscn" type="PackedScene" id=22]
 
 [sub_resource type="SpatialMaterial" id=10]
@@ -73,18 +70,6 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 21.435, 1.26609, 6.50382
 [node name="Duck6" parent="." instance=ExtResource( 15 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -160.219, 1.26609, 324.925 )
 
-[node name="Duck7" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -130.802, 1.26609, 324.925 )
-
-[node name="Duck3" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -28.5964, 1.26609, -29.8899 )
-
-[node name="Duck4" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 21.8846, 1.26609, 40.7648 )
-
-[node name="Duck5" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 12.5772, 1.26609, 7.15431 )
-
 [node name="Dog" parent="." instance=ExtResource( 14 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, -9.31323e-10, 0, 9.31323e-10, 0.25, 97.8168, 1.00747, -20.7157 )
 
@@ -99,6 +84,9 @@ transform = Transform( -1.49999, -0.000122674, 0.00160598, -0.000416634, 0.49997
 
 [node name="Mountainland4" parent="." instance=ExtResource( 17 )]
 transform = Transform( -1.49999, -0.000122674, 0.00160598, -0.000416634, 0.499975, -0.00504661, -0.00481398, -0.00504703, -0.499972, -14.4851, 14.2137, -743.428 )
+
+[node name="Mountainland5" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.0738506, -0.000122675, -0.499394, 0.0151046, 0.499976, -0.000371004, 1.4981, -0.00504704, -0.0246144, -770.618, 23.2556, 6.61805 )
 
 [node name="tree23" parent="." instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, 708.189, 4.99037, -5.96046e-08 )
@@ -130,9 +118,6 @@ transform = Transform( 1, 0, 0, 0, 1, -1.30385e-08, 0, 1.30385e-08, 1, 708.189, 
 [node name="land" parent="." instance=ExtResource( 20 )]
 transform = Transform( 30, 0, 0, 0, 30, -2.38419e-07, 0, 2.38419e-07, 30, 198.952, -1.87964, -451.983 )
 
-[node name="planet" parent="." instance=ExtResource( 21 )]
-transform = Transform( 20, 0, 0, 0, 20, -2.98023e-08, 0, 2.98023e-08, 20, 1140.52, 910.299, 784.345 )
-
 [node name="treepath" parent="." instance=ExtResource( 22 )]
 transform = Transform( 2.46276, 2.08106e-09, 1.71313, 1.49012e-08, 3, -2.42144e-08, -1.71313, 2.23517e-08, 2.46276, 27.9839, 0.8, -4.30717 )
 
@@ -160,266 +145,80 @@ transform = Transform( 1.50072, 2.83377e-09, 2.59766, 2.79397e-08, 3, -1.21072e-
 [node name="treepath5" parent="." instance=ExtResource( 22 )]
 transform = Transform( 1.50072, -3.22696e-09, 2.59766, 3.1665e-08, 3, -1.45667e-08, -2.59766, 3.47052e-08, 1.50072, -186.892, 0.8, 410.613 )
 
-[node name="Mountains" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1.3, 0, 0, 0, 3, -1.86265e-08, 0, 1.86265e-08, 3, -417.657, 0, 0 )
-
 [node name="CamPosition" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, -2.79397e-09, 0, 2.79397e-09, 1, 0, 13.0442, 2.74371 )
+transform = Transform( 1, 0, 0, 0, 0.975265, 0.221038, 0, -0.221038, 0.975265, -0.0773392, 13.0442, 26.6283 )
 
 [node name="CoffeCup2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.53903e-08, 0, 3.53903e-08, 1, -2.5867, 1.51685, -6.65134 )
-
-[node name="CoffeCup14" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.81842e-08, 0, 3.81842e-08, 1, -38.6895, 1.51685, -60.8163 )
-
-[node name="CoffeCup7" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.25963e-08, 0, 3.25963e-08, 1, 39.2813, 1.51685, -5.56798 )
-
-[node name="CoffeCup11" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.00469e-08, 0, 4.00469e-08, 1, -42.188, 1.51685, 92.299 )
-
-[node name="CoffeCup12" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.37722e-08, 0, 4.37722e-08, 1, -68.7746, 1.51684, 167.357 )
-
-[node name="CoffeCup15" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -5.12227e-08, 0, 5.12227e-08, 1, -159.187, 1.51684, 297.716 )
-
-[node name="CoffeCup13" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.56348e-08, 0, 4.56348e-08, 1, -102.341, 1.51684, 167.357 )
-
-[node name="CoffeCup8" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.44589e-08, 0, 3.44589e-08, 1, 39.2813, 1.51685, 79.5961 )
-
-[node name="CoffeCup9" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.63216e-08, 0, 3.63216e-08, 1, -24.4184, 1.51685, 79.5961 )
-
-[node name="CoffeCup10" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.00469e-08, 0, 4.00469e-08, 1, 1.42057, 1.51685, 46.7923 )
-
-[node name="CoffeCup3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.63216e-08, 0, 3.63216e-08, 1, -6.94271, 1.51685, -12.5179 )
+transform = Transform( 1, 0, 0, 0, 1, -4.09782e-08, 0, 4.09782e-08, 1, -1.31609, 1.51685, 2.83473 )
 
 [node name="CoffeCup4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.44589e-08, 0, 3.44589e-08, 1, 0.270208, 1.51685, 16.4006 )
+transform = Transform( 1, 0, 0, 0, 1, -4.09782e-08, 0, 4.09782e-08, 1, -2.5867, 1.51685, -23.0136 )
 
 [node name="CoffeCup5" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.81842e-08, 0, 3.81842e-08, 1, 12.147, 1.51685, -19.6008 )
+transform = Transform( 1, 0, 0, 0, 1, -4.28408e-08, 0, 4.28408e-08, 1, 151.326, 1.51685, -23.0136 )
+
+[node name="CoffeCup3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, -4.09782e-08, 0, 4.09782e-08, 1, -2.5867, 1.51685, 34.9789 )
 
 [node name="CoffeCup6" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.00469e-08, 0, 4.00469e-08, 1, 12.147, 1.51685, -31.5186 )
-
-[node name="CoffeCup16" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.37722e-08, 0, 4.37722e-08, 1, 12.147, 1.51687, -519.07 )
+transform = Transform( 1, 0, 0, 0, 1, -4.28408e-08, 0, 4.28408e-08, 1, -2.5867, 1.51685, 47.7745 )
 
 [node name="Bottle" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 0.316592, 1.517, -8.80892 )
 
-[node name="Bottle13" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -40.3385, 1.517, -27.5492 )
-
-[node name="Bottle7" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 21.4198, 1.517, -44.7432 )
-
-[node name="Bottle8" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 32.3031, 1.517, -24.5274 )
-
-[node name="Bottle9" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -10.3131, 1.517, 60.2409 )
-
-[node name="Bottle10" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -33.7967, 1.517, 77.9436 )
-
-[node name="Bottle11" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -33.7967, 1.517, 97.3593 )
-
-[node name="Bottle14" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -100.335, 1.517, 236.871 )
-
-[node name="Bottle16" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -100.335, 1.517, -353.573 )
-
-[node name="Bottle15" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -113.392, 1.517, 252.722 )
-
-[node name="Bottle12" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 105.854, 1.517, 36.9193 )
-
-[node name="Bottle5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 10.686, 1.517, -28.0664 )
-
-[node name="Bottle6" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 10.686, 1.517, 85.7707 )
-
-[node name="Bottle4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 5.17456, 1.517, 30.826 )
+[node name="Bottle3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -13.619, 1.517, -8.80892 )
 
 [node name="Bottle2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 5.64784, 1.517, 106.532 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -39.0367, 1.517, -52.6698 )
 
-[node name="Bottle3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, -102.788, 1.517, 106.532 )
+[node name="Bottle4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 15.5025, 1.517, -47.6755 )
 
-[node name="Can" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, 0.440296, 1.52783, -13.052 )
-
-[node name="Can2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, 16.5105, 1.52783, -13.052 )
-
-[node name="Can4" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, 26.1205, 1.52783, -35.3151 )
-
-[node name="Can5" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -21.7025, 1.52783, -35.3151 )
-
-[node name="Can6" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -21.7025, 1.52783, 83.7216 )
-
-[node name="Can7" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -66.3534, 1.52783, 83.7216 )
-
-[node name="Can8" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -66.3534, 1.52783, 15.77 )
-
-[node name="Can9" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, 26.5841, 1.52783, 15.77 )
-
-[node name="Can11" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -53.9357, 1.52783, 158.744 )
-
-[node name="Can12" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -78.6912, 1.52783, 184.728 )
-
-[node name="Can13" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -78.6912, 1.52783, 206.008 )
-
-[node name="Can14" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -109.81, 1.52783, 206.008 )
-
-[node name="Can15" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -224.211, 1.52783, 206.008 )
-
-[node name="Can10" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, 26.5841, 1.52783, -51.0531 )
-
-[node name="Can3" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, -4.65661e-09, 0, 4.65661e-09, 0.4, -8.82861, 1.52783, 53.0778 )
+[node name="Bottle5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, -2.32831e-10, 0, 2.32831e-10, 0.1, 256.002, 1.517, -47.6755 )
 
 [node name="BlueBarrel" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.08654e-09, 0, 1.08654e-09, 0.1, 0.648, 1.517, -16.958 )
-
-[node name="BlueBarrel11" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, -40.9118, 1.517, -48.1466 )
-
-[node name="BlueBarrel12" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, -53.9864, 1.517, -68.54 )
-
-[node name="BlueBarrel2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 0.648, 1.517, -35.4767 )
-
-[node name="BlueBarrel16" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 279.094, 1.517, -35.4768 )
-
-[node name="BlueBarrel13" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, -24.5553, 1.517, 121.547 )
-
-[node name="BlueBarrel14" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, -45.2173, 1.517, 142.787 )
-
-[node name="BlueBarrel15" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, -109.393, 1.517, 231.062 )
-
-[node name="BlueBarrel3" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 32.2783, 1.517, -35.4768 )
-
-[node name="BlueBarrel4" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 73.4394, 1.517, -62.0875 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, -8.84756e-09, 0, 8.84756e-09, 0.2, -7.958, 1.517, 2.835 )
 
 [node name="BlueBarrel5" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 91.5922, 1.517, -62.0875 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, -8.84756e-09, 0, 8.84756e-09, 0.2, 432.38, 1.517, 2.835 )
 
-[node name="BlueBarrel6" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 129.039, 1.517, -98.2389 )
+[node name="BlueBarrel3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, -8.84756e-09, 0, 8.84756e-09, 0.2, 68.0333, 1.517, -34.8206 )
 
-[node name="BlueBarrel7" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 154.256, 1.517, -98.2389 )
+[node name="BlueBarrel4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, -8.84756e-09, 0, 8.84756e-09, 0.2, 68.0333, 1.51701, -106.511 )
 
-[node name="BlueBarrel8" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 193.633, 1.517, -167.693 )
+[node name="BlueBarrel2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, -8.84756e-09, 0, 8.84756e-09, 0.2, 44.054, 1.517, 2.835 )
 
-[node name="BlueBarrel9" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 231.355, 1.517, -167.693 )
+[node name="Can" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, -2.79397e-09, 0, 2.79397e-09, 0.7, 8.986, 1.517, 0 )
 
-[node name="BlueBarrel10" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, -1.04774e-09, 0, 1.04774e-09, 0.1, 231.355, 1.517, 16.314 )
+[node name="Can2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.7, 0, 0, 0, 0.700001, -3.25963e-09, 0, 3.25963e-09, 0.700001, -35.5565, 1.517, 9.31323e-10 )
+
+[node name="Can4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.7, 0, 0, 0, 0.700001, -3.72529e-09, 0, 3.72529e-09, 0.700001, 98.6102, 1.517, 1.86265e-09 )
+
+[node name="Can5" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.7, 0, 0, 0, 0.700001, -3.72529e-09, 0, 3.72529e-09, 0.700001, 98.6102, 1.517, 92.9802 )
+
+[node name="Can3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.7, 0, 0, 0, 0.700001, -3.72529e-09, 0, 3.72529e-09, 0.700001, -35.5565, 1.517, 28.4204 )
 
 [node name="Wine" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -2.79397e-08, 0, 2.79397e-08, 1, 0.62854, 1.55118, -19.3569 )
-
-[node name="Wine12" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.72529e-08, 0, 3.72529e-08, 1, -32.4998, 1.55118, 142.65 )
-
-[node name="Wine13" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.09782e-08, 0, 4.09782e-08, 1, -102.355, 1.55117, 224.348 )
-
-[node name="Wine14" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.28408e-08, 0, 4.28408e-08, 1, -86.4642, 1.55117, 224.348 )
-
-[node name="Wine15" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.65661e-08, 0, 4.65661e-08, 1, -98.4148, 1.55118, 183.756 )
-
-[node name="Wine11" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.37722e-08, 0, 4.37722e-08, 1, -50.2027, 1.55118, -57.1429 )
+transform = Transform( 1, 0, 0, 0, 1, -5.58794e-09, 0, 5.58794e-09, 1, 0, 1.50951, 3.72529e-09 )
 
 [node name="Wine2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 30.8696, 1.55118, -19.3569 )
-
-[node name="Wine3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.35276e-08, 0, 3.35276e-08, 1, 41.8095, 1.55118, -46.6257 )
+transform = Transform( 1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, -30.4598, 1.50951, 4.65661e-09 )
 
 [node name="Wine4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.53903e-08, 0, 3.53903e-08, 1, 56.7916, 1.55118, -46.6257 )
+transform = Transform( 1, 0, 0, 0, 1, -1.11759e-08, 0, 1.11759e-08, 1, -0.634388, 1.50951, -83.4409 )
 
 [node name="Wine5" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -3.91155e-08, 0, 3.91155e-08, 1, 84.2127, 1.55118, -46.6257 )
+transform = Transform( 1, 0, 0, 0, 1, -1.30385e-08, 0, 1.30385e-08, 1, -0.634388, 1.50951, 34.2168 )
 
-[node name="Wine6" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.28408e-08, 0, 4.28408e-08, 1, 96.9798, 1.55118, -69.8355 )
-
-[node name="Wine7" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.47035e-08, 0, 4.47035e-08, 1, 96.9798, 1.55119, -103.628 )
-
-[node name="Wine8" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.65661e-08, 0, 4.65661e-08, 1, 143.53, 1.55119, -103.628 )
-
-[node name="Wine9" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -4.84288e-08, 0, 4.84288e-08, 1, 167.439, 1.55119, -103.628 )
-
-[node name="Wine10" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -5.02914e-08, 0, 5.02914e-08, 1, 167.439, 1.55119, -134.39 )
-
-[node name="Wine16" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, -5.40167e-08, 0, 5.40167e-08, 1, 422.209, 1.55118, 18.4579 )
-
-[node name="Bottle17" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, 37.0589, 6.2333, -20.802 )
-
-[node name="Bottle18" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, 37.0589, 6.2333, 29.9614 )
-
-[node name="Bottle24" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, 37.0589, 6.2333, -234.994 )
-
-[node name="Bottle19" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, -67.5176, 6.2333, 29.9614 )
-
-[node name="Bottle20" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, 267.742, 6.2333, 29.9614 )
-
-[node name="Bottle21" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, 267.742, 6.2333, 473.177 )
-
-[node name="Bottle22" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, -305.5, 6.2333, -600.546 )
-
-[node name="Bottle23" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 7.27596e-12, 0, -7.27596e-12, 0.01, -305.5, 6.2333, -349.553 )
+[node name="Wine3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, -1.11759e-08, 0, 1.11759e-08, 1, 12.4565, 1.50951, -27.6477 )
