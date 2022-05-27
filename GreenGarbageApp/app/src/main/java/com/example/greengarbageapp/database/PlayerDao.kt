@@ -16,4 +16,6 @@ interface PlayerDao {
     @Query("SELECT * FROM player_table WHERE player_points > 0 ORDER BY player_points DESC LIMIT 3")
     fun readAllData(): LiveData<List<Player>>
 
+    @Query("SELECT * FROM player_table WHERE player_points > 0 ORDER BY player_review DESC")
+    fun loadUsers() :  LiveData<List<Player>>
 }

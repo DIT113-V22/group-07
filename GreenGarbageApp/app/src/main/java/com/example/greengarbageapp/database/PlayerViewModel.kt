@@ -12,12 +12,15 @@ class PlayerViewModel(application: Application): AndroidViewModel(application){
 
 
     val readAllData: LiveData<List<Player>>
+    val loadUsers : LiveData<List<Player>>
     private val repository: PlayerRepository
 
     init {
         val playerDao = PlayerDatabase.getDatabase(application).playerDao()
         repository = PlayerRepository(playerDao)
         readAllData = repository.readAllData
+        loadUsers = repository.loadUsers
+
     }
 
     fun addPlayer(player: Player){
