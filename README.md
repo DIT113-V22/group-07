@@ -1,4 +1,6 @@
-# Green Garbage
+<p align="center">
+<img width="600" alt="GG_logo" src="https://user-images.githubusercontent.com/91566171/167687486-58728f32-b9b0-404c-940a-92c4faaba427.png">
+</p>
 
 Project proposal
 ----------------
@@ -32,6 +34,13 @@ When the gamer is done playing, the gamer are able to store the result and check
 ---------------------------------------------
 
 We will use Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Java, CSS and a variety of other programming languages.
+
+
+📺 The result - Green Garbage Demo:
+---------------------------------------------
+
+[![Geeen Garbage Demo](http://img.youtube.com/vi/JB_B8VS-6sw/0.jpg)](https://www.youtube.com/embed/JB_B8VS-6sw "GreenGarbage Final Demo")
+
 		
 :e-mail: Team members:
 ---------------------------------------------
