@@ -1,8 +1,7 @@
 <p align="center">
-<img width="550" alt="GG_logo" src="https://user-images.githubusercontent.com/91566171/167687486-58728f32-b9b0-404c-940a-92c4faaba427.png">
+<img width="600" alt="GG_logo" src="https://user-images.githubusercontent.com/91566171/167687486-58728f32-b9b0-404c-940a-92c4faaba427.png">
 </p>
 
-***
 
 Project proposal
 ----------------
@@ -42,6 +41,11 @@ When the gamer is done playing, the gamer are able to store the result and check
 
 We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.Diagram
 
+📺 The result - Green Garbage Demo:
+---------------------------------------------
+
+[![Geeen Garbage Demo](http://img.youtube.com/vi/JB_B8VS-6sw/0.jpg)](https://www.youtube.com/embed/JB_B8VS-6sw "GreenGarbage Final Demo")
+
 
 🏗️ Software Architecture
 ---------------------------------------------
@@ -53,8 +57,6 @@ The truck has been composed with a variety of sensors such as gyroscope for basi
 
 [User Manual](https://github.com/DIT113-V22/group-07/wiki/User-Manual) - Description of the features.
 
-
-----------------
 		
 :e-mail: Team members:
 ---------------------------------------------
