@@ -19,6 +19,12 @@ For the project, we plan to create a game that raises awareness about high level
 
 For more information, see *https://sdgs.un.org/goals/goal12*
 
+**Pictures of trash, Lindholmen 2022-05-23**
+
+<p align="center">
+<img width="912" alt="lindholmen" src="https://user-images.githubusercontent.com/91566171/170865876-8b9f7612-c511-4471-b272-760d1fcebf9b.png">
+</p>
+
 With our educational game, we would like to raise awareness about waste pollution and the negative impact it has on the environment but in a fun way. In these current times, one can see trash of all materials lying on roads, parks, and nature reserves for years. This is to inspire more action and to encourage people to not litter as well as to clean up more in places they go by in their daily lives.
 
 
