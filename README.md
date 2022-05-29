@@ -34,12 +34,12 @@ We are planning to use a modded vehicle ([Garbage Truck](https://www.kenney.nl/a
 We will create an world that suits the environment we aim to have in the game.
 Kotlin will be used to create the app and controller of the vehicle itself.
 The app will give the gamer game instructions, educational context about waste and pollution and keep a track on how the game is going.
-When the gamer is done playing, the gamer are able to store the result and check if the result got reach the top 3. 
+When the gamer is done playing, the gamer is able to store the result and check if the result got to reach the top 3. 
 
 :chains: What kind of technology are you going to use?
 ---------------------------------------------
 
-We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.Diagram
+We will use Android Studio, Arduino IDE, Smartcar-Shield Library, SMCE, Kotlin, Godot and Blender.
 
 📺 The result - Green Garbage Demo:
 ---------------------------------------------
