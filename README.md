@@ -15,6 +15,12 @@ For the project, we plan to create a game that raises awareness about high level
 
 For more information, see *https://sdgs.un.org/goals/goal12*
 
+**Pictures of trash, Lindholmen 2022-05-23**
+
+<p align="center">
+<img width="912" alt="lindholmen" src="https://user-images.githubusercontent.com/91566171/170865876-8b9f7612-c511-4471-b272-760d1fcebf9b.png">
+</p>
+
 With our educational game, we would like to raise awareness about waste pollution and the negative impact it has on the environment but in a fun way. In these current times, one can see trash of all materials lying on roads, parks, and nature reserves for years. This is to inspire more action and to encourage people to not litter as well as to clean up more in places they go by in their daily lives.
 
 
@@ -26,7 +32,7 @@ Using sensors to indicate when trash is collected and add it to the trash counte
 We will create an world that suits the environment we aim to have in the game.
 Kotlin will be used to create the app and controller of the vehicle itself.
 The app will give the gamer game instructions, educational context about waste and pollution and keep a track on how the game is going.
-When the gamer is done playing, the gamer are able to store the result and check if the result got reasch thhe top 3. 
+When the gamer is done playing, the gamer are able to store the result and check if the result got reasch the top 3. 
 
 :chains: What kind of technology are you going to use?
 ---------------------------------------------
